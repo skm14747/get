@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PrivacyBadge } from "@/components/ui/privacy-badge";
 import { useToolSession } from "@/components/use-tool-session";
 import { MAX_PDF_BYTES } from "@/lib/files";
 import type { FormField } from "@/lib/pdf-tools";
@@ -84,6 +85,7 @@ export function PdfFormTool() {
 
   return (
     <form className="grid gap-5" onSubmit={(e) => { e.preventDefault(); loaded ? void run() : void loadFields(); }}>
+      <PrivacyBadge message="Your form data stays on this device. Nothing is uploaded or stored." />
       <label
         className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-line px-6 py-8 text-center transition-colors hover:border-line-strong hover:bg-canvas"
         onDragOver={(e) => e.preventDefault()}

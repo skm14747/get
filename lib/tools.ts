@@ -98,6 +98,7 @@ export const tools = [
   tool("sign-pdf", "/sign-pdf", "Sign PDF", "Draw, type, or upload a signature and place it on a PDF page.", "Add a visual signature to any PDF page. Draw freehand, type your name in cursive, or upload a signature image. Position and size are adjustable. No upload required.", "pdf", ["edit-pdf", "pdf-forms"], "sign pdf", ["sign", "signature"], "Sign PDF — Add Signature to PDF in Browser"),
   tool("delete-pdf-pages", "/delete-pdf-pages", "Delete PDF Pages", "Remove specific pages from a PDF.", "Select pages to remove from a PDF document. Remaining pages are re-saved into a clean file. No upload — processed locally with pdf-lib.", "pdf", ["split-pdf", "organize-pdf"], "delete pdf pages", ["delete-pages"], "Delete PDF Pages — Remove Pages from PDF in Browser"),
   tool("extract-pdf-pages", "/extract-pdf-pages", "Extract PDF Pages", "Extract specific pages into a new PDF.", "Pull selected pages or ranges from a PDF into a new standalone document. Choose pages like 1-3, 5. No upload — processed in browser.", "pdf", ["split-pdf", "merge-pdf"], "extract pdf pages", ["extract-pages"], "Extract PDF Pages — Pull Pages from PDF in Browser"),
+  tool("pdf-pipeline", "/pdf-pipeline", "PDF Pipeline", "Chain unlimited PDF operations with undo/redo.", "Upload once, then rotate, crop, watermark, compress, delete pages and more in sequence. Full version history with undo and redo. No uploads.", "pdf", ["merge-pdf", "edit-pdf"], "pdf pipeline", ["pipeline", "chain", "workflow"], "PDF Pipeline — Chain PDF Tools with Undo/Redo in Browser"),
   tool("unit-converter", "/unit-converter", "Unit converter", "Convert length, mass, temperature, area, volume, and speed.", "Convert metric and imperial units across length, mass, temperature, area, volume, and speed with exact scientific constants and formulas shown.", "calculator", ["percentage-calculator", "date-calculator"], "unit converter", ["convert"], "Unit Converter — Length, Weight, Temperature & Volume"),
   tool("date-calculator", "/date-calculator", "Date calculator", "Count days between dates or add days.", "Calculate exact calendar days, midnights, and Monday-Friday business days between dates, or add days to calculate future and past target dates.", "calculator", ["age-calculator"], "date calculator", ["between", "add", "business"], "Date Calculator — Days Between Dates & Business Days"),
   tool("gst-calculator", "/gst-calculator", "GST calculator", "Add or remove a GST rate you enter.", "Calculate GST amount, reverse GST, and gross totals from any tax rate. Displays breakdown for Central GST (CGST), State GST (SGST), and IGST.", "calculator", ["percentage-calculator"], "gst calculator", ["add", "remove"], "GST Calculator — Add or Remove GST with CGST/SGST Split"),
@@ -210,6 +211,18 @@ export const tools = [
     "unix timestamp converter",
     ["timestamp-to-date", "date-to-timestamp"],
     "Unix Timestamp Converter — Epoch to Date & DateTime in Browser"
+  ),
+  tool(
+    "jwt-decoder",
+    "/jwt-decoder",
+    "JWT decoder",
+    "Decode and inspect JSON Web Tokens (JWT) in your browser.",
+    "Decode JSON Web Tokens (JWT) online. Inspect headers, claims, payload data, and expiration dates. 100% in-browser processing guarantees token privacy.",
+    "developer",
+    ["base64", "json-formatter"],
+    "jwt decoder",
+    ["decode", "claims", "expiry"],
+    "JWT Decoder — Decode & Inspect JSON Web Tokens"
   ),
 ] as const satisfies readonly ToolDefinition[];
 

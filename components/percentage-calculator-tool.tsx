@@ -117,7 +117,7 @@ export function PercentageCalculatorTool() {
     <form className="mx-auto max-w-2xl" onSubmit={(e) => e.preventDefault()}>
       {/* ── Mode selector ── */}
       <fieldset>
-        <legend className="text-sm font-medium text-ink">Calculation</legend>
+        <legend className="text-sm font-medium text-ink">Calculation <span className="font-normal text-muted">— 8 modes in one tool</span></legend>
         <div className="mt-2 grid gap-1.5 sm:grid-cols-2">
           {operations.map((item) => (
             <label key={item.id} className={`flex min-h-10 cursor-pointer items-center gap-2 rounded-md border px-3 text-[0.8125rem] font-medium transition-colors ${operation === item.id ? "border-action bg-action-soft text-action" : "border-line text-muted hover:border-line-strong"}`}>

@@ -97,7 +97,7 @@ export function ImageTool({ mode }: { mode: "compress" | "resize" }) {
             <dl className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <div><dt className="text-xs text-faint">Original</dt><dd className="font-medium tabular-nums">{formatSize(before)}</dd></div>
               <div><dt className="text-xs text-faint">Result</dt><dd className="font-medium tabular-nums">{formatSize(after)}</dd></div>
-              {reduced !== null ? <div><dt className="text-xs text-faint">Change</dt><dd className="font-medium tabular-nums">{reduced.toFixed(1)}%</dd></div> : null}
+              {reduced !== null ? <div><dt className="text-xs text-faint">Savings</dt><dd className={`font-medium tabular-nums ${reduced > 0 ? "text-green-600 dark:text-green-400" : ""}`}>{reduced > 0 ? `↓ ${reduced.toFixed(1)}% smaller` : `${reduced.toFixed(1)}%`}</dd></div> : null}
             </dl>
           ) : null}
         </div>

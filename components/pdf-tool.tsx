@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PrivacyBadge } from "@/components/ui/privacy-badge";
 import { useToolSession } from "@/components/use-tool-session";
 import { MAX_PDF_BYTES, MAX_PDF_FILES, parsePageRanges } from "@/lib/files";
 
@@ -286,8 +287,10 @@ export function PdfTool({ mode }: { mode: PdfMode }) {
     : mode === "extract" ? "Extract Pages"
     : "Create PDF";
 
+  const privacyModes: PdfMode[] = ["unlock", "merge", "split"];
   return (
     <form className="grid gap-5" onSubmit={(e) => { e.preventDefault(); void run(); }}>
+      {privacyModes.includes(mode) ? <PrivacyBadge /> : null}
       {/* ── Upload area ── */}
       <label
         className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-line px-6 py-8 text-center transition-colors hover:border-line-strong hover:bg-canvas"

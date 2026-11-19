@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import { PrivacyBadge } from "@/components/ui/privacy-badge";
 import { useToolSession } from "@/components/use-tool-session";
 import { MAX_PDF_BYTES } from "@/lib/files";
 
@@ -162,6 +163,7 @@ export function PdfSignTool() {
 
   return (
     <form className="grid gap-5" onSubmit={(e) => { e.preventDefault(); void run(); }}>
+      <PrivacyBadge message="Your signature and PDF stay on this device. Nothing is uploaded." />
       {/* ── PDF upload ── */}
       <label
         className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-line px-6 py-8 text-center transition-colors hover:border-line-strong hover:bg-canvas"

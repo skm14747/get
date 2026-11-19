@@ -52,7 +52,7 @@ export const browseGroups: readonly BrowseGroup[] = [
       "Generate cryptographically secure random passwords using Web Crypto API (crypto.getRandomValues).",
       "Create permanent, high-resolution static QR codes for website links, plain text, and Wi-Fi networks.",
     ],
-    toolIds: ["json-formatter", "base64", "password-generator", "qr-code-generator", "slug-generator", "color-converter", "unix-timestamp-converter"],
+    toolIds: ["json-formatter", "base64", "password-generator", "qr-code-generator", "slug-generator", "color-converter", "unix-timestamp-converter", "jwt-decoder"],
   },
   {
     id: "image-tools",
@@ -80,7 +80,7 @@ export const browseGroups: readonly BrowseGroup[] = [
       "Extract individual pages or custom page ranges (e.g. 1-3, 5) into a standalone PDF document.",
       "Convert JPG and PNG photos into professional PDF documents with standard A4 or native sizing.",
     ],
-    toolIds: ["merge-pdf", "split-pdf", "jpg-to-pdf", "rotate-pdf", "organize-pdf", "crop-pdf", "add-page-numbers", "watermark-pdf", "unlock-pdf", "pdf-to-jpg", "compress-pdf", "edit-pdf", "pdf-forms", "sign-pdf"],
+    toolIds: ["merge-pdf", "split-pdf", "jpg-to-pdf", "rotate-pdf", "organize-pdf", "crop-pdf", "add-page-numbers", "watermark-pdf", "unlock-pdf", "pdf-to-jpg", "compress-pdf", "edit-pdf", "pdf-forms", "sign-pdf", "delete-pdf-pages", "extract-pdf-pages", "pdf-pipeline"],
   },
   {
     id: "converters",

@@ -252,6 +252,33 @@ This document provides complete mathematical formulas, parsing specifications, c
   - Visual only: Does not apply cryptographic digital signatures (PKI).
   - Bounds: 1 PDF document up to 20 MB.
 
+### Delete PDF Pages
+- **URL:** https://goeasytools.com/delete-pdf-pages
+- **Specifications:**
+  - Input: Page numbers or ranges to delete (e.g. 2, 4-6). Uses the same range parser as Split PDF.
+  - Logic: Keeps all pages NOT in the delete set and copies them into a new document.
+  - Validation: Refuses if deletion would leave zero pages.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Extract PDF Pages
+- **URL:** https://goeasytools.com/extract-pdf-pages
+- **Specifications:**
+  - Input: Page numbers or ranges to extract (e.g. 1-3, 5). Same range parser as Split PDF.
+  - Logic: Copies only specified pages into a new document in the given order.
+  - Validation: Page numbers must be within the document range.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### PDF Pipeline
+- **URL:** https://goeasytools.com/pdf-pipeline
+- **Specifications:**
+  - Workflow: Upload once, chain unlimited operations without re-uploading.
+  - Operations: Rotate, delete pages, extract pages, organize, crop, add page numbers, watermark, compress, unlock.
+  - Version History: Every operation creates a versioned copy (v0, v1, v2...). Click any version to jump to it.
+  - Undo/Redo: Go back or forward through the version timeline. Applying from an earlier version branches (replaces later versions).
+  - Size Tracking: Shows page count and file size at each version, plus percentage change from original.
+  - Privacy: All versions stored in browser memory. Nothing uploaded. History lost on tab close.
+  - Bounds: 1 PDF document up to 20 MB per input.
+
 ### UK VAT Calculator
 - **URL:** https://goeasytools.com/vat-calculator-uk
 - **Specifications:**

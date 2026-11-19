@@ -301,6 +301,36 @@ const faqs: Record<string, FaqItem[]> = {
       answer: "Flattening converts interactive form fields into static page content. The values become part of the page drawing and can no longer be edited. This is useful for final documents.",
     },
   ],
+  "pdf-pipeline": [
+    {
+      question: "How many operations can I chain?",
+      answer: "There is no limit on the number of operations. Each step creates a new version. The only constraint is your browser memory since all versions are stored locally.",
+    },
+    {
+      question: "Can I go back to an earlier version after applying several operations?",
+      answer: "Yes. Click any version in the timeline to jump to it. You can also use the Undo and Redo buttons. Applying a new operation from an earlier version replaces later versions, like branching in version control.",
+    },
+  ],
+  "delete-pdf-pages": [
+    {
+      question: "What happens if I try to delete all pages?",
+      answer: "The tool refuses the operation. At least one page must remain in the output document. If you need an empty PDF, create a new one instead.",
+    },
+    {
+      question: "Is the original file modified?",
+      answer: "No. The remaining pages are copied into a brand-new PDF document. Your original file is never changed.",
+    },
+  ],
+  "extract-pdf-pages": [
+    {
+      question: "How is this different from Split PDF?",
+      answer: "Extract PDF Pages creates a new document containing only the pages you specify. Split PDF does the same thing but is named for a different search intent. Both use the same underlying page-extraction logic.",
+    },
+    {
+      question: "Can I extract pages in a different order?",
+      answer: "Yes. Enter page numbers in any order (e.g. 5, 1-3) and the extracted pages will appear in the order you specify.",
+    },
+  ],
   "sign-pdf": [
     {
       question: "Is this a legally binding digital signature?",

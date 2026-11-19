@@ -85,7 +85,19 @@ export function DiscountCalculatorTool() {
         <label className="text-sm font-medium">{mode === "percent" ? "Discount %" : "Discount amount"}<input inputMode="decimal" value={discount} onChange={(e) => setDiscount(e.target.value)} className="field-control mt-1" /></label>
         <label className="text-sm font-medium">Additional % <span className="font-normal text-muted">(optional)</span><input inputMode="decimal" value={additional} onChange={(e) => setAdditional(e.target.value)} className="field-control mt-1" /></label>
       </div>
-      <p className="mt-2 text-xs text-faint">The additional percentage is taken off the price after the first discount. Amounts use hundredths, so yen is not listed.</p>
+      <details className="mt-3 rounded-lg border border-line px-4 py-3">
+        <summary className="cursor-pointer text-[0.8125rem] font-medium text-ink">Why 20% + 10% off ≠ 30% off</summary>
+        <div className="mt-2 text-[0.8125rem] leading-relaxed text-muted">
+          <p>Stacked discounts apply sequentially, not added. On a $100 item:</p>
+          <ul className="mt-1.5 ml-4 list-disc space-y-1">
+            <li><strong>20% off first</strong> → $100 → $80</li>
+            <li><strong>10% off second</strong> → $80 → $72</li>
+            <li><strong>Combined effect: 28%</strong>, not 30%</li>
+          </ul>
+          <p className="mt-1.5">The second discount applies to the <em>already-reduced</em> price. Use the Additional % field to see the real combined savings.</p>
+        </div>
+      </details>
+      <p className="mt-2 text-xs text-faint">Amounts use hundredths, so yen is not listed.</p>
 
       <label className="mt-3 inline-flex items-center gap-2 text-sm font-medium">
         Currency

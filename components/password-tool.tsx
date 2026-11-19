@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PrivacyBadge } from "@/components/ui/privacy-badge";
 import { useToolSession } from "@/components/use-tool-session";
 import { generatePassword, PASSWORD_MAX, PASSWORD_MIN, type PasswordOptions } from "@/lib/password";
 
@@ -32,8 +33,9 @@ export function PasswordTool() {
 
   return (
     <form className="mx-auto max-w-xl" onSubmit={(e) => e.preventDefault()}>
+      <PrivacyBadge message="Generated with your browser's cryptographic random generator. The password never leaves this page." />
       {/* ── Result ── */}
-      <div className="rounded-lg bg-canvas p-5">
+      <div className="mt-4 rounded-lg bg-canvas p-5">
         <p className={`min-h-[2.5rem] break-all font-mono text-xl leading-relaxed ${hidden ? "tracking-[0.2em]" : ""}`} aria-live="polite">
           {password ? (hidden ? "•".repeat(password.length) : password) : <span className="text-muted">No password yet.</span>}
         </p>

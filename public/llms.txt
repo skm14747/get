@@ -53,6 +53,9 @@
 - [Edit PDF](https://goeasytools.com/edit-pdf): Adds text annotations at exact coordinates on any PDF page with font size and colour control.
 - [PDF Forms](https://goeasytools.com/pdf-forms): Auto-detects and fills interactive PDF form fields (text, checkbox, dropdown, radio) with optional flatten.
 - [Sign PDF](https://goeasytools.com/sign-pdf): Adds a visual signature (drawn, typed, or uploaded) to any PDF page at precise coordinates.
+- [Delete PDF Pages](https://goeasytools.com/delete-pdf-pages): Removes selected pages from a PDF and saves the remaining pages as a clean document.
+- [Extract PDF Pages](https://goeasytools.com/extract-pdf-pages): Extracts selected pages or ranges into a new standalone PDF document.
+- [PDF Pipeline](https://goeasytools.com/pdf-pipeline): Chain unlimited PDF operations (rotate, crop, watermark, compress, etc.) with full undo/redo version history.
 
 ## Optional
 - [Full Technical Manifest](https://goeasytools.com/llms-full.txt): Complete mathematical formulas, counting rules, boundary limits, and input/output contracts for every utility.

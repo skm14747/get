@@ -234,6 +234,27 @@ export const intentBridges: readonly IntentBridge[] = [
     callToAction: "Open PDF Forms",
   },
   {
+    sourceToolId: "delete-pdf-pages",
+    targetToolId: "merge-pdf",
+    headline: "Need to combine what remains with another PDF?",
+    description: "Merge multiple PDF files into one clean document in custom reading order.",
+    callToAction: "Open Merge PDF",
+  },
+  {
+    sourceToolId: "extract-pdf-pages",
+    targetToolId: "merge-pdf",
+    headline: "Have multiple page extracts to combine?",
+    description: "Merge multiple PDF files into one unified document in your browser.",
+    callToAction: "Open Merge PDF",
+  },
+  {
+    sourceToolId: "pdf-pipeline",
+    targetToolId: "sign-pdf",
+    headline: "Ready to sign the finished document?",
+    description: "Draw, type, or upload a visual signature and place it on any page.",
+    callToAction: "Open Sign PDF",
+  },
+  {
     sourceToolId: "vat-calculator-uk",
     targetToolId: "percentage-calculator",
     headline: "Need general percentage increases or differences?",
@@ -295,6 +316,13 @@ export const intentBridges: readonly IntentBridge[] = [
     headline: "Need to calculate days between dates or add working days?",
     description: "Calculate elapsed calendar days and Monday-to-Friday business days.",
     callToAction: "Open Date Calculator",
+  },
+  {
+    sourceToolId: "jwt-decoder",
+    targetToolId: "base64",
+    headline: "Need to encode or decode raw payloads?",
+    description: "Convert UTF-8 text and binary data to standard Base64 safely in your browser.",
+    callToAction: "Open Base64 Encoder",
   },
 ];
 

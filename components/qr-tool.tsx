@@ -7,7 +7,7 @@ import { textPayload, urlPayload, wifiPayload } from "@/lib/qr-payload";
 const modes = [
   { id: "url", label: "URL" },
   { id: "text", label: "Text" },
-  { id: "wifi", label: "Wi-Fi" },
+  { id: "wifi", label: "📶 Wi-Fi" },
 ] as const;
 
 type Mode = (typeof modes)[number]["id"];
@@ -58,11 +58,15 @@ export function QrTool() {
               </label>
             ))}
           </div>
+          {mode !== "wifi" ? <p className="mt-1.5 text-xs text-muted">💡 Try <button type="button" className="font-medium text-action underline underline-offset-2" onClick={() => setMode("wifi")}>Wi-Fi mode</button> — guests scan the code to connect without typing the password.</p> : null}
         </fieldset>
 
         {mode === "wifi" ? (
           <>
-            <label className="text-sm font-medium">Network name<input className="field-control mt-1" value={ssid} onChange={(e) => setSsid(e.target.value)} /></label>
+            <div className="rounded-lg border border-action/20 bg-action/5 px-3.5 py-2.5 text-[0.8125rem] leading-relaxed text-muted">
+              <strong className="text-ink">Scan-to-connect:</strong> Guests point their phone camera at the QR code and join your Wi-Fi automatically — no password typing needed.
+            </div>
+            <label className="text-sm font-medium">Network name (SSID)<input className="field-control mt-1" value={ssid} onChange={(e) => setSsid(e.target.value)} /></label>
             <label className="text-sm font-medium">Password<input className="field-control mt-1" value={wifiPassword} onChange={(e) => setWifiPassword(e.target.value)} type="password" autoComplete="off" /></label>
           </>
         ) : (
