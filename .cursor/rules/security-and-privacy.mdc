@@ -1,0 +1,20 @@
+---
+description: Input, privacy, analytics, secrets, and header constraints for the GoEasyTools app.
+globs: app/**/*.ts, app/**/*.tsx, components/**/*.tsx, lib/**/*.ts, next.config.ts, .env.example
+alwaysApply: false
+---
+
+# Security and privacy
+
+These instructions do not make the site secure. They stop the usual ways this app could leak input or weaken its headers.
+
+- Validate untrusted input at the boundary. Numbers go through `parseDecimal` in `lib/numbers.ts`. Do not accept a comma as a decimal separator in the English UI.
+- Render user text as React text. Do not pass it to `dangerouslySetInnerHTML`. The JSON-LD scripts in `components/tool-page.tsx` serialize server-owned objects only.
+- Do not log typed text, prices, clipboard contents, or result strings. Do not put them in the query string. `canonicalUrl` already strips query and hash; keep tool state out of links.
+- Secrets do not belong in source. Research tokens and public site variables stay empty or non-secret in `.env.example`. Never commit a real `.env`.
+- Analytics must go through `sanitizeProperties` and `track` in `lib/analytics.ts`. Allowed keys are `tool_id`, `operation`, `error_code`, `destination_tool_id`, and `locale`. New keys require the `add-analytics-event` workflow. Events wait for consent and for `NEXT_PUBLIC_ANALYTICS_ENDPOINT`.
+- Do not add a third-party script, font, or ad tag unless the task explicitly approves it. Update `app/privacy/page.tsx` and the content security policy in `next.config.ts` in the same change.
+- Keep the existing headers: `Content-Security-Policy`, `nosniff`, `Referrer-Policy`, `X-Frame-Options`, and `Permissions-Policy`. Do not add `unsafe-eval`, widen `connect-src`, or disable TLS checks.
+- Do not add file upload or server-side file processing without an explicit approval. PDF and similar tools are out of the current product.
+- A new dependency is a security change. Prefer the current stack. If one is approved, record the package, version, and why.
+- State any new privacy or security risk in the change summary. Do not describe the app as fully audited.

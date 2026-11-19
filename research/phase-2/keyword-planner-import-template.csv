@@ -1,0 +1,55 @@
+keyword,language,country_code,avg_monthly_searches,volume_range,competition,competition_index,top_of_page_bid_low,top_of_page_bid_high,currency,match_type,planner_account,date_exported,notes
+word counter,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+word counter,en,GB,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+word counter,en,CA,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+word counter,en,AU,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+word counter,en,IN,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+percentage calculator,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+percentage calculator,en,GB,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+case converter,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+remove duplicate lines,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+json formatter,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+base64 decode,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+url encode,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+length converter,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+unix timestamp converter,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+discount calculator,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+merge pdf,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+split pdf,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+jpg to pdf,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+pdf compressor,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+pdf compressor to 200kb,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+time zone converter,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+days between dates,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+working days calculator,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+uuid generator,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+hex to rgb,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+html entities,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+slug generator,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+compound interest calculator,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+sales tax calculator,en,US,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+sales tax calculator,en,CA,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+vat calculator,en,GB,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+gst calculator,en,AU,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+gst calculator,en,IN,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+compteur de mots,fr,FR,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+fusionner pdf,fr,FR,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+compresser pdf,fr,FR,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calcul tva,fr,FR,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calcul tva,fr,BE,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calcul tva,fr,CH,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+fusionner pdf,fr,CA,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+contador de palabras,es,ES,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+comprimir pdf,es,ES,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+unir pdf,es,MX,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calculadora iva,es,MX,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calculadora iva,es,AR,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calculadora iva,es,CO,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calculadora iva,es,CL,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+calculadora iva,es,ES,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+دمج pdf,ar,SA,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+ضغط pdf,ar,SA,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+حاسبة ضريبة القيمة المضافة,ar,SA,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+حاسبة ضريبة القيمة المضافة,ar,AE,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+حاسبة ضريبة القيمة المضافة,ar,EG,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.
+دمج pdf,ar,KW,,,,,,,,,,,Leave blank until a Keyword Planner export. Do not fill with Trends indexes.

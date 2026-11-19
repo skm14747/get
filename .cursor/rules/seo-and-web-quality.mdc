@@ -1,0 +1,20 @@
+---
+description: Indexing, metadata, content, and web-quality rules for GoEasyTools pages.
+globs: app/**/*.ts, app/**/*.tsx, lib/seo.ts, lib/site.ts, lib/tools.ts, components/*guide*.tsx, components/tool-page.tsx, components/related-tools.tsx
+alwaysApply: false
+---
+
+# SEO and web quality
+
+The site is an App Router app. Tool pages are server-rendered shells around client utilities. Do not move the tools to a client-only site, and do not add a locale route group to chase an international setup the product has not launched.
+
+- Every indexable page needs real content: a working tool or a useful explanation, a single `h1`, and further headings in order. Guides live in the server component, not only inside the client widget.
+- Build titles and descriptions with `pageMetadata` or `toolMetadata` in `lib/seo.ts`. Canonical URLs go through `canonicalUrl` in `lib/site.ts`. One tool, one path, no trailing slash, no query variant.
+- Adding a tool means updating `lib/tools.ts`. `app/sitemap.ts` reads that registry plus `/`, `/privacy`, and `/contact`. Do not hand-maintain a second URL list that can drift.
+- `app/robots.ts` allows `/`. Do not disallow a live tool. Do not add parameter pages that could be indexed.
+- Related links come from `tool.related` and `components/related-tools.tsx`. Link tools that share a task. Do not add a mesh of unrelated links.
+- Structured data is limited to the `WebApplication` and `BreadcrumbList` objects in `components/tool-page.tsx`. Do not add reviews, ratings, or offers the product does not have. The free `Offer` must stay accurate.
+- Do not invent rankings, traffic, Core Web Vitals, or rich-result eligibility. Do not stuff queries into titles or publish a thin page for a near-duplicate keyword.
+- Keep the page usable on a narrow viewport. The current tools use a single column until `lg`.
+- Do not render an advertisement or an empty reserved box. The approved model is display ads, and no provider is configured. See `docs/monetization.md`. Never put an ad against the primary control.
+- Performance: do not add a client dependency to a page that only needs `lib/`. The typeface is the device font. Honor `prefers-reduced-motion` in `app/globals.css`.

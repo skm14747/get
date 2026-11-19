@@ -1,0 +1,30 @@
+---
+description: Vitest expectations for GoEasyTools logic, UI, and honest reporting of checks that did not run.
+globs: lib/**/*.ts, components/**/*.tsx, app/**/*.ts, app/**/*.tsx, tests/**/*.ts, tests/**/*.tsx, vitest.config.ts
+alwaysApply: false
+---
+
+# Testing and verification
+
+Read the existing test before changing behavior. Logic tests live beside the module name in `tests/`. The current examples are `tests/word-count.test.ts`, `tests/percentage.test.ts`, `tests/discount.test.ts`, `tests/case-convert.test.ts`, `tests/numbers.test.ts`, `tests/analytics.test.ts`, and `tests/seo.test.ts`.
+
+## What to add
+
+- A behavior change in `lib/` needs a unit test for the normal case, the documented edge cases, and the failure result.
+- A client interaction that can regress accessibly needs a Testing Library test. Copy `tests/components/word-counter.test.tsx`, including the first-line directive `/** @vitest-environment jsdom */`. The default environment in `vitest.config.ts` is `node`. Do not switch the whole suite to jsdom for one component.
+- Analytics changes must assert the payload shape and that raw text, prices, and document contents are dropped. Extend `tests/analytics.test.ts`.
+- Do not weaken an assertion or delete a test to make the implementation pass. Change the test only when the intended behavior changed, and say so.
+
+## What to run
+
+1. Targeted test: `npm run test -- tests/<file>.test.ts`
+2. `npm run test` when the change is shared or the targeted run is green
+3. `npm run typecheck` for type-level changes
+4. `npm run lint`. The flat config is `eslint.config.mjs`.
+5. `npm run build` for route, metadata, or config changes
+
+`.github/workflows/ci.yml` runs `npm ci`, then test, typecheck, lint, and build on Node 22. `npm ci` needs `package-lock.json`. Do not delete the lockfile to make a check pass.
+
+A green build does not replace a behavioral test. If `node_modules` is missing, say the check was not run. Do not invent a passing result.
+
+Coverage is not configured. Call out untested critical branches instead of quoting a coverage percentage.

@@ -1,0 +1,316 @@
+# GoEasyTools — Full Technical & Algorithmic Manifest
+
+This document provides complete mathematical formulas, parsing specifications, counting rules, platform boundary constraints, and privacy contracts for all utilities on https://goeasytools.com.
+
+---
+
+## Architecture & Privacy Guarantee
+1. **Client-Side Processing:** All computations execute inside the user's browser runtime using standard Web APIs (WebAssembly, HTML5 2D Canvas Context, Web Crypto API `crypto.getRandomValues`).
+2. **Zero Uploads:** Typed strings, uploaded images, and PDF binary streams are never transmitted over network sockets or saved in server logs.
+3. **Canonical Base URL:** https://goeasytools.com
+
+---
+
+## 1. Text Utilities
+
+### Word Counter
+- **URL:** https://goeasytools.com/word-counter
+- **Counting Heuristics:**
+  - Words: Split on whitespace sequence `\s+`. Non-spaced scripts (e.g. Japanese without spaces) count as a single token.
+  - Characters (with spaces): Full count of Unicode code points.
+  - Characters (without spaces): Unicode code points filtering out whitespace characters (`\s`).
+  - Sentences: Regex sentence termination boundary using `[.!?]+`, exempting decimals (e.g., `3.14`) and standard abbreviations (`Dr.`, `Mr.`, `Mrs.`, `Ms.`, `Prof.`, `Sr.`, `Jr.`, `e.g.`, `i.e.`, `vs.`, `etc.`, `approx.`, `est.`, `min.`, `max.`, `dept.`, `univ.`, `vol.`, `no.`).
+  - Paragraphs: Blocks separated by one or more blank lines (`\n\s*\n`).
+  - Reading Time: Calculated using standard baseline of 200 words per minute (`ceil(words / 200)` minutes).
+
+### Character Counter
+- **URL:** https://goeasytools.com/character-counter
+- **Counting Rules:**
+  - Unicode code point evaluation.
+  - Optional limit subtraction: `Remaining = Limit - Total Characters`.
+  - Common thresholds: Twitter/X (280), SMS (160), Meta Title (60), Meta Description (160).
+
+### Case Converter
+- **URL:** https://goeasytools.com/case-converter
+- **Supported Conversions:**
+  - UPPERCASE: Full uppercase string mapping (`toLocaleUpperCase('en')`).
+  - lowercase: Full lowercase string mapping (`toLocaleLowerCase('en')`).
+  - Title Case: Capitalizes first character of each word, lowercases remaining characters.
+  - Sentence case: Capitalizes first character of the string and first letter following sentence terminators (`.`, `!`, `?`).
+  - camelCase: Lowercases first word, capitalizes subsequent words, strips delimiters.
+  - PascalCase: Capitalizes every word, strips delimiters.
+  - snake_case: Delimits lowercase words with underscores (`_`).
+  - kebab-case: Delimits lowercase words with hyphens (`-`).
+
+---
+
+## 2. Calculators & Financial
+
+### Percentage Calculator
+- **URL:** https://goeasytools.com/percentage-calculator
+- **Formulas:**
+  - Percent of a number: `(Percent × Value) / 100`
+  - What percent is X of Y: `(X / Y) × 100`
+  - Percentage change (Increase/Decrease): `((New - Original) / Original) × 100`
+  - Percentage difference (Directionless): `(|A - B| / ((|A| + |B|) / 2)) × 100`
+  - Original before increase: `Final / (1 + Rate / 100)`
+  - Original before discount: `Final / (1 - Rate / 100)`
+- **Boundaries:** Division by zero yields an undefined error result; decimal numbers use period (`.`) format.
+
+### Discount Calculator
+- **URL:** https://goeasytools.com/discount-calculator
+- **Formulas:**
+  - Single Discount: `Savings = Price × (Rate / 100)`, `Final Price = Price - Savings`
+  - Sequential Second Discount: `Price_Intermediate = Price - Savings_1`, `Savings_2 = Price_Intermediate × (Rate_2 / 100)`, `Final Price = Price_Intermediate - Savings_2`
+  - Supported Currencies: USD ($), EUR (€), GBP (£), INR (₹), BRL (R$), SAR (SR).
+
+### EMI Calculator
+- **URL:** https://goeasytools.com/emi-calculator
+- **Formula:** Reducing-balance loan amortization:
+  `EMI = [P × r × (1 + r)^n] / [(1 + r)^n - 1]`
+  Where `P` = Principal, `r` = Monthly interest rate (`Annual Rate / (12 × 100)`), `n` = Tenure in months.
+- **Boundaries:** Zero interest rate calculates `P / n`; maximum allowed tenure is 360 months (30 years).
+
+### GST Calculator
+- **URL:** https://goeasytools.com/gst-calculator
+- **Formulas:**
+  - Add GST (Tax Exclusive): `Tax = Amount × (Rate / 100)`, `Gross = Amount + Tax`
+  - Remove GST (Tax Inclusive): `Net Taxable = Amount / (1 + Rate / 100)`, `Tax = Amount - Net Taxable`
+  - Tax Split: Central GST (CGST) = 50% of Tax, State GST (SGST) = 50% of Tax; odd hundredths round to CGST. Inter-state IGST = 100% of Tax.
+
+### Unit Converter
+- **URL:** https://goeasytools.com/unit-converter
+- **Conversion Constants (SI & Imperial):**
+  - Length: 1 in = 0.0254 m (exact), 1 ft = 0.3048 m (exact), 1 mi = 1,609.344 m (exact).
+  - Mass: 1 lb = 0.45359237 kg (exact), 1 oz = 0.028349523125 kg (exact).
+  - Temperature: `F = (C × 9/5) + 32`, `C = (F - 32) × 5/9`, `K = C + 273.15`.
+  - Volume: 1 US gallon = 3.785411784 L (exact).
+
+### Date Calculator
+- **URL:** https://goeasytools.com/date-calculator
+- **Conventions:**
+  - Calendar Days: Difference in elapsed midnights between ISO 8601 calendar dates.
+  - Business Days: Counts Monday through Friday dates within the specified interval, excluding weekends.
+
+### Age Calculator
+- **URL:** https://goeasytools.com/age-calculator
+- **Conventions:** Chronological age computed across full calendar years, remaining full months, and remaining days. Leap day (February 29) birthdays recognize anniversary on February 28 in non-leap years.
+
+---
+
+## 3. Developer Utilities
+
+### JSON Formatter & Validator
+- **URL:** https://goeasytools.com/json-formatter
+- **Specifications:**
+  - Parsing: Native `JSON.parse()`. Provides exact line and column error position diagnostics.
+  - Formatting: `JSON.stringify(data, null, 2)` for pretty-printing; whitespace-stripped compact output for minification.
+  - Limits: 1,000,000 character maximum to prevent browser tab locking.
+
+### Base64 Encoder & Decoder
+- **URL:** https://goeasytools.com/base64
+- **Specifications:**
+  - Standards: RFC 4648 Base64 character alphabet (`A-Z`, `a-z`, `0-9`, `+`, `/`, padding `=`).
+  - Encoding: Uses UTF-8 bytes (`TextEncoder` / `TextDecoder`) to handle multi-byte characters and emojis without data loss.
+
+### Password Generator
+- **URL:** https://goeasytools.com/password-generator
+- **Specifications:**
+  - Randomness: Web Crypto API `crypto.getRandomValues()` with rejection sampling to eliminate modulo bias.
+  - Exclusions: Excludes ambiguous glyphs (`1`, `l`, `I`, `0`, `O`).
+  - Length: 8 to 64 characters.
+
+### QR Code Generator
+- **URL:** https://goeasytools.com/qr-code-generator
+- **Specifications:**
+  - Formats: Website URLs (`http://`, `https://`), plain text, and Wi-Fi networks (`WIFI:T:WPA;S:SSID;P:PASSWORD;;`).
+  - Output: High-contrast 2D matrix exported as client-side PNG canvas download.
+
+---
+
+## 4. Image & PDF Utilities
+
+### Image Compressor
+- **URL:** https://goeasytools.com/image-compressor
+- **Specifications:**
+  - Processing: HTML5 2D Canvas `toBlob` re-encoding.
+  - Formats: JPG, PNG (lossless optimization), WebP. Maximum file size: 15 MB.
+
+### Image Resizer
+- **URL:** https://goeasytools.com/image-resizer
+- **Specifications:**
+  - Processing: Pixel scaling on HTML5 Canvas.
+  - Dimensions: Pixel width and height adjustments with optional aspect-ratio lock.
+
+### Merge PDF
+- **URL:** https://goeasytools.com/merge-pdf
+- **Specifications:**
+  - Processing: In-browser binary page manipulation via `pdf-lib`.
+  - Bounds: 2 to 10 PDF documents, maximum 20 MB per file. Encrypted documents refused.
+
+### Split PDF
+- **URL:** https://goeasytools.com/split-pdf
+- **Specifications:**
+  - Extraction: Range parsing supporting individual pages and contiguous ranges (e.g. `1-3, 5`).
+  - Bounds: 1 PDF document up to 20 MB.
+
+### JPG to PDF
+- **URL:** https://goeasytools.com/jpg-to-pdf
+- **Specifications:**
+  - Embedding: JPG and PNG images embedded directly into PDF canvas streams.
+  - Page Sizing: International A4 (595.28 × 841.89 points) with proportional fit margins or native image dimensions.
+
+### Rotate PDF
+- **URL:** https://goeasytools.com/rotate-pdf
+- **Specifications:**
+  - Rotation: Clockwise by 90°, 180°, or 270°. Additive to any existing page rotation.
+  - Scope: All pages rotated uniformly. Encrypted files refused.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Organize PDF
+- **URL:** https://goeasytools.com/organize-pdf
+- **Specifications:**
+  - Reordering: Arbitrary page order via comma-separated page numbers and ranges (e.g. `3,1,2` or `1-3,5`).
+  - Duplication: Same page number may appear multiple times to duplicate pages.
+  - Deletion: Omitting a page number removes that page from the output.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Crop PDF
+- **URL:** https://goeasytools.com/crop-pdf
+- **Specifications:**
+  - Cropping: Sets the CropBox on each page using top, right, bottom, and left margins in PDF points (72 pt = 1 inch).
+  - Content Preservation: Content outside the crop area is hidden, not deleted. The original MediaBox is unchanged.
+  - Validation: Refuses margins that leave zero or negative visible area.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Add Page Numbers
+- **URL:** https://goeasytools.com/add-page-numbers
+- **Specifications:**
+  - Positions: bottom-center (default), bottom-left, bottom-right, top-center, top-left, top-right.
+  - Numbers start from a configurable integer (default 1) and increment sequentially.
+  - Font: Helvetica, configurable size (default 12pt).
+  - Margin: 36pt (0.5 inch) from page edges.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Watermark PDF
+- **URL:** https://goeasytools.com/watermark-pdf
+- **Specifications:**
+  - Text watermark centered on each page in semi-transparent grey (rgb 0.5, 0.5, 0.5).
+  - Configurable font size (default 48pt), opacity (0.01–1.0, default 0.3), and diagonal (45°) toggle.
+  - Font: Helvetica embedded.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Unlock PDF
+- **URL:** https://goeasytools.com/unlock-pdf
+- **Specifications:**
+  - Loads the PDF with encryption bypassed and re-saves all pages into a new unrestricted document.
+  - Works for PDFs with owner-only or empty passwords. Strongly encrypted files that block page extraction will fail.
+  - Optional password field (processed client-side, never transmitted).
+  - Bounds: 1 PDF document up to 20 MB.
+
+### PDF to JPG
+- **URL:** https://goeasytools.com/pdf-to-jpg
+- **Specifications:**
+  - Renders each PDF page to a canvas using pdfjs-dist and exports as JPEG.
+  - Default JPEG quality: 0.85, adjustable from 0.1 to 1.0.
+  - Default scale: 2× (144 dpi), adjustable from 0.5× to 4×.
+  - Single-page PDFs download as a .jpg file; multi-page PDFs download as a .zip archive.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Compress PDF
+- **URL:** https://goeasytools.com/compress-pdf
+- **Specifications:**
+  - Copies all pages into a fresh PDFDocument and saves with object-stream compression.
+  - Lossless: no images are downsampled and no text is removed.
+  - Reports original size, compressed size, and percentage reduction.
+  - Typical savings: 5–20% on unoptimized PDFs. Already-optimized files may see no reduction.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Edit PDF
+- **URL:** https://goeasytools.com/edit-pdf
+- **Specifications:**
+  - Draws text on PDF pages using pdf-lib `page.drawText()` with Helvetica font.
+  - Each annotation specifies: page number (1-based), X/Y coordinates (PDF points from bottom-left), font size, and RGB colour.
+  - Multiple annotations per document. Out-of-range page indices are skipped.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### PDF Forms
+- **URL:** https://goeasytools.com/pdf-forms
+- **Specifications:**
+  - Reads AcroForm fields from PDF: text fields, checkboxes, dropdowns, radio groups.
+  - Signature and button fields are detected but not fillable.
+  - XFA forms are not supported.
+  - Optional flatten converts interactive fields to static page content.
+  - Bounds: 1 PDF document up to 20 MB.
+
+### Sign PDF
+- **URL:** https://goeasytools.com/sign-pdf
+- **Specifications:**
+  - Signature creation: Draw freehand on canvas, type name in cursive script, or upload PNG/JPG image.
+  - Placement: Page number (1-based), X/Y coordinates (PDF points from bottom-left), width, and height.
+  - Embedding: Signature rendered as PNG and embedded via pdf-lib `page.drawImage()`.
+  - Visual only: Does not apply cryptographic digital signatures (PKI).
+  - Bounds: 1 PDF document up to 20 MB.
+
+### UK VAT Calculator
+- **URL:** https://goeasytools.com/vat-calculator-uk
+- **Specifications:**
+  - Standard HMRC Rates: Standard (20%), Reduced (5%), Zero (0%), and custom rates.
+  - Calculations: Add VAT (Gross = Net × (1 + Rate)) and Reverse VAT (Net = Gross / (1 + Rate)).
+  - Currency: British Pounds (GBP £) with two-decimal precision.
+
+### Australia GST Calculator
+- **URL:** https://goeasytools.com/gst-calculator-australia
+- **Specifications:**
+  - Standard ATO Rates: 10% Goods and Services Tax.
+  - Statutory 1/11th Rule: Inclusive GST = Total / 11; Net = Total − (Total / 11).
+  - Currency: Australian Dollars (AUD $) with two-decimal precision.
+
+### France TVA Calculator
+- **URL:** https://goeasytools.com/france-tva-calculator
+- **Specifications:**
+  - Rates: Normal 20%, Intermediate 10%, Reduced 5.5%, Super-reduced 2.1%, and custom.
+  - Directions: TVA-exclusive (add TVA) and TVA-inclusive (reverse-calculate net amount).
+  - Currency: Euro (€) with two-decimal precision.
+
+### Belgium TVA Calculator
+- **URL:** https://goeasytools.com/belgium-tva-calculator
+- **Specifications:**
+  - Rates: Standard 21%, Reduced 6%, Intermediate 12%, and custom.
+  - Directions: TVA-exclusive (add TVA) and TVA-inclusive (reverse-calculate net amount).
+  - Currency: Euro (€) with two-decimal precision.
+
+### Slug Generator
+- **URL:** https://goeasytools.com/slug-generator
+- **Specifications:**
+  - Unicode Normalization: Form KD (NFKD) decomposes combined glyphs, transliterating accented Latin (e.g. é → e, ñ → n).
+  - Multilingual Script Support: Preserves non-Latin Unicode scripts (Arabic, Cyrillic, Devanagari) while stripping punctuation.
+  - Delimiters: Configurable hyphens (-) or underscores (_).
+
+### Remove Duplicate Lines
+- **URL:** https://goeasytools.com/remove-duplicate-lines
+- **Specifications:**
+  - Operations: Remove duplicate lines, trim whitespace, remove blank lines, sort alphabetically.
+  - Case Sensitivity: Configurable case-sensitive or case-insensitive deduplication.
+  - Privacy: 100% client-side with zero server uploads.
+
+### Color Converter
+- **URL:** https://goeasytools.com/color-converter
+- **Specifications:**
+  - Formats: HEX (3/6/8-digit), RGB (0–255), HSL (hue 0–360, saturation/lightness 0–100%).
+  - Live Preview: Real-time color swatch updates as values change.
+  - Copy: One-click CSS color string copy for each format.
+
+### Unix Timestamp Converter
+- **URL:** https://goeasytools.com/unix-timestamp-converter
+- **Specifications:**
+  - Conversions: Unix seconds ↔ UTC date-time, Unix milliseconds ↔ UTC date-time, local timezone display.
+  - Current Timestamp: Shows live current Unix timestamp in seconds and milliseconds.
+  - Privacy: 100% client-side with zero server requests.
+
+### Text Diff Checker
+- **URL:** https://goeasytools.com/text-compare
+- **Specifications:**
+  - Algorithm: In-browser Longest Common Subsequence (Myers diff) algorithm.
+  - Modes: Line-by-line diff and word-by-word diff.
+  - Privacy: 100% client-side computation with zero server transit. Bounded to 100,000 characters per panel.

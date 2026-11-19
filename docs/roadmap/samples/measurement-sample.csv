@@ -1,0 +1,3 @@
+row_status,date,page,impressions,clicks,completion_events,revenue_usd,notes
+synthetic,2026-01-01,/word-counter,,,,,Invented blank metrics. Do not treat blanks as zero and do not fill them with guesses.
+synthetic,2026-01-01,/percentage-calculator,,,,,Invented blank metrics for a dashboard layout test only.

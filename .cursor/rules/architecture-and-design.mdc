@@ -1,0 +1,31 @@
+---
+description: Module boundaries for the GoEasyTools Next.js app. Pure tool logic stays separate from pages and client UI.
+globs: app/**/*.ts, app/**/*.tsx, components/**/*.tsx, lib/**/*.ts, locales/**/*.ts, next.config.ts
+alwaysApply: false
+---
+
+# Architecture and design
+
+GoEasyTools is a client-side utility site. Do not add a database, authentication, microservice, queue, cache layer, or server upload path unless a task states a concrete requirement that the current design cannot meet.
+
+## Boundaries
+
+- `lib/*.ts` holds deterministic tool logic, site constants, metadata helpers, and analytics payload rules. These modules must not import React or `next/navigation`.
+- `app/**/page.tsx` is a server route. It loads a tool from `lib/tools.ts`, exports metadata, and composes `ToolPage`, the client tool, and the guide. Copy `app/word-counter/page.tsx`.
+- `components/*-tool.tsx` is the client UI. It calls `lib/` and `track` from `lib/analytics.ts`. Copy `components/word-counter-tool.tsx`. Load `pdf-lib` and `qrcode` only from the PDF and QR tools, with a dynamic import so other routes do not download them.
+- `components/*-guide.tsx` is crawlable explanation. It states rules, formulas, limitations, and examples. Copy `components/word-counter-guide.tsx`.
+- Shared chrome is `components/site-header.tsx`, `components/site-footer.tsx`, `components/tool-page.tsx`, and `components/related-tools.tsx`. Chrome copy lives in `locales/en.ts`. Tool labels and guides stay beside the tool until a translation project moves them.
+
+## Data and errors
+
+There is no data-access layer. User text and numbers stay in component state. Do not put them in the URL, a cookie, or an analytics property.
+
+Domain failures return a result object, as in `lib/percentage.ts` and `lib/discount.ts`. Reserve thrown errors for programmer mistakes such as an unknown tool id in `getTool`.
+
+Configuration is `lib/site.ts` plus the public variables in `.env.example`. Do not invent a new `NEXT_PUBLIC_*` variable without documenting it there and on the privacy or contact page when the user can observe it.
+
+## Dependencies
+
+UI may depend on `lib`. `lib` may not depend on `app` or `components`. Pages may depend on both. Prefer a pure function in `lib/` over logic inside a component when the behavior can be tested without rendering.
+
+Do not introduce a shared abstraction for a single tool. Add a registry row and a route only after checking `lib/tools.ts` and `app/` for an existing one.

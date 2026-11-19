@@ -1,0 +1,21 @@
+---
+description: TypeScript and React conventions that ESLint and Prettier do not already enforce in this repo.
+globs: app/**/*.ts, app/**/*.tsx, components/**/*.tsx, lib/**/*.ts, locales/**/*.ts, tests/**/*.ts, tests/**/*.tsx, next.config.ts, vitest.config.ts
+alwaysApply: false
+---
+
+# Coding standards
+
+`tsconfig.json` has `strict: true`. ESLint is `eslint.config.mjs`, which extends `next/core-web-vitals` and `next/typescript`. There is no Prettier config. Match the surrounding file and do not restate lint rules here.
+
+- Use the `@/` alias for project imports. Keep `import type` for type-only imports.
+- Export functions and components by name. App Router files keep the default export Next.js requires: `page.tsx`, `layout.tsx`, `not-found.tsx`, `sitemap.ts`, `robots.ts`.
+- Name tool ids, paths, and analytics operation names in kebab-case, matching `lib/tools.ts`. Name functions and variables in camelCase and components in PascalCase.
+- Prefer a discriminated union, as `PercentValue` and `DiscountQuote` do, over `any`, a bare assertion, or a catch that ignores the failure.
+- Do not add `@ts-expect-error`, `@ts-ignore`, or `eslint-disable` without a one-line reason and a narrower scope.
+- Name unexplained numbers. `WORDS_PER_MINUTE` in `lib/word-count.ts` is the pattern. A formula constant needs a name or a comment that says what it is.
+- Do not copy a formula or counting rule into a second module. Call the existing function.
+- Do not add a dependency for something the standard library or the current stack already does.
+- Do not leave unused exports, commented-out implementations, or speculative options that no caller needs.
+- Styling uses Tailwind utilities and the tokens in `app/globals.css` (`--ink`, `--muted`, `--line`, `--paper`, `--accent`, `--danger`). Do not add a CSS framework or a per-component stylesheet for a single screen.
+- Interactive controls use `type="button"` unless they submit a form. Minimum target size in the current tools is `min-h-11`.

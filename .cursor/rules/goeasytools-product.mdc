@@ -1,0 +1,20 @@
+---
+description: GoEasyTools launch scope, evidence limits, and rules for adding or changing a tool.
+globs: lib/**/*.ts, components/**/*.tsx, app/**/page.tsx, research/**/*.md, research/**/*.csv
+alwaysApply: false
+---
+
+# Product
+
+GoEasyTools is a search-driven utility site. The published language is English. The registry in `lib/tools.ts` lists the implemented tools. Search evidence still supports only the original four as experiments. The later tools were added because a product task required working utilities, and their demand is not validated. Read `docs/implementation-plan.md`, `research/phase-2/08-revised-mvp-recommendation.md`, and `docs/roadmap/08-decision-log.md` before treating a tool as a launch or SEO decision. `research/06-mvp-roadmap.md` is the older ten-tool plan, not a demand proof.
+
+- A tool that is easy to build is not evidence of demand. Implementation ease is only one scored component.
+- Google Trends values in the research are relative indexes. They are not monthly search volume. Volume, CPC, keyword difficulty, and publisher RPM stay unknown unless a source in the research files says they were measured.
+- Do not invent a monetization forecast or fill a blank score. Scoring rules are in `research/08-methodology.md` and `research/phase-2/05-scoring-audit.md`. Do not rescale a partial score into a 100-point total.
+- Do not add a tool, a near-duplicate URL, or a translated directory because the infrastructure could support it. `locales/en.ts` is English chrome, not a license to launch another language. A new tool still needs a user job, a maintenance note, and an honest demand field. Do not mark demand as validated without a sourced measurement.
+- PDF merge, split, and image-to-PDF run in the browser with pdf-lib. Compress PDF is not implemented. Read `research/phase-3-file-tools/03-prototype-decision.md` and `docs/privacy-security.md`. Do not promise a target file size, and do not describe a structural rewrite as compression.
+- Prefer a complete workflow over extra modes that do not change the job. Keep formulas and counting rules in `lib/`, with limitations written in the guide, as `components/word-counter-guide.tsx` does.
+- The only approved monetization model is display advertising. Do not add a subscription, affiliate flow, or lead form. Do not add ad scripts in this codebase until a task explicitly asks.
+- Keep typed text and calculated values out of analytics. Privacy copy in `app/privacy/page.tsx` must stay true.
+- Do not overwrite research files or their source dates. A correction is an added note with a new date, unless the task says to edit the historical file.
+- URLs stay unprefixed and English, matching the decision log. A second locale keeps those URLs and adds a new prefix. See `docs/roadmap/05-internationalization-plan.md`.

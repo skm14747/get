@@ -1,0 +1,41 @@
+import { SENTENCE_ABBREVIATIONS, WORDS_PER_MINUTE } from "@/lib/word-count";
+
+export function WordCounterGuide() {
+  return (
+    <div className="mt-10 max-w-3xl space-y-8 text-[15px] leading-7">
+      <section>
+        <h2 className="text-xl font-medium">How to use it</h2>
+        <p className="mt-2">
+          Type or paste into the text box. The counts update as you type. Paste, select all, and clear act on that box. Copy counts copies the numbers, not the text itself.
+        </p>
+      </section>
+      <section>
+        <h2 className="text-xl font-medium">Counting rules</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>A word is a stretch of text separated by whitespace. “well-known” is one word. An emoji with spaces around it is counted as a word. This is not dictionary segmentation. Text written without spaces, including a typical Japanese sentence, counts as one word.</li>
+          <li>Characters are Unicode code points. A single emoji such as 👍 is one character even though it uses two UTF-16 code units.</li>
+          <li>Characters without spaces exclude characters that JavaScript treats as whitespace, including line breaks.</li>
+          <li>Graphemes are what a reader usually sees as one symbol. A family emoji made of several code points can be one grapheme and several characters.</li>
+          <li>Lines are separated by line breaks. A trailing line break counts as an extra empty line. An empty box has zero lines.</li>
+          <li>Paragraphs are separated by a blank line. A single line break does not start a new paragraph.</li>
+          <li>
+            Sentences use a heuristic. The text is split on periods, exclamation marks, and question marks. Decimals such as 3.14 are kept together. Initials and these abbreviations are also kept together: {SENTENCE_ABBREVIATIONS.join(", ")}. A block of text with no terminator still counts as one sentence when it contains a letter or number. This is not linguistic sentence segmentation.
+          </li>
+          <li>Reading time uses {WORDS_PER_MINUTE} words per minute. Under that pace, any text with at least one word is labeled “Less than 1 minute”. Longer text is rounded up to the next minute. This is an assumption, not a measurement of a reader.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-medium">Example</h2>
+        <p className="mt-2">
+          “Dr. Smith paid 3.14. Then she left.” has 7 words, 2 sentences, and 1 paragraph. The abbreviations and the decimal do not create extra sentences.
+        </p>
+      </section>
+      <section>
+        <h2 className="text-xl font-medium">Privacy</h2>
+        <p className="mt-2">
+          The text is counted in this browser. The page does not put it in the address bar or send it to GoEasyTools. Optional measurement, if you allow it and an address is configured, records that the word counter was used. It does not record the text.
+        </p>
+      </section>
+    </div>
+  );
+}

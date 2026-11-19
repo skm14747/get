@@ -1,0 +1,18 @@
+---
+description: Next.js App Router conventions for routes, metadata, and the client/server split in this repo.
+globs: app/**/*.ts, app/**/*.tsx, next.config.ts
+alwaysApply: false
+---
+
+# Next.js App Router
+
+This repo uses the App Router in Next.js 15. Confirm version-specific APIs against the installed Next.js docs before using a feature that is not already in the repo.
+
+- A route is a `page.tsx` under `app/`. The current tool routes are `app/word-counter`, `app/percentage-calculator`, `app/discount-calculator`, and `app/case-converter`.
+- Pages and layouts are server components. They export `metadata` from `lib/seo.ts`. Do not add `"use client"` to a page. Put the interactive tool in `components/` and render it from the page.
+- Do not read tool input on the server. Do not add a Server Action, route handler, or `cookies()` / `headers()` call for tool data.
+- `app/sitemap.ts` and `app/robots.ts` are the only crawl files. `trailingSlash` is false in `next.config.ts`. Keep new paths consistent with `canonicalUrl`.
+- Root metadata and the HTML language live in `app/layout.tsx`. `site.htmlLang` is `en`. Visible chrome strings come from `locales/en.ts`. Do not add `hreflang` until a real alternate URL exists.
+- `not-found.tsx` is the unknown-path page. Do not invent a soft-200 tool page for an unknown slug.
+- Header and CSP changes belong in `next.config.ts`. Read the current policy before adding a host.
+- Client components that call `window`, `localStorage`, or `navigator.clipboard` stay behind `"use client"` and guard `window` the way `track` does.

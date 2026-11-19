@@ -1,0 +1,19 @@
+---
+description: Accessibility expectations for GoEasyTools pages and client tools.
+globs: app/**/*.tsx, components/**/*.tsx, tests/**/*.tsx, app/globals.css
+alwaysApply: false
+---
+
+# Frontend accessibility
+
+Match `components/word-counter-tool.tsx` and the skip link in `app/layout.tsx`.
+
+- Use a real control: `button`, `a`, `label`, `input`, `textarea`, or `select`. Do not add a clickable `div`.
+- Every input has a visible label and an accessible name. Use `useId` when a page can render more than once.
+- Keyboard users must reach every control. Do not remove the `:focus-visible` outline in `app/globals.css`.
+- After clear, paste failure, or a calculation error, move focus or announce the result. The word counter returns focus to the textarea on clear and uses `role="status"` for clipboard notices.
+- Live results use an `aria-live="polite"` region, visually hidden if the visible numbers would be noisy. Do not announce on every keystroke without the debounce the word counter uses.
+- Errors are text, not color alone. `--danger` may emphasize a message that is also written out.
+- Respect `prefers-reduced-motion` in `app/globals.css`. Do not add motion or a modal that blocks the tool.
+- Keep the layout usable at the width of a phone. The current shell is `max-w-5xl` with horizontal padding.
+- A component test is the automated check. It does not replace trying the keyboard path on a changed workflow. Say which of the two you actually did.

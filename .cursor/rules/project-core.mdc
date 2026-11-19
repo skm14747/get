@@ -1,0 +1,19 @@
+---
+description: Essential GoEasyTools guardrails for inspection, small changes, and honest verification.
+alwaysApply: true
+---
+
+# Project core
+
+Inspect the implementation and nearby tests before editing. Follow patterns already in the repo. Prefer a small, maintainable change over a new abstraction or a new package.
+
+- Do not refactor unrelated code in the same change.
+- Do not change public behavior, URLs, metadata, analytics payloads, or copy unless the task asks for that change.
+- Preserve edits you did not make. Review the final diff for stray files and generated output.
+- After a code change, run the narrowest relevant check first, then the broader ones the change can affect. Local commands are `npm run test`, `npm run typecheck`, `npm run lint`, and `npm run build`. `.github/workflows/ci.yml` runs those after `npm ci`.
+- Report the command, the result, and any check you did not run. Never describe a check as passed unless it ran in this session.
+- State assumptions and questions that the code or docs do not settle.
+- Update the existing doc when behavior, architecture, configuration, or a workflow actually changes. Hard-to-reverse choices go in `docs/roadmap/08-decision-log.md`. Do not rewrite `research/` history.
+- Do not install dependencies, deploy, change DNS, or read production secrets unless the task explicitly asks.
+
+Language and framework details belong in the scoped rules, not here.

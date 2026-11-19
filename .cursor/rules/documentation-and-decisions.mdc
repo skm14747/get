@@ -1,0 +1,19 @@
+---
+description: When to update GoEasyTools docs or the decision log, and how to avoid a second copy of the research.
+alwaysApply: false
+---
+
+# Documentation and decisions
+
+Update the doc that already owns the fact. Do not add a parallel README, rule, or research note that restates it.
+
+- Behavior, public URLs, counting rules, and formulas: the tool guide and the `lib/` module.
+- Chrome copy: `locales/en.ts`. Do not duplicate it in a second dictionary.
+- Metadata and indexing: `lib/seo.ts`, `lib/tools.ts`, `app/sitemap.ts`, `app/robots.ts`, and `docs/roadmap/02-technical-seo-checklist.md` when the checklist itself changes.
+- Privacy and analytics: `app/privacy/page.tsx`, `lib/analytics.ts`, `docs/roadmap/03-analytics-plan.md`, and `docs/roadmap/04-quality-and-privacy.md`.
+- Environment variables: `.env.example`.
+- Launch scope and evidence: `research/` and `docs/roadmap/01-product-roadmap.md`. Never overwrite a research file's history unless the task explicitly authorizes that edit. Add a dated note instead.
+- Accepted decisions: `docs/roadmap/08-decision-log.md`. Use the architecture-decision-record skill. A hypothesis is not an accepted decision.
+- Cursor rules and skills: `docs/engineering/cursor-customization-audit.md` and `docs/engineering/cursor-rules-and-skills.md`.
+
+Record the trade-off and what evidence would reopen the decision. Keep a roadmap item in `research/` distinct from a tool that already has a route. Setup steps must match scripts that exist in `package.json`.
