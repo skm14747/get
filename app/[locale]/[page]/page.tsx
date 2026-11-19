@@ -1,4 +1,3 @@
-import { appendFileSync } from "fs";
 import { notFound } from "next/navigation";
 import { ToolPage } from "@/components/tool-page";
 import { resolvePrefixedRequest } from "@/lib/hreflang";
@@ -51,9 +50,6 @@ export default async function PrefixedPage({
   const t = getToolTranslation(locale, tool.id, tool);
   const ui = getUiMessages(locale);
   const localizedTool = { ...tool, name: t.name, shortDescription: t.shortDescription };
-  // #region agent log
-  try { appendFileSync('/Users/sandeepmishra/Desktop/prsnl/goeasytools/.cursor/debug-24a009.log', JSON.stringify({sessionId:'24a009',location:'[locale]/[page]/page.tsx',message:'render-locale-tool',data:{locale,toolId:tool.id,originalName:tool.name,translatedName:t.name,homeLabel:ui.home},timestamp:Date.now(),hypothesisId:'translation-fix'})+'\n'); } catch {}
-  // #endregion
 
   return (
     <ToolPage tool={localizedTool} homePath={`/${locale}`} homeLabel={ui.home}>

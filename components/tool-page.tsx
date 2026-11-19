@@ -55,7 +55,7 @@ export function ToolPage({ tool, children, homePath = "/", homeLabel = "Home" }:
       </nav>
 
       <header className="mt-3 mb-5 max-w-3xl">
-        <h1 className="text-2xl font-medium tracking-tight text-ink sm:text-3xl">{tool.name}</h1>
+        <h1 className="text-2xl font-medium tracking-tight text-ink sm:text-3xl">{tool.h1 ?? tool.name}</h1>
         <p className="mt-2 text-[0.9375rem] leading-relaxed text-muted">{tool.shortDescription}</p>
       </header>
 

@@ -5,6 +5,7 @@ export type ToolDefinition = {
   path: string;
   name: string;
   title: string;
+  h1?: string;
   shortDescription: string;
   metaDescription: string;
   category: ToolCategory;
@@ -20,6 +21,7 @@ export const tools = [
     path: "/word-counter",
     name: "Word counter",
     title: "Word Counter — Count Words, Characters & Reading Time",
+    h1: "Word Counter & Character Count",
     shortDescription: "Count words, characters, sentences, paragraphs, and estimated reading time.",
     metaDescription:
       "Free online word counter: count words, characters with or without spaces, sentences, paragraphs, and reading time in your browser with zero data uploads.",
@@ -35,6 +37,7 @@ export const tools = [
     path: "/percentage-calculator",
     name: "Percentage calculator",
     title: "Percentage Calculator — Change, Difference & Share",
+    h1: "Percentage Calculator (Change, Difference & Share)",
     shortDescription: "Find a percentage, a share of a total, a change, or a directionless difference.",
     metaDescription:
       "Calculate percentage of a number, percentage increase or decrease, and directionless percentage difference. Step-by-step mathematical formulas displayed.",
@@ -50,6 +53,7 @@ export const tools = [
     path: "/discount-calculator",
     name: "Discount calculator",
     title: "Discount Calculator — Sale Price & Double Discounts",
+    h1: "Discount Calculator — Sale Price & Savings",
     shortDescription: "Take a percent or an amount off a price, with an optional second discount.",
     metaDescription:
       "Calculate sale price and savings from single or sequential double discounts across USD, EUR, GBP, and INR. Free, instant, and client-side.",
@@ -65,6 +69,7 @@ export const tools = [
     path: "/case-converter",
     name: "Case converter",
     title: "Case Converter — Uppercase, Lowercase, Title & Code Cases",
+    h1: "Case Converter — UPPERCASE, lowercase, camelCase",
     shortDescription: "Convert text to upper, lower, title, sentence, camel, Pascal, snake, or kebab case.",
     metaDescription:
       "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case instantly in your browser.",
@@ -75,14 +80,14 @@ export const tools = [
       "Google Trends, United States, web search, past 12 months, exact term, collected 2026-10-24. The average index was 10 on a chart where percentage calculator averaged 74. Monthly search volume and the results page were not measured.",
     operations: ["upper", "lower", "title", "sentence", "camel", "pascal", "snake", "kebab"],
   },
-  tool("json-formatter", "/json-formatter", "JSON formatter", "Pretty-print, minify, and validate JSON in the browser.", "Pretty-print, minify, and validate JSON online with syntax error diagnostics. 100% in-browser processing guarantees private API payloads never leave your device.", "developer", ["base64"], "json formatter", ["pretty", "minify", "validate"], "JSON Formatter & Validator — Pretty-Print & Minify"),
-  tool("character-counter", "/character-counter", "Character counter", "Count characters against an optional limit.", "Check character count with and without spaces against custom platform limits (Twitter/X, SMS, meta tags). Real-time remaining character counter.", "text", ["word-counter", "case-converter"], "character counter", ["count", "limit"], "Character Counter — Count Characters With & Without Spaces"),
-  tool("age-calculator", "/age-calculator", "Age calculator", "Find an age in years, months, and days.", "Calculate chronological age from date of birth to any target date in exact years, months, and days. Includes next birthday countdown and leap year handling.", "calculator", ["date-calculator", "unit-converter"], "age calculator", ["age", "next-birthday"], "Age Calculator — Exact Age in Years, Months & Days"),
-  tool("qr-code-generator", "/qr-code-generator", "QR code generator", "Make a QR code for a URL, text, or Wi-Fi network.", "Create permanent static QR codes for links, plain text, and Wi-Fi networks in your browser. Free PNG download that never expires, with no tracking.", "developer", ["base64", "password-generator"], "qr code generator", ["url", "text", "wifi"], "QR Code Generator — Free Static QR Codes (No Sign-Up)"),
-  tool("password-generator", "/password-generator", "Password generator", "Create a password with the browser’s secure random generator.", "Generate strong, cryptographically secure random passwords using browser Web Crypto. Filter ambiguous characters with zero server transmission.", "developer", ["qr-code-generator", "base64"], "password generator", ["generate"], "Password Generator — Secure Random Passwords in Browser"),
-  tool("image-compressor", "/image-compressor", "Image compressor", "Re-encode a JPG, PNG, or WebP and compare file sizes.", "Compress JPG, PNG, and WebP images locally via HTML5 canvas. Lossless PNG compression and adjustable quality without uploading photos to a server.", "image", ["image-resizer"], "image compressor", ["compress"], "Image Compressor — Compress JPG, PNG & WebP in Browser"),
-  tool("image-resizer", "/image-resizer", "Image resizer", "Resize an image and keep or change the aspect ratio.", "Resize image width and height in pixels while maintaining aspect ratio. Free in-browser image resizing with zero upload delay and instant preview.", "image", ["image-compressor"], "image resizer", ["resize"], "Image Resizer — Resize Dimensions & Keep Aspect Ratio"),
-  tool("merge-pdf", "/merge-pdf", "Merge PDF", "Combine PDF files in the browser.", "Combine multiple PDF files into one in custom order using client-side pdf-lib. Confidential documents are never uploaded to any cloud server.", "pdf", ["split-pdf", "jpg-to-pdf"], "merge pdf", ["merge"], "Merge PDF — Combine PDF Files in Your Browser"),
+  tool("json-formatter", "/json-formatter", "JSON formatter", "Pretty-print, minify, and validate JSON in the browser.", "Pretty-print, minify, and validate JSON online with syntax error diagnostics. 100% in-browser processing guarantees private API payloads never leave your device.", "developer", ["base64"], "json formatter", ["pretty", "minify", "validate"], "JSON Formatter & Validator — Pretty-Print & Minify", "JSON Formatter & Validator Online"),
+  tool("character-counter", "/character-counter", "Character counter", "Count characters against an optional limit.", "Check character count with and without spaces against custom platform limits (Twitter/X, SMS, meta tags). Real-time remaining character counter.", "text", ["word-counter", "case-converter"], "character counter", ["count", "limit"], "Character Counter — Count Characters With & Without Spaces", "Character Counter (With & Without Spaces)"),
+  tool("age-calculator", "/age-calculator", "Age calculator", "Find an age in years, months, and days.", "Calculate chronological age from date of birth to any target date in exact years, months, and days. Includes next birthday countdown and leap year handling.", "calculator", ["date-calculator", "unit-converter"], "age calculator", ["age", "next-birthday"], "Age Calculator — Exact Age in Years, Months & Days", "Age Calculator (Years, Months & Days)"),
+  tool("qr-code-generator", "/qr-code-generator", "QR code generator", "Make a QR code for a URL, text, or Wi-Fi network.", "Create permanent static QR codes for links, plain text, and Wi-Fi networks in your browser. Free PNG download that never expires, with no tracking.", "developer", ["base64", "password-generator"], "qr code generator", ["url", "text", "wifi"], "QR Code Generator — Free Static QR Codes (No Sign-Up)", "QR Code Generator for URLs, Text & Wi-Fi"),
+  tool("password-generator", "/password-generator", "Password generator", "Create a password with the browser’s secure random generator.", "Generate strong, cryptographically secure random passwords using browser Web Crypto. Filter ambiguous characters with zero server transmission.", "developer", ["qr-code-generator", "base64"], "password generator", ["generate"], "Password Generator — Secure Random Passwords in Browser", "Secure Password Generator"),
+  tool("image-compressor", "/image-compressor", "Image compressor", "Re-encode a JPG, PNG, or WebP and compare file sizes.", "Compress JPG, PNG, and WebP images locally via HTML5 canvas. Lossless PNG compression and adjustable quality without uploading photos to a server.", "image", ["image-resizer"], "image compressor", ["compress"], "Image Compressor — Compress JPG, PNG & WebP in Browser", "Compress Images Online (JPG, PNG, WebP)"),
+  tool("image-resizer", "/image-resizer", "Image resizer", "Resize an image and keep or change the aspect ratio.", "Resize image width and height in pixels while maintaining aspect ratio. Free in-browser image resizing with zero upload delay and instant preview.", "image", ["image-compressor"], "image resizer", ["resize"], "Image Resizer — Resize Dimensions & Keep Aspect Ratio", "Resize Images Online (Maintain Aspect Ratio)"),
+  tool("merge-pdf", "/merge-pdf", "Merge PDF", "Combine PDF files in the browser.", "Combine multiple PDF files into one in custom order using client-side pdf-lib. Confidential documents are never uploaded to any cloud server.", "pdf", ["split-pdf", "jpg-to-pdf"], "merge pdf", ["merge"], "Merge PDF — Combine PDF Files in Your Browser", "Merge PDF Files Online Free"),
   tool("split-pdf", "/split-pdf", "Split PDF", "Extract pages or ranges from a PDF.", "Extract individual pages or custom page ranges (e.g., 1-3, 5) from PDF files directly in your browser. Fast, free, and completely private.", "pdf", ["merge-pdf"], "split pdf", ["split"], "Split PDF — Extract Pages & Custom Ranges in Browser"),
   tool("jpg-to-pdf", "/jpg-to-pdf", "JPG to PDF", "Place images on PDF pages and download the file.", "Convert JPG and PNG images to PDF documents. Support for standard A4 formatting or native image sizing, processed locally on your device.", "pdf", ["merge-pdf"], "jpg to pdf", ["convert"], "JPG to PDF — Convert Images to PDF in Browser"),
   tool("rotate-pdf", "/rotate-pdf", "Rotate PDF", "Rotate all or selected pages by 90°, 180°, or 270°.", "Rotate PDF pages clockwise by 90, 180, or 270 degrees in your browser. No upload needed — the file stays on your device.", "pdf", ["organize-pdf", "merge-pdf"], "rotate pdf", ["rotate"], "Rotate PDF — Turn PDF Pages 90°, 180° or 270° in Browser"),
@@ -441,12 +446,14 @@ function tool(
   primaryQuery: string,
   operations: string[],
   title?: string,
+  h1?: string,
 ): ToolDefinition {
   return {
     id,
     path,
     name,
     title: title ?? name,
+    h1: h1 ?? title ?? name,
     shortDescription,
     metaDescription,
     category,

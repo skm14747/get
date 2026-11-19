@@ -29,6 +29,7 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} GoEasyTools</p>
           <nav aria-label={messages.siteNav}>
             <ul className="flex gap-4">
+              <li><Link href="/blog" className="no-underline transition-colors hover:text-ink">Blog</Link></li>
               <li><Link href="/privacy" className="no-underline transition-colors hover:text-ink">{messages.privacy}</Link></li>
               <li><Link href="/contact" className="no-underline transition-colors hover:text-ink">{messages.contact}</Link></li>
             </ul>

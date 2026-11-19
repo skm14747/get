@@ -1,46 +1,98 @@
 import type { ReactNode } from "react";
+import { AgeCalculatorGuide } from "@/components/age-calculator-guide";
 import { AgeTool } from "@/components/age-tool";
+import { AudioSpeedGuide } from "@/components/audio-speed-guide";
+import { AudioSpeedTool } from "@/components/audio-speed-tool";
+import { AudioTrimmerGuide } from "@/components/audio-trimmer-guide";
+import { AudioTrimmerTool } from "@/components/audio-trimmer-tool";
+import { AustraliaGstGuide } from "@/components/australia-gst-guide";
+import { AustraliaGstTool } from "@/components/australia-gst-tool";
+import { BarcodeGuide } from "@/components/barcode-guide";
+import { BarcodeTool } from "@/components/barcode-tool";
+import { Base64Guide } from "@/components/base64-guide";
 import { Base64Tool } from "@/components/base64-tool";
+import { BelgiumTvaGuide } from "@/components/belgium-tva-guide";
+import { BelgiumTvaTool } from "@/components/belgium-tva-tool";
+import { BorderRadiusGuide } from "@/components/border-radius-guide";
+import { BorderRadiusTool } from "@/components/border-radius-tool";
+import { BoxShadowGuide } from "@/components/box-shadow-guide";
+import { BoxShadowTool } from "@/components/box-shadow-tool";
 import { CaseConverterTool } from "@/components/case-converter-tool";
 import { CaseGuide } from "@/components/case-guide";
+import { CharacterCounterGuide } from "@/components/character-counter-guide";
 import { CharacterTool } from "@/components/character-tool";
+import { ColorGuide } from "@/components/color-guide";
+import { ColorTool } from "@/components/color-tool";
+import { ContrastGuide } from "@/components/contrast-guide";
+import { ContrastTool } from "@/components/contrast-tool";
+import { CronGuide } from "@/components/cron-guide";
+import { CronTool } from "@/components/cron-tool";
+import { CsvJsonGuide } from "@/components/csv-json-guide";
+import { CsvJsonTool } from "@/components/csv-json-tool";
+import { DateCalculatorGuide } from "@/components/date-calculator-guide";
 import { DateTool } from "@/components/date-tool";
 import { DiscountCalculatorTool } from "@/components/discount-calculator-tool";
 import { DiscountGuide } from "@/components/discount-guide";
+import { EmiCalculatorGuide } from "@/components/emi-calculator-guide";
 import { EmiTool } from "@/components/emi-tool";
+import { FranceTvaGuide } from "@/components/france-tva-guide";
+import { FranceTvaTool } from "@/components/france-tva-tool";
+import { GradientGuide } from "@/components/gradient-guide";
+import { GradientTool } from "@/components/gradient-tool";
+import { GstCalculatorGuide } from "@/components/gst-calculator-guide";
 import { GstTool } from "@/components/gst-tool";
+import { ImageCompressorGuide } from "@/components/image-compressor-guide";
+import { ImageCropperGuide } from "@/components/image-cropper-guide";
+import { ImageCropperTool } from "@/components/image-cropper-tool";
+import { ImageResizerGuide } from "@/components/image-resizer-guide";
 import { ImageTool } from "@/components/image-tool";
+import { JpgToPdfGuide } from "@/components/jpg-to-pdf-guide";
+import { JsonFormatterGuide } from "@/components/json-formatter-guide";
+import { JsonToPythonGuide } from "@/components/json-to-python-guide";
+import { JsonToPythonTool } from "@/components/json-to-python-tool";
+import { JsonToTsGuide } from "@/components/json-to-ts-guide";
+import { JsonToTsTool } from "@/components/json-to-ts-tool";
 import { JsonTool } from "@/components/json-tool";
+import { JwtGuide } from "@/components/jwt-guide";
+import { JwtTool } from "@/components/jwt-tool";
+import { MergePdfGuide } from "@/components/merge-pdf-guide";
+import { PaletteGuide } from "@/components/palette-guide";
+import { PaletteTool } from "@/components/palette-tool";
+import { PasswordGeneratorGuide } from "@/components/password-generator-guide";
 import { PasswordTool } from "@/components/password-tool";
+import { PdfEditTool } from "@/components/pdf-edit-tool";
+import { PdfFormTool } from "@/components/pdf-form-tool";
+import { PdfPipelineTool } from "@/components/pdf-pipeline-tool";
+import { PdfSignTool } from "@/components/pdf-sign-tool";
 import { PdfTool } from "@/components/pdf-tool";
 import { PercentageCalculatorTool } from "@/components/percentage-calculator-tool";
 import { PercentageGuide } from "@/components/percentage-guide";
+import { QrCodeGeneratorGuide } from "@/components/qr-code-generator-guide";
 import { QrTool } from "@/components/qr-tool";
+import { RegexGuide } from "@/components/regex-guide";
+import { RegexTool } from "@/components/regex-tool";
+import { SlugGuide } from "@/components/slug-guide";
+import { SlugTool } from "@/components/slug-tool";
+import { SplitPdfGuide } from "@/components/split-pdf-guide";
+import { SqlGuide } from "@/components/sql-guide";
+import { SqlTool } from "@/components/sql-tool";
+import { TextCleanerGuide } from "@/components/text-cleaner-guide";
+import { TextCleanerTool } from "@/components/text-cleaner-tool";
+import { TextDiffGuide } from "@/components/text-diff-guide";
+import { TextDiffTool } from "@/components/text-diff-tool";
+import { UkVatGuide } from "@/components/uk-vat-guide";
+import { UkVatTool } from "@/components/uk-vat-tool";
+import { UnitConverterGuide } from "@/components/unit-converter-guide";
 import { UnitTool } from "@/components/unit-tool";
+import { UnixTimestampGuide } from "@/components/unix-timestamp-guide";
+import { UnixTimestampTool } from "@/components/unix-timestamp-tool";
+import { UrlGuide } from "@/components/url-guide";
+import { UrlTool } from "@/components/url-tool";
+import { VideoGifGuide } from "@/components/video-gif-guide";
+import { VideoGifTool } from "@/components/video-gif-tool";
 import { WordCounterGuide } from "@/components/word-counter-guide";
 import { WordCounterTool } from "@/components/word-counter-tool";
-import { AustraliaGstTool } from "@/components/australia-gst-tool";
-import { AustraliaGstGuide } from "@/components/australia-gst-guide";
-import { UkVatTool } from "@/components/uk-vat-tool";
-import { UkVatGuide } from "@/components/uk-vat-guide";
-import { SlugTool } from "@/components/slug-tool";
-import { SlugGuide } from "@/components/slug-guide";
-import { TextDiffTool } from "@/components/text-diff-tool";
-import { TextDiffGuide } from "@/components/text-diff-guide";
 import type { ToolDefinition } from "@/lib/tools";
-
-type InlineGuideProps = { tool?: ToolDefinition; heading: string; body: string };
-
-function InlineGuide({ heading, body }: InlineGuideProps) {
-  return (
-    <div className="mt-10 max-w-3xl space-y-4 text-[15px] leading-7">
-      <h2 className="text-xl font-semibold">{heading}</h2>
-      <p>{body}</p>
-      <h2 className="text-xl font-semibold">Privacy</h2>
-      <p>Processing stays in this browser. The page does not put the contents in the address or in measurement events.</p>
-    </div>
-  );
-}
 
 type ToolEntry = {
   render: () => ReactNode;
@@ -66,111 +118,119 @@ const registry: Record<string, ToolEntry> = {
   },
   "json-formatter": {
     render: () => <JsonTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="JSON.parse reads the text and JSON.stringify writes it. The text is not run as JavaScript. More than 1,000,000 characters is refused." />
-    ),
+    guide: () => <JsonFormatterGuide />,
   },
   "character-counter": {
     render: () => <CharacterTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Characters are Unicode code points, the same rule as the word counter. A limit of 280 with 10 characters leaves 270. The limit is a count, not a publisher's rule." />
-    ),
+    guide: () => <CharacterCounterGuide />,
   },
   "age-calculator": {
     render: () => <AgeTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Dates are calendar dates, not timestamps. Age is the last birthday counted in years, then the months and days after it. A February 29 birthday falls on February 28 in a non-leap year." />
-    ),
+    guide: () => <AgeCalculatorGuide />,
   },
   "qr-code-generator": {
     render: () => <QrTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="URL codes accept only http and https. Wi-Fi codes use the WIFI: payload. The image is a PNG created in the browser. A contact card is not offered because the field set was not tested against phone scanners." />
-    ),
+    guide: () => <QrCodeGeneratorGuide />,
   },
   "password-generator": {
     render: () => <PasswordTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Bytes come from crypto.getRandomValues. The generator avoids modulo bias and then shuffles. It omits ambiguous characters. Nothing in the generator sends the password to a server." />
-    ),
+    guide: () => <PasswordGeneratorGuide />,
   },
   "image-compressor": {
     render: () => <ImageTool mode="compress" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="JPEG and WebP are re-encoded at the chosen quality, which can drop detail. PNG export from the canvas is lossless, so the quality control does not promise a smaller PNG. The file stays in the browser and is limited to 15 MB." />
-    ),
+    guide: () => <ImageCompressorGuide />,
   },
   "image-resizer": {
     render: () => <ImageTool mode="resize" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="The image is drawn onto a canvas at the requested pixel size. Locking the aspect ratio updates the other side. Output uses the source family: JPEG, PNG, or WebP. This does not add pixels that were not in the file." />
-    ),
+    guide: () => <ImageResizerGuide />,
   },
   "merge-pdf": {
     render: () => <PdfTool mode="merge" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Pages are copied in the listed order with pdf-lib. Encrypted files are refused. Two files are required. Each file is limited to 20 MB and the batch to 10 files. The bytes are not uploaded." />
-    ),
+    guide: () => <MergePdfGuide />,
   },
   "split-pdf": {
     render: () => <PdfTool mode="split" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Ranges such as 1-3,5 are inclusive page numbers. The result is one PDF containing those pages in that order. Encrypted files are refused." />
-    ),
+    guide: () => <SplitPdfGuide />,
   },
   "jpg-to-pdf": {
     render: () => <PdfTool mode="images" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="JPG and PNG images are embedded. WebP is refused here. A4 scales the image to fit. Match-the-image uses the image's pixel size as the page size." />
-    ),
-  },
-  "unit-converter": {
-    render: () => <UnitTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Length uses exact factors such as 1 inch = 0.0254 m and 1 mile = 1609.344 m. Celsius to Fahrenheit is (°C × 9/5) + 32. Kelvin is Celsius plus 273.15. Results are not a legal metrology certificate." />
-    ),
-  },
-  "date-calculator": {
-    render: () => <DateTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="The day count is the number of midnights between the dates, using UTC calendar dates so a timezone does not move the day. Business days count Monday through Friday after the start date through the end date. No public-holiday calendar is included." />
-    ),
-  },
-  "gst-calculator": {
-    render: () => <GstTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Tax is amount × rate / 100 when the amount is exclusive. An inclusive amount is divided by 1 + rate / 100. CGST and SGST split the rounded tax. When the tax cannot be split evenly, the extra hundredth stays on CGST. You must supply the rate. This is not tax advice." />
-    ),
-  },
-  "emi-calculator": {
-    render: () => <EmiTool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="The payment is P × r × (1+r)^n / ((1+r)^n − 1), where r is the annual rate divided by 12 and by 100, and n is the number of months. A zero rate divides the principal by the months. Tenure above 360 months is refused. This is not a loan offer." />
-    ),
-  },
-  base64: {
-    render: () => <Base64Tool />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Encoding uses UTF-8 bytes, then standard Base64. Decoding rejects characters outside the alphabet and rejects byte sequences that are not UTF-8. Base64 is not encryption." />
-    ),
+    guide: () => <JpgToPdfGuide />,
   },
   "rotate-pdf": {
     render: () => <PdfTool mode="rotate" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Choose 90°, 180°, or 270° clockwise. The rotation is added to any existing page rotation. All pages are rotated. Encrypted files are refused. The file is limited to 20 MB." />
-    ),
+    guide: () => <MergePdfGuide />,
   },
   "organize-pdf": {
     render: () => <PdfTool mode="organize" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Enter page numbers in any order to rearrange them. Use ranges like 3,1,2 to reorder or 1-3,5 to keep only certain pages. Encrypted files are refused. The file is limited to 20 MB." />
-    ),
+    guide: () => <SplitPdfGuide />,
   },
   "crop-pdf": {
     render: () => <PdfTool mode="crop" />,
-    guide: (tool) => (
-      <InlineGuide tool={tool} heading="How it works" body="Set top, right, bottom, and left margins in points (72 points = 1 inch). The CropBox is adjusted on every page. Content outside the crop area is hidden but not removed. Encrypted files are refused." />
-    ),
+    guide: () => <SplitPdfGuide />,
+  },
+  "add-page-numbers": {
+    render: () => <PdfTool mode="pagenumber" />,
+    guide: () => <MergePdfGuide />,
+  },
+  "watermark-pdf": {
+    render: () => <PdfTool mode="watermark" />,
+    guide: () => <MergePdfGuide />,
+  },
+  "unlock-pdf": {
+    render: () => <PdfTool mode="unlock" />,
+    guide: () => <MergePdfGuide />,
+  },
+  "pdf-to-jpg": {
+    render: () => <PdfTool mode="pdf2jpg" />,
+    guide: () => <JpgToPdfGuide />,
+  },
+  "compress-pdf": {
+    render: () => <PdfTool mode="compress" />,
+    guide: () => <MergePdfGuide />,
+  },
+  "edit-pdf": {
+    render: () => <PdfEditTool />,
+    guide: () => <MergePdfGuide />,
+  },
+  "pdf-forms": {
+    render: () => <PdfFormTool />,
+    guide: () => <MergePdfGuide />,
+  },
+  "sign-pdf": {
+    render: () => <PdfSignTool />,
+    guide: () => <MergePdfGuide />,
+  },
+  "delete-pdf-pages": {
+    render: () => <PdfTool mode="delete" />,
+    guide: () => <SplitPdfGuide />,
+  },
+  "extract-pdf-pages": {
+    render: () => <PdfTool mode="extract" />,
+    guide: () => <SplitPdfGuide />,
+  },
+  "pdf-pipeline": {
+    render: () => <PdfPipelineTool />,
+    guide: () => <MergePdfGuide />,
+  },
+  "unit-converter": {
+    render: () => <UnitTool />,
+    guide: () => <UnitConverterGuide />,
+  },
+  "date-calculator": {
+    render: () => <DateTool />,
+    guide: () => <DateCalculatorGuide />,
+  },
+  "gst-calculator": {
+    render: () => <GstTool />,
+    guide: () => <GstCalculatorGuide />,
+  },
+  "emi-calculator": {
+    render: () => <EmiTool />,
+    guide: () => <EmiCalculatorGuide />,
+  },
+  base64: {
+    render: () => <Base64Tool />,
+    guide: () => <Base64Guide />,
   },
   "vat-calculator-uk": {
     render: () => <UkVatTool />,
@@ -187,6 +247,98 @@ const registry: Record<string, ToolEntry> = {
   "text-compare": {
     render: () => <TextDiffTool />,
     guide: () => <TextDiffGuide />,
+  },
+  "france-tva-calculator": {
+    render: () => <FranceTvaTool />,
+    guide: () => <FranceTvaGuide />,
+  },
+  "belgium-tva-calculator": {
+    render: () => <BelgiumTvaTool />,
+    guide: () => <BelgiumTvaGuide />,
+  },
+  "remove-duplicate-lines": {
+    render: () => <TextCleanerTool />,
+    guide: () => <TextCleanerGuide />,
+  },
+  "color-converter": {
+    render: () => <ColorTool />,
+    guide: () => <ColorGuide />,
+  },
+  "unix-timestamp-converter": {
+    render: () => <UnixTimestampTool />,
+    guide: () => <UnixTimestampGuide />,
+  },
+  "jwt-decoder": {
+    render: () => <JwtTool />,
+    guide: () => <JwtGuide />,
+  },
+  "url-encoder": {
+    render: () => <UrlTool />,
+    guide: () => <UrlGuide />,
+  },
+  "json-to-typescript": {
+    render: () => <JsonToTsTool />,
+    guide: () => <JsonToTsGuide />,
+  },
+  "json-to-python": {
+    render: () => <JsonToPythonTool />,
+    guide: () => <JsonToPythonGuide />,
+  },
+  "csv-to-json": {
+    render: () => <CsvJsonTool />,
+    guide: () => <CsvJsonGuide />,
+  },
+  "contrast-checker": {
+    render: () => <ContrastTool />,
+    guide: () => <ContrastGuide />,
+  },
+  "gradient-generator": {
+    render: () => <GradientTool />,
+    guide: () => <GradientGuide />,
+  },
+  "color-palette-generator": {
+    render: () => <PaletteTool />,
+    guide: () => <PaletteGuide />,
+  },
+  "css-box-shadow-generator": {
+    render: () => <BoxShadowTool />,
+    guide: () => <BoxShadowGuide />,
+  },
+  "css-border-radius-generator": {
+    render: () => <BorderRadiusTool />,
+    guide: () => <BorderRadiusGuide />,
+  },
+  "regex-tester": {
+    render: () => <RegexTool />,
+    guide: () => <RegexGuide />,
+  },
+  "cron-generator": {
+    render: () => <CronTool />,
+    guide: () => <CronGuide />,
+  },
+  "sql-formatter": {
+    render: () => <SqlTool />,
+    guide: () => <SqlGuide />,
+  },
+  "barcode-generator": {
+    render: () => <BarcodeTool />,
+    guide: () => <BarcodeGuide />,
+  },
+  "image-cropper": {
+    render: () => <ImageCropperTool />,
+    guide: () => <ImageCropperGuide />,
+  },
+  "audio-trimmer": {
+    render: () => <AudioTrimmerTool />,
+    guide: () => <AudioTrimmerGuide />,
+  },
+  "audio-speed-changer": {
+    render: () => <AudioSpeedTool />,
+    guide: () => <AudioSpeedGuide />,
+  },
+  "video-to-gif": {
+    render: () => <VideoGifTool />,
+    guide: () => <VideoGifGuide />,
   },
 };
 
