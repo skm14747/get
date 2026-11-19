@@ -126,6 +126,100 @@ This document provides complete mathematical formulas, parsing specifications, c
   - Formats: Website URLs (`http://`, `https://`), plain text, and Wi-Fi networks (`WIFI:T:WPA;S:SSID;P:PASSWORD;;`).
   - Output: High-contrast 2D matrix exported as client-side PNG canvas download.
 
+### JWT Decoder
+- **URL:** https://goeasytools.com/jwt-decoder
+- **Specifications:**
+  - Parsing: Base64URL decodes header and payload with standard `TextDecoder`. Slices token into 3 dot-separated segments.
+  - Claims: Evaluates standard RFC 7519 claims: `exp` (expiration), `iat` (issued at), `nbf` (not before), `iss`, `sub`, and `aud`.
+  - Security: 100% in-browser parsing. Bearer credentials are never transmitted over network sockets or logged.
+
+### URL Encoder & Decoder
+- **URL:** https://goeasytools.com/url-encoder
+- **Specifications:**
+  - Standard: RFC 3986 percent-encoding specification.
+  - Modes: URL Component (`encodeURIComponent`), Full URL (`encodeURI`), and Query Parameter Table parser.
+  - Multi-byte: Full UTF-8 multi-byte encoding/decoding. Optional space-as-plus (`+`) encoding.
+
+### JSON to TypeScript
+- **URL:** https://goeasytools.com/json-to-typescript
+- **Specifications:**
+  - AST Inference: Recursively traverses JSON objects and arrays to infer property data types (`string`, `number`, `boolean`, `any`, arrays, and unions).
+  - Structure: Separates nested objects into modular child interfaces or type aliases with configurable root identifier name.
+  - Formatting: Wraps reserved symbols and hyphenated keys in quotes for syntactically valid TypeScript code. Client-side execution.
+
+### JSON to Python
+- **URL:** https://goeasytools.com/json-to-python
+- **Specifications:**
+  - Target Frameworks: Pydantic BaseModel (v2) with Field aliases, standard library `@dataclass`, and `typing.TypedDict`.
+  - Type Mapping: Maps JSON types to Python types (`str`, `int`, `float`, `bool`, `Optional[Any]`, `List[T]`).
+  - PEP 8: Automatic conversion of camelCase JSON keys into snake_case with Pydantic Field alias preservation. Runs entirely client-side.
+
+### CSV to JSON Converter
+- **URL:** https://goeasytools.com/csv-to-json
+- **Specifications:**
+  - Standard: RFC 4180 parsing with full support for quoted values, escaped quotes (`""`), and embedded newlines.
+  - Delimiters: Auto-detection and explicit support for comma (`,`), tab (`\t`), semicolon (`;`), and pipe (`|`).
+  - Conversion: Bidirectional CSV to JSON array of objects and JSON to CSV spreadsheet export. Optional numeric and boolean type coercion.
+
+### Contrast Checker
+- **URL:** https://goeasytools.com/contrast-checker
+- **Specifications:**
+  - Standard: W3C Web Content Accessibility Guidelines (WCAG) 2.1 relative luminance and contrast algorithm.
+  - Evaluation: Calculates contrast ratio between 1:1 and 21:1. Assesses Level AA (4.5:1 normal / 3.0:1 large text) and Level AAA (7.0:1 normal / 4.5:1 large text).
+  - Preview: Renders live text and component previews directly in client-side canvas and DOM. Zero server tracking.
+
+### CSS Gradient Generator
+- **URL:** https://goeasytools.com/gradient-generator
+- **Specifications:**
+  - Types: Linear gradients with 0° to 360° angle dials and radial gradients with circular or elliptical focus shapes.
+  - Controls: Multi-stop color placement (0% to 100%) with up to 6 custom stops and curated aesthetic presets.
+  - Code Export: Emits standard fallback declarations, cross-browser CSS rules, and Tailwind arbitrary values. Local canvas rendering.
+
+### Color Palette Generator
+- **URL:** https://goeasytools.com/color-palette-generator
+- **Specifications:**
+  - Harmony Modes: Analogous, Monochromatic, Triadic, Complementary, and Split-Complementary schemes derived via HSL color wheel angles.
+  - Features: Real-time Spacebar randomizer, individual swatch pin-locking, and instant CSS root variables (:root) export. 100% in-browser computation.
+
+### CSS Box Shadow Generator
+- **URL:** https://goeasytools.com/css-box-shadow-generator
+- **Specifications:**
+  - Syntax: Compiles standard CSS and webkit box-shadow rules with X-offset, Y-offset, blur radius, spread radius, color, and inset properties.
+  - Multi-layer: Composites up to 4 custom shadow layers for natural photorealistic ambient occlusion. Instant live preview and Tailwind class export.
+
+### CSS Border Radius Generator
+- **URL:** https://goeasytools.com/css-border-radius-generator
+- **Specifications:**
+  - Modes: Simple 4-corner pixel radii and advanced 8-point percentage slash syntax (`H / V`).
+  - Output: Organic liquid blobs, asymmetric cards, and pills with live shape preview and copyable pure CSS and Tailwind utility classes. Zero server uploads.
+
+### Regex Tester
+- **URL:** https://goeasytools.com/regex-tester
+- **Specifications:**
+  - Engine: Native ECMAScript (JavaScript) RegExp engine.
+  - Features: Supports standard flags (g, i, m, s, u), named and indexed capture groups, real-time match highlighting, and execution timing benchmarks.
+  - Safety: Capped global iterations and zero-length loop guards protect against catastrophic backtracking (ReDoS). Client-side execution.
+
+### Cron Expression Generator
+- **URL:** https://goeasytools.com/cron-generator
+- **Specifications:**
+  - Syntax: Standard 5-field Unix cron expression (minute, hour, day-of-month, month, day-of-week).
+  - Translation: Instant bidirectional visual builder and human-readable natural English schedule interpreter.
+  - Projection: Projects the next 5 upcoming execution timestamps relative to the user's local timezone. Zero server logging.
+
+### SQL Formatter
+- **URL:** https://goeasytools.com/sql-formatter
+- **Specifications:**
+  - Formatting: Organizes major clauses (SELECT, FROM, WHERE, GROUP BY, ORDER BY, LIMIT) and sub-clauses (JOINs, ON, AND, OR) onto clean lines with configurable 2 or 4-space indentation.
+  - Standardizing: Capitalizes SQL reserved keywords and preserves comments and string literals intact.
+  - Minification: Strips comments and excessive whitespace for single-line production deployment. Zero server logging.
+
+### Barcode Generator
+- **URL:** https://goeasytools.com/barcode-generator
+- **Specifications:**
+  - Formats: Code 128 (all 128 ASCII chars with modulo-103 check), EAN-13 (13-digit retail GTIN with modulo-10 check), UPC-A (12-digit North American retail), and Code 39.
+  - Export: Renders crisp vector SVG XML and client-side 2x canvas-rasterized PNG downloads with automated optical quiet zones. 100% private in-browser generation.
+
 ---
 
 ## 4. Image & PDF Utilities
@@ -141,6 +235,13 @@ This document provides complete mathematical formulas, parsing specifications, c
 - **Specifications:**
   - Processing: Pixel scaling on HTML5 Canvas.
   - Dimensions: Pixel width and height adjustments with optional aspect-ratio lock.
+
+### Image Cropper
+- **URL:** https://goeasytools.com/image-cropper
+- **Specifications:**
+  - Canvas Extraction: Extracts pixel coordinate bounding boxes at 100% native resolution via HTML5 2D canvas context.
+  - Presets: Freeform, 1:1 Square, 16:9 Widescreen, 4:3 Standard, and 3:2 Photo ratios with visual rule-of-thirds grid overlay.
+  - Formats: JPG, PNG, and WebP up to 15 MB. Zero server uploads.
 
 ### Merge PDF
 - **URL:** https://goeasytools.com/merge-pdf

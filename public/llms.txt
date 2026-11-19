@@ -35,10 +35,25 @@
 - [Slug Generator](https://goeasytools.com/slug-generator): Generates URL-friendly slugs from text, accents, and multilingual scripts with custom delimiters.
 - [Color Converter](https://goeasytools.com/color-converter): Converts color codes between HEX, RGB, and HSL formats with live color preview.
 - [Unix Timestamp Converter](https://goeasytools.com/unix-timestamp-converter): Converts Unix epoch timestamps to UTC and local dates, and dates to Unix seconds and milliseconds.
+- [JWT Decoder](https://goeasytools.com/jwt-decoder): Decodes and inspects JSON Web Tokens (JWT) online, parsing claims, headers, and expiration dates safely in browser.
+- [URL Encoder & Decoder](https://goeasytools.com/url-encoder): Encodes and decodes URL components, full URLs, and query strings using RFC 3986 percent-encoding in browser.
+- [JSON to TypeScript](https://goeasytools.com/json-to-typescript): Generates TypeScript interfaces and type definitions from JSON data with recursive type inference in browser.
+- [JSON to Python](https://goeasytools.com/json-to-python): Converts JSON payloads into Python Pydantic models (v2), dataclasses, or TypedDict with PEP 8 snake_case mapping.
+- [CSV to JSON Converter](https://goeasytools.com/csv-to-json): Converts CSV spreadsheets to JSON arrays and JSON to CSV using RFC 4180 parsing in browser.
+- [Contrast Checker](https://goeasytools.com/contrast-checker): Tests foreground and background color contrast ratios against WCAG 2.1 AA and AAA standards with live text preview.
+- [CSS Gradient Generator](https://goeasytools.com/gradient-generator): Generates linear and radial CSS gradients with angle controls, multi-color stops, and live canvas preview.
+- [Color Palette Generator](https://goeasytools.com/color-palette-generator): Generates harmonious 5-color palettes based on HSL color wheel rules with pin locks and CSS variables export.
+- [CSS Box Shadow Generator](https://goeasytools.com/css-box-shadow-generator): Generates multi-layer CSS box shadows with live card preview, blur, spread, opacity, and inset controls.
+- [CSS Border Radius Generator](https://goeasytools.com/css-border-radius-generator): Generates 8-point CSS border-radius organic shapes, liquid blobs, and rounded corners with live canvas preview.
+- [Regex Tester](https://goeasytools.com/regex-tester): Tests JavaScript regular expressions with real-time match highlighting, flag toggles, capture group tables, and presets.
+- [Cron Expression Generator](https://goeasytools.com/cron-generator): Generates and translates 5-part cron schedules into natural English with upcoming execution run dates.
+- [SQL Formatter](https://goeasytools.com/sql-formatter): Formats, beautifies, indents, and minifies SQL queries with uppercase keywords and clause breaks in browser.
+- [Barcode Generator](https://goeasytools.com/barcode-generator): Generates 1D barcodes (Code 128, EAN-13, UPC-A, Code 39) with print-ready SVG and PNG downloads in browser.
 
 ## Image & PDF Suite
 - [Image Compressor](https://goeasytools.com/image-compressor): Compresses JPG, PNG, and WebP images locally via HTML5 canvas with before/after byte comparisons.
 - [Image Resizer](https://goeasytools.com/image-resizer): Resizes image pixel width and height with optional aspect-ratio lock.
+- [Image Cropper](https://goeasytools.com/image-cropper): Crops JPG, PNG, and WebP images with custom aspect ratio presets (1:1, 16:9, 4:3) and live canvas grid preview.
 - [Merge PDF](https://goeasytools.com/merge-pdf): Combines multiple PDF files (up to 10 files, 20 MB each) into one using pdf-lib in browser.
 - [Split PDF](https://goeasytools.com/split-pdf): Extracts pages or custom page ranges (e.g., 1-3, 5) from PDF files into a new document.
 - [JPG to PDF](https://goeasytools.com/jpg-to-pdf): Converts JPG and PNG images into standard A4 or native-sized PDF documents.
@@ -56,6 +71,9 @@
 - [Delete PDF Pages](https://goeasytools.com/delete-pdf-pages): Removes selected pages from a PDF and saves the remaining pages as a clean document.
 - [Extract PDF Pages](https://goeasytools.com/extract-pdf-pages): Extracts selected pages or ranges into a new standalone PDF document.
 - [PDF Pipeline](https://goeasytools.com/pdf-pipeline): Chain unlimited PDF operations (rotate, crop, watermark, compress, etc.) with full undo/redo version history.
+
+## Audio & Media Suite
+- [Audio Trimmer](https://goeasytools.com/audio-trimmer): Trims and cuts MP3, WAV, OGG, and AAC audio files with interactive waveform scrubbing in browser.
 
 ## Optional
 - [Full Technical Manifest](https://goeasytools.com/llms-full.txt): Complete mathematical formulas, counting rules, boundary limits, and input/output contracts for every utility.

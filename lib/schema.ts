@@ -9,7 +9,7 @@ export function applicationCategoryFor(category: ToolCategory, id: string): stri
   if (category === "developer") {
     return "DeveloperApplication";
   }
-  if (category === "image") {
+  if (category === "image" || category === "media") {
     return "MultimediaApplication";
   }
   if (category === "calculator") {

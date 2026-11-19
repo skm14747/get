@@ -421,6 +421,166 @@ const faqs: Record<string, FaqItem[]> = {
       answer: "It uses your browser's native IANA timezone database to display local date and time alongside standard UTC (Coordinated Universal Time).",
     },
   ],
+  "jwt-decoder": [
+    {
+      question: "Does decoding a JWT verify its cryptographic signature?",
+      answer: "No. Decoding inspects the Base64URL-encoded header and payload data. Signature verification requires checking against your backend private key or HMAC secret.",
+    },
+    {
+      question: "Is it safe to paste confidential production JWTs into this tool?",
+      answer: "Yes. Processing executes 100% inside your local browser memory using TextDecoder. No bearer tokens or authentication credentials are ever transmitted across the network.",
+    },
+  ],
+  "url-encoder": [
+    {
+      question: "What is the difference between encoding a URL component and a full URL?",
+      answer: "Component encoding escapes structural symbols like slash, question mark, and ampersand. Full URL encoding leaves protocol and query delimiters intact so the link still functions.",
+    },
+    {
+      question: "Should spaces be encoded as %20 or + in URLs?",
+      answer: "Standard RFC 3986 uses %20 for path and general URI encoding. The plus symbol is commonly used in application/x-www-form-urlencoded query strings. Both are supported.",
+    },
+  ],
+  "json-to-typescript": [
+    {
+      question: "How does the tool handle nested objects and arrays?",
+      answer: "Nested objects are recursively extracted into separate named child interfaces. Array items are inspected to infer element types or create multi-type union arrays.",
+    },
+    {
+      question: "Can I choose between TypeScript interfaces and type aliases?",
+      answer: "Yes. Toggle the Format selector between interface and type alias to generate standard interface declarations or type assignment blocks.",
+    },
+  ],
+  "json-to-python": [
+    {
+      question: "Which Python versions and frameworks are supported?",
+      answer: "Generated code is compatible with Python 3.8+ for dataclasses and TypedDict, and Pydantic v2 (FastAPI standard) with Field aliases for camelCase keys.",
+    },
+    {
+      question: "How does the tool handle camelCase keys in Python?",
+      answer: "When snake_case is enabled, camelCase keys like userId are converted to user_id, and Pydantic Field(alias='userId') is generated automatically.",
+    },
+  ],
+  "csv-to-json": [
+    {
+      question: "How does the converter handle commas inside text cells?",
+      answer: "Following the RFC 4180 specification, cells containing commas are enclosed in quotes. Literal quotation marks inside fields are escaped by doubling them.",
+    },
+    {
+      question: "Can I convert tab-delimited (TSV) or semicolon-delimited files?",
+      answer: "Yes. The delimiter dropdown supports auto-detection or explicit selection of comma, tab (TSV), semicolon, or pipe delimiters.",
+    },
+  ],
+  "contrast-checker": [
+    {
+      question: "What is the minimum contrast ratio required by law under WCAG AA?",
+      answer: "WCAG 2.1 Level AA requires a minimum ratio of 4.5:1 for body copy and regular text, and 3.0:1 for large text (18pt+ or 14pt bold) and active UI component borders.",
+    },
+    {
+      question: "What is the difference between WCAG AA and AAA ratings?",
+      answer: "Level AA is the standard legal baseline for accessibility. Level AAA is an enhanced standard requiring 7.0:1 contrast for regular text, ensuring high legibility for low-vision readers.",
+    },
+  ],
+  "gradient-generator": [
+    {
+      question: "How do I use the generated gradient in Tailwind CSS?",
+      answer: "Use Tailwind arbitrary value syntax by replacing spaces with underscores, for example bg-[linear-gradient(135deg,#f97316_0%,#ec4899_100%)].",
+    },
+    {
+      question: "How many color stops can I add to a gradient?",
+      answer: "The tool supports up to 6 custom color stops with individual percentage position controls from 0% to 100% along the gradient axis.",
+    },
+  ],
+  "color-palette-generator": [
+    {
+      question: "How do I lock a color while generating new palettes?",
+      answer: "Click the padlock icon at the top of any swatch to lock it. Pressing Spacebar or clicking Generate will keep your locked colors while randomizing the rest.",
+    },
+    {
+      question: "Which color harmony modes are available?",
+      answer: "The generator supports Analogous (adjacent colors), Monochromatic (single hue shades), Triadic (120-degree wheel triangle), and Complementary (opposite hue) schemes.",
+    },
+  ],
+  "css-box-shadow-generator": [
+    {
+      question: "What is the difference between blur radius and spread radius?",
+      answer: "Blur radius controls the softness and diffusion of the shadow edge. Spread radius expands or contracts the shadow perimeter in all directions before blur is applied.",
+    },
+    {
+      question: "How do I create multi-layer shadows for realistic elevation?",
+      answer: "Click '+ Add Layer' to composite multiple shadows. Stacking a sharp, dark contact shadow with a soft, diffused ambient shadow creates realistic lighting depth.",
+    },
+  ],
+  "css-border-radius-generator": [
+    {
+      question: "How does the 8-value border-radius slash syntax work?",
+      answer: "Values before the slash define horizontal radii, and values after define vertical radii. Combining different percentage values produces organic, asymmetrical liquid blob shapes.",
+    },
+    {
+      question: "Is 8-point border-radius supported in all modern browsers?",
+      answer: "Yes. Elliptical border-radius is part of W3C CSS Backgrounds Level 3 and is natively supported across all modern browsers without JavaScript polyfills.",
+    },
+  ],
+  "regex-tester": [
+    {
+      question: "Which JavaScript regex flavor is supported?",
+      answer: "The tester uses the standard ECMAScript (JavaScript) RegExp engine, supporting lookahead/lookbehind, named capture groups, and flags like g, i, m, s, and u.",
+    },
+    {
+      question: "How does the tool protect against catastrophic backtracking?",
+      answer: "The evaluator includes zero-length loop guards and limits total global match iterations, preventing browser freeze from runaway nested quantifier expressions.",
+    },
+  ],
+  "cron-generator": [
+    {
+      question: "Which cron format does this tool support?",
+      answer: "The tool supports the standard Unix/Linux 5-field cron syntax: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6).",
+    },
+    {
+      question: "How are the upcoming execution dates calculated?",
+      answer: "Next run dates are computed by evaluating your cron schedule against your local system clock and timezone, projecting the next 5 exact execution times.",
+    },
+  ],
+  "sql-formatter": [
+    {
+      question: "Which SQL database dialects are supported?",
+      answer: "The formatter adheres to standard ANSI SQL syntax and formats queries for PostgreSQL, MySQL, SQLite, MariaDB, SQL Server, Snowflake, and BigQuery.",
+    },
+    {
+      question: "Does the formatter support SQL query minification?",
+      answer: "Yes. Click 'Minify' to strip comments and excess whitespace, compressing your query into a single compact line suitable for production code.",
+    },
+  ],
+  "barcode-generator": [
+    {
+      question: "Which barcode format should I choose for general logistics or shipping?",
+      answer: "Code 128 is the industry standard for logistics, inventory, and packaging because it encodes any ASCII character with high density and error checking.",
+    },
+    {
+      question: "How does the tool calculate EAN-13 check digits?",
+      answer: "EAN-13 uses standard modulo-10 weighting. You can enter 12 digits and the generator calculates the 13th check digit automatically.",
+    },
+  ],
+  "image-cropper": [
+    {
+      question: "Does cropping an image decrease its resolution or quality?",
+      answer: "No. Cropping extracts a coordinate slice at 100% native resolution using hardware-accelerated HTML5 Canvas, preserving crisp pixel clarity.",
+    },
+    {
+      question: "Which image file formats can be cropped and downloaded?",
+      answer: "The tool supports JPG, PNG, and WebP files up to 15 MB. Cropped images download in the original source format with zero server uploads.",
+    },
+  ],
+  "audio-trimmer": [
+    {
+      question: "Which audio formats can I upload and trim?",
+      answer: "The trimmer supports MP3, WAV, OGG, AAC, and M4A audio files up to 50 MB, decoded in browser memory using the Web Audio API.",
+    },
+    {
+      question: "What format does the trimmed audio file download in?",
+      answer: "The trimmed segment is encoded directly to standard 16-bit PCM stereo/mono WAV, preserving pristine lossless acoustic quality.",
+    },
+  ],
 };
 
 export function faqsFor(id: string): FaqItem[] {

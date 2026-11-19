@@ -52,7 +52,7 @@ export const browseGroups: readonly BrowseGroup[] = [
       "Generate cryptographically secure random passwords using Web Crypto API (crypto.getRandomValues).",
       "Create permanent, high-resolution static QR codes for website links, plain text, and Wi-Fi networks.",
     ],
-    toolIds: ["json-formatter", "base64", "password-generator", "qr-code-generator", "slug-generator", "color-converter", "unix-timestamp-converter", "jwt-decoder"],
+    toolIds: ["json-formatter", "base64", "password-generator", "qr-code-generator", "slug-generator", "color-converter", "unix-timestamp-converter", "jwt-decoder", "url-encoder", "json-to-typescript", "json-to-python", "csv-to-json", "contrast-checker", "gradient-generator", "color-palette-generator", "css-box-shadow-generator", "css-border-radius-generator", "regex-tester", "cron-generator", "sql-formatter", "barcode-generator"],
   },
   {
     id: "image-tools",
@@ -66,7 +66,7 @@ export const browseGroups: readonly BrowseGroup[] = [
       "Resize pixel width and height dimensions with aspect-ratio locking for responsive web layouts and avatars.",
       "Export optimized images with zero cloud transmission delays or daily file quotas.",
     ],
-    toolIds: ["image-compressor", "image-resizer"],
+    toolIds: ["image-compressor", "image-resizer", "image-cropper"],
   },
   {
     id: "pdf-tools",
@@ -123,6 +123,20 @@ export const browseGroups: readonly BrowseGroup[] = [
       "Model loan scenarios up to 360 months (30 years) across varying interest rates.",
     ],
     toolIds: ["gst-calculator", "emi-calculator", "vat-calculator-uk", "gst-calculator-australia", "france-tva-calculator", "belgium-tva-calculator"],
+  },
+  {
+    id: "audio-tools",
+    path: "/topics/audio-tools",
+    name: "Audio tools",
+    summary: "Trim, cut, and process audio tracks locally with interactive waveforms in your browser.",
+    overview:
+      "Audio editing tasks—such as trimming voice memos, extracting podcast soundbites, cutting custom ringtones, or adjusting playback tempo—require precision without uploading confidential voice recordings to cloud servers. GoEasyTools processes audio directly on your device using the native Web Audio API and hardware-accelerated canvas.",
+    keyUseCases: [
+      "Trim MP3, WAV, AAC, and OGG audio files with visual waveform peak scrubbing.",
+      "Preview selected audio intervals with instant client-side playback before downloading.",
+      "Export lossless 16-bit PCM WAV audio files with zero server processing or compression artifacts.",
+    ],
+    toolIds: ["audio-trimmer"],
   },
 ];
 

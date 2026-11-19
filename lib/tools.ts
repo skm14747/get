@@ -1,4 +1,4 @@
-export type ToolCategory = "text" | "calculator" | "image" | "pdf" | "developer";
+export type ToolCategory = "text" | "calculator" | "image" | "pdf" | "developer" | "media";
 
 export type ToolDefinition = {
   id: string;
@@ -223,6 +223,186 @@ export const tools = [
     "jwt decoder",
     ["decode", "claims", "expiry"],
     "JWT Decoder — Decode & Inspect JSON Web Tokens"
+  ),
+  tool(
+    "url-encoder",
+    "/url-encoder",
+    "URL encoder",
+    "Encode and decode URL components, full URLs, and query strings.",
+    "Encode and decode URL components and full URLs online. Convert special characters into percent-encoding or parse query parameters. 100% private in browser.",
+    "developer",
+    ["base64", "slug-generator"],
+    "url encoder",
+    ["encode", "decode", "params"],
+    "URL Encoder & Decoder — Encode & Decode URLs Online"
+  ),
+  tool(
+    "json-to-typescript",
+    "/json-to-typescript",
+    "JSON to TypeScript",
+    "Generate TypeScript interfaces and types from JSON in your browser.",
+    "Convert JSON to TypeScript interfaces and type definitions online. Infers types from nested objects and arrays. 100% private in-browser generation.",
+    "developer",
+    ["json-formatter", "base64"],
+    "json to typescript",
+    ["infer", "interface", "type"],
+    "JSON to TypeScript — Convert JSON to TS Interfaces Online"
+  ),
+  tool(
+    "json-to-python",
+    "/json-to-python",
+    "JSON to Python",
+    "Convert JSON to Python Pydantic models, dataclasses, or TypedDict.",
+    "Convert JSON to Python Pydantic models, standard dataclasses, or TypedDict classes online. Automatic snake_case field mapping. 100% private in browser.",
+    "developer",
+    ["json-to-typescript", "json-formatter"],
+    "json to python",
+    ["pydantic", "dataclass", "typeddict"],
+    "JSON to Python — Convert JSON to Pydantic & Dataclasses"
+  ),
+  tool(
+    "csv-to-json",
+    "/csv-to-json",
+    "CSV to JSON converter",
+    "Convert CSV spreadsheets to JSON arrays and JSON to CSV in your browser.",
+    "Convert CSV spreadsheets to JSON arrays and JSON to CSV online. Supports RFC 4180 quotes, auto delimiter detection, and data type parsing. 100% private.",
+    "developer",
+    ["json-formatter", "json-to-typescript"],
+    "csv to json",
+    ["csv2json", "json2csv"],
+    "CSV to JSON Converter — Convert CSV to JSON Online"
+  ),
+  tool(
+    "contrast-checker",
+    "/contrast-checker",
+    "Contrast checker",
+    "Check text contrast ratios against WCAG 2.1 AA and AAA standards.",
+    "Check color contrast ratios against WCAG 2.1 AA and AAA accessibility standards. Real-time preview for normal text, large text, and UI controls in browser.",
+    "developer",
+    ["color-converter", "slug-generator"],
+    "contrast checker",
+    ["contrast", "wcag", "luminance"],
+    "Contrast Checker — WCAG 2.1 Color Accessibility Checker"
+  ),
+  tool(
+    "gradient-generator",
+    "/gradient-generator",
+    "CSS gradient generator",
+    "Create linear and radial CSS gradients with live preview and code export.",
+    "Create linear and radial CSS gradients online. Adjust angles, add color stops, and preview transitions in real time. Copy pure CSS or Tailwind classes.",
+    "developer",
+    ["color-converter", "contrast-checker"],
+    "css gradient generator",
+    ["linear", "radial", "stops"],
+    "CSS Gradient Generator — Linear & Radial CSS Gradients"
+  ),
+  tool(
+    "color-palette-generator",
+    "/color-palette-generator",
+    "Color palette generator",
+    "Generate harmonious 5-color palettes with hex codes, pin locks, and CSS export.",
+    "Generate harmonious 5-color palettes online. Supports complementary, analogous, and triadic schemes with pin locks and CSS variables export. 100% private.",
+    "developer",
+    ["color-converter", "contrast-checker"],
+    "color palette generator",
+    ["generate", "lock", "export"],
+    "Color Palette Generator — Create & Export Harmonious Palettes"
+  ),
+  tool(
+    "css-box-shadow-generator",
+    "/css-box-shadow-generator",
+    "CSS box shadow generator",
+    "Create multi-layer CSS box shadows with live preview, blur, spread, and inset.",
+    "Generate multi-layer CSS box shadows online with live card preview. Adjust offsets, blur, spread, opacity, and inset. Copy clean CSS or Tailwind classes.",
+    "developer",
+    ["gradient-generator", "contrast-checker"],
+    "css box shadow generator",
+    ["shadow", "inset", "layers"],
+    "CSS Box Shadow Generator — Multi-Layer CSS Drop Shadows"
+  ),
+  tool(
+    "css-border-radius-generator",
+    "/css-border-radius-generator",
+    "CSS border radius generator",
+    "Create 8-point organic shapes, blobs, and rounded corners with live CSS export.",
+    "Generate 8-point CSS border-radius organic shapes, liquid blobs, and rounded corners online. Live visual canvas preview. Copy pure CSS or Tailwind classes.",
+    "developer",
+    ["css-box-shadow-generator", "gradient-generator"],
+    "css border radius generator",
+    ["radius", "blob", "elliptical"],
+    "CSS Border Radius Generator — 8-Point Organic Shapes & Blobs"
+  ),
+  tool(
+    "regex-tester",
+    "/regex-tester",
+    "Regex tester",
+    "Test regular expressions in real time with match highlighting and capture groups.",
+    "Test regular expressions online with live match highlighting, flag toggles, capture group tables, and presets. 100% private in-browser regex tester.",
+    "developer",
+    ["json-formatter", "url-encoder"],
+    "regex tester",
+    ["test", "flags", "groups"],
+    "Regex Tester — Test Regular Expressions Online with Highlighting"
+  ),
+  tool(
+    "cron-generator",
+    "/cron-generator",
+    "Cron expression generator",
+    "Generate and explain cron schedules with human-readable translations and run dates.",
+    "Generate and translate 5-part cron expressions online. Visual schedule builder with plain English translations and upcoming execution runs. 100% private.",
+    "developer",
+    ["unix-timestamp-converter", "json-formatter"],
+    "cron generator",
+    ["generate", "explain", "schedule"],
+    "Cron Generator — Cron Expression Generator & Explainer Online"
+  ),
+  tool(
+    "sql-formatter",
+    "/sql-formatter",
+    "SQL formatter",
+    "Format, beautify, and minify SQL queries with standard indentation.",
+    "Format, beautify, and indent SQL queries online. Uppercase keywords, indent sub-clauses, and minify database queries. 100% private in-browser tool.",
+    "developer",
+    ["json-formatter", "csv-to-json"],
+    "sql formatter",
+    ["format", "minify", "indent"],
+    "SQL Formatter — Format, Beautify & Minify SQL Online"
+  ),
+  tool(
+    "barcode-generator",
+    "/barcode-generator",
+    "Barcode generator",
+    "Create 1D barcodes for Code 128, EAN-13, UPC-A, and Code 39 with SVG and PNG download.",
+    "Generate 1D barcodes online for Code 128, EAN-13, UPC-A, and Code 39. Download print-ready high-res PNG or vector SVG with zero tracking. 100% private.",
+    "developer",
+    ["qr-code-generator", "slug-generator"],
+    "barcode generator",
+    ["code128", "ean13", "upca", "code39"],
+    "Barcode Generator — Free Code 128, EAN-13 & UPC-A Barcodes"
+  ),
+  tool(
+    "image-cropper",
+    "/image-cropper",
+    "Image cropper",
+    "Crop JPG, PNG, and WebP images with custom aspect ratios in your browser.",
+    "Crop JPG, PNG, and WebP images online with custom aspect ratios (1:1, 16:9, 4:3). Live canvas grid preview. 100% private in-browser image cropping.",
+    "image",
+    ["image-resizer", "image-compressor"],
+    "image cropper",
+    ["crop", "aspect", "dimensions"],
+    "Image Cropper — Crop JPG, PNG & WebP Images Online Free"
+  ),
+  tool(
+    "audio-trimmer",
+    "/audio-trimmer",
+    "Audio trimmer",
+    "Trim and cut MP3, WAV, and audio files with interactive waveform in browser.",
+    "Trim and cut MP3, WAV, and audio files online with interactive waveform preview. Extract audio clips and ringtones. 100% private in-browser tool.",
+    "media",
+    ["image-cropper", "image-compressor"],
+    "audio trimmer",
+    ["trim", "cut", "waveform"],
+    "Audio Trimmer — Cut & Trim MP3 & Audio Files Online Free"
   ),
 ] as const satisfies readonly ToolDefinition[];
 
