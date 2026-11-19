@@ -442,3 +442,21 @@ This document provides complete mathematical formulas, parsing specifications, c
   - Algorithm: In-browser Longest Common Subsequence (Myers diff) algorithm.
   - Modes: Line-by-line diff and word-by-word diff.
   - Privacy: 100% client-side computation with zero server transit. Bounded to 100,000 characters per panel.
+
+---
+
+## 5. Audio & Media Utilities
+
+### Audio Trimmer
+- **URL:** https://goeasytools.com/audio-trimmer
+- **Specifications:**
+  - Decoding: Native Web Audio API (`AudioContext.decodeAudioData`) supporting MP3, WAV, OGG, AAC, and M4A up to 50 MB.
+  - Waveform: Canvas amplitude peak scrubbing with synchronized audio playback preview.
+  - Encoding: Pure client-side 16-bit PCM RIFF WAV serialization. Zero server uploads.
+
+### Audio Speed Changer
+- **URL:** https://goeasytools.com/audio-speed-changer
+- **Specifications:**
+  - Tempo Modification: Variable playback rates from 0.25x to 3.0x with real-time interactive preview.
+  - Rendering: Hardware-accelerated `OfflineAudioContext` multi-threaded buffer rendering.
+  - Export: Lossless 16-bit PCM RIFF WAV audio container. 100% in-browser processing.

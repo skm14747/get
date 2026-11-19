@@ -404,6 +404,18 @@ export const tools = [
     ["trim", "cut", "waveform"],
     "Audio Trimmer — Cut & Trim MP3 & Audio Files Online Free"
   ),
+  tool(
+    "audio-speed-changer",
+    "/audio-speed-changer",
+    "Audio speed changer",
+    "Speed up or slow down MP3, WAV, and audio files with duration estimation.",
+    "Speed up or slow down audio files online from 0.25x to 3x. Real-time playback preview and duration comparison. 100% private in-browser audio speed changer.",
+    "media",
+    ["audio-trimmer", "image-compressor"],
+    "audio speed changer",
+    ["speed", "tempo", "duration"],
+    "Audio Speed Changer — Speed Up or Slow Down Audio Online"
+  ),
 ] as const satisfies readonly ToolDefinition[];
 
 function tool(

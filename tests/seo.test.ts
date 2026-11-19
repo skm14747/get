@@ -98,7 +98,7 @@ describe("SEO metadata standards", () => {
         expect(json.applicationCategory).toBe("FinanceApplication");
       } else if (tool.category === "developer") {
         expect(json.applicationCategory).toBe("DeveloperApplication");
-      } else if (tool.category === "image") {
+      } else if (tool.category === "image" || tool.category === "media") {
         expect(json.applicationCategory).toBe("MultimediaApplication");
       } else if (tool.category === "calculator") {
         expect(json.applicationCategory).toBe("EducationalApplication");

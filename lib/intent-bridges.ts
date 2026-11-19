@@ -429,6 +429,13 @@ export const intentBridges: readonly IntentBridge[] = [
     description: "Crop JPG, PNG, and WebP images with custom aspect ratio presets in browser.",
     callToAction: "Open Image Cropper",
   },
+  {
+    sourceToolId: "audio-speed-changer",
+    targetToolId: "audio-trimmer",
+    headline: "Need to cut or trim audio clips?",
+    description: "Trim MP3, WAV, and audio files with interactive waveform scrubbing in browser.",
+    callToAction: "Open Audio Trimmer",
+  },
 ];
 
 export function intentBridgeFor(toolId: string): (IntentBridge & { targetTool: ToolDefinition }) | undefined {

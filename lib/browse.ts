@@ -136,7 +136,7 @@ export const browseGroups: readonly BrowseGroup[] = [
       "Preview selected audio intervals with instant client-side playback before downloading.",
       "Export lossless 16-bit PCM WAV audio files with zero server processing or compression artifacts.",
     ],
-    toolIds: ["audio-trimmer"],
+    toolIds: ["audio-trimmer", "audio-speed-changer"],
   },
 ];
 

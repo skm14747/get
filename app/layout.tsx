@@ -28,6 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang={site.htmlLang} suppressHydrationWarning>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-4058029196087745" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Script
           async

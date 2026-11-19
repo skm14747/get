@@ -581,6 +581,16 @@ const faqs: Record<string, FaqItem[]> = {
       answer: "The trimmed segment is encoded directly to standard 16-bit PCM stereo/mono WAV, preserving pristine lossless acoustic quality.",
     },
   ],
+  "audio-speed-changer": [
+    {
+      question: "Can I preview audio speed changes in real time before downloading?",
+      answer: "Yes. Click 'Play Preview' to hear the adjusted tempo immediately. You can tweak the speed slider while listening to find the optimal pace.",
+    },
+    {
+      question: "How does the tool speed up audio without server latency?",
+      answer: "The audio is rendered using the browser's hardware-accelerated OfflineAudioContext, which processes audio samples faster than real time locally.",
+    },
+  ],
 };
 
 export function faqsFor(id: string): FaqItem[] {
