@@ -443,6 +443,13 @@ export const intentBridges: readonly IntentBridge[] = [
     description: "Compress images and graphics locally to reduce bandwidth and storage.",
     callToAction: "Open Image Compressor",
   },
+  {
+    sourceToolId: "tokenizer",
+    targetToolId: "character-counter",
+    headline: "Need character or word counts for your text?",
+    description: "Count words, characters, sentences, and reading time alongside your token analysis.",
+    callToAction: "Open Character Counter",
+  },
 ];
 
 export function intentBridgeFor(toolId: string): (IntentBridge & { targetTool: ToolDefinition }) | undefined {

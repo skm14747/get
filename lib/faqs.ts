@@ -601,6 +601,28 @@ const faqs: Record<string, FaqItem[]> = {
       answer: "The converter accepts MP4, WebM, and MOV video clips up to 50 MB, extracted frame-by-frame using the HTML5 2D canvas context in browser.",
     },
   ],
+  "tokenizer": [
+    {
+      question: "What is a token?",
+      answer: "A token is a group of characters that a language model treats as a single unit. It can be a whole word, a subword, a number, or a punctuation mark. Token counts are usually higher than word counts because uncommon words are split into multiple tokens.",
+    },
+    {
+      question: "Why do token counts differ between models?",
+      answer: "Each provider uses a different tokenizer with its own vocabulary. The same sentence can produce a different number of tokens for GPT-4o, Claude, Gemini, and Grok. Always check with the model you plan to use.",
+    },
+    {
+      question: "Is my text sent to a server?",
+      answer: "No. All processing runs in your browser. OpenAI models are tokenized with js-tiktoken. Claude, Gemini, and Grok counts are estimated using characters-per-token ratios. Your text never leaves your device.",
+    },
+    {
+      question: "What are the most expensive words?",
+      answer: "These are words that the tokenizer breaks into the most tokens. They are usually rare terms, long compound words, or non-English text. Rephrasing these can reduce your token usage and API cost.",
+    },
+    {
+      question: "Does the token count include system prompts?",
+      answer: "No. The count covers only the text you enter. It does not include system prompts, message framing tokens, or other overhead that the provider adds when you make an API call.",
+    },
+  ],
 };
 
 export function faqsFor(id: string): FaqItem[] {

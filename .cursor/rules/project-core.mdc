@@ -5,6 +5,8 @@ alwaysApply: true
 
 # Project core
 
+GoEasyTools is a **client-only product**. All computation runs in the browser. Do not add server-side API routes, server actions, or external API calls that process user input. Do not introduce API keys for third-party services. If a feature cannot run client-side, use a documented estimation or approximation and label it as such in the UI.
+
 Inspect the implementation and nearby tests before editing. Follow patterns already in the repo. Prefer a small, maintainable change over a new abstraction or a new package.
 
 - Do not refactor unrelated code in the same change.

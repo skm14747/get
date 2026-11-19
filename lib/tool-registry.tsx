@@ -88,6 +88,8 @@ import { UnixTimestampGuide } from "@/components/unix-timestamp-guide";
 import { UnixTimestampTool } from "@/components/unix-timestamp-tool";
 import { UrlGuide } from "@/components/url-guide";
 import { UrlTool } from "@/components/url-tool";
+import { TokenizerGuide } from "@/components/tokenizer-guide";
+import { TokenizerTool } from "@/components/tokenizer-tool";
 import { VideoGifGuide } from "@/components/video-gif-guide";
 import { VideoGifTool } from "@/components/video-gif-tool";
 import { WordCounterGuide } from "@/components/word-counter-guide";
@@ -339,6 +341,10 @@ const registry: Record<string, ToolEntry> = {
   "video-to-gif": {
     render: () => <VideoGifTool />,
     guide: () => <VideoGifGuide />,
+  },
+  "tokenizer": {
+    render: () => <TokenizerTool />,
+    guide: () => <TokenizerGuide />,
   },
 };
 

@@ -49,6 +49,7 @@
 - [Cron Expression Generator](https://goeasytools.com/cron-generator): Generates and translates 5-part cron schedules into natural English with upcoming execution run dates.
 - [SQL Formatter](https://goeasytools.com/sql-formatter): Formats, beautifies, indents, and minifies SQL queries with uppercase keywords and clause breaks in browser.
 - [Barcode Generator](https://goeasytools.com/barcode-generator): Generates 1D barcodes (Code 128, EAN-13, UPC-A, Code 39) with print-ready SVG and PNG downloads in browser.
+- [Tokenizer](https://goeasytools.com/tokenizer): Counts tokens and visualizes how GPT-4o, GPT-4, Claude, Gemini, and Grok tokenize text. OpenAI uses exact BPE; others use character-per-token estimation. 100% in-browser.
 
 ## Image & PDF Suite
 - [Image Compressor](https://goeasytools.com/image-compressor): Compresses JPG, PNG, and WebP images locally via HTML5 canvas with before/after byte comparisons.

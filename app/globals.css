@@ -53,6 +53,13 @@
   --cat-date-soft: #e0f2fe;
   --cat-finance: #14532d;
   --cat-finance-soft: #dcfce7;
+
+  /* ── Tokenizer pastel palette ── */
+  --token-1: #eed9b5;
+  --token-2: #c7ebca;
+  --token-3: #c6bfed;
+  --token-4: #e9b3b4;
+  --token-5: #b4daf1;
 }
 
 .dark {
@@ -104,6 +111,13 @@
   --cat-date-soft: rgba(125, 211, 252, 0.10);
   --cat-finance: #86efac;
   --cat-finance-soft: rgba(134, 239, 172, 0.10);
+
+  /* ── Tokenizer pastel palette (dimmed for dark) ── */
+  --token-1: rgba(238, 217, 181, 0.35);
+  --token-2: rgba(199, 235, 202, 0.35);
+  --token-3: rgba(198, 191, 237, 0.35);
+  --token-4: rgba(233, 179, 180, 0.35);
+  --token-5: rgba(180, 218, 241, 0.35);
 }
 
 @theme inline {
@@ -399,6 +413,15 @@ details[open] > summary::before {
   transform: rotate(45deg);
 }
 
+}
+
+/* ── Tokenizer tokens ── */
+
+.tokenizer-token {
+  display: inline;
+  padding: 1px 0;
+  border-radius: 2px;
+  white-space: pre-wrap;
 }
 
 /* ── Reduced motion ── */

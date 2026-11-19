@@ -433,6 +433,18 @@ export const tools = [
     ["gif", "convert", "frames"],
     "Video to GIF — Convert MP4 & WebM to Animated GIF Online"
   ),
+  tool(
+    "tokenizer",
+    "/tokenizer",
+    "Tokenizer",
+    "Count tokens and visualize how GPT, Claude, Gemini, and Grok tokenize your text.",
+    "Count tokens for GPT-4o, GPT-4, Claude, Gemini, and Grok. See color-coded token spans, most expensive words, and frequent tokens. OpenAI runs in-browser.",
+    "developer",
+    ["json-formatter", "character-counter", "word-counter"],
+    "tokenizer",
+    ["tokenize", "count"],
+    "Tokenizer — Count & Visualize Tokens for GPT, Claude & Gemini"
+  ),
 ] as const satisfies readonly ToolDefinition[];
 
 function tool(

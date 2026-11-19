@@ -220,6 +220,17 @@ This document provides complete mathematical formulas, parsing specifications, c
   - Formats: Code 128 (all 128 ASCII chars with modulo-103 check), EAN-13 (13-digit retail GTIN with modulo-10 check), UPC-A (12-digit North American retail), and Code 39.
   - Export: Renders crisp vector SVG XML and client-side 2x canvas-rasterized PNG downloads with automated optical quiet zones. 100% private in-browser generation.
 
+### Tokenizer
+- **URL:** https://goeasytools.com/tokenizer
+- **Specifications:**
+  - OpenAI GPT-4o / GPT-4o-mini: exact BPE tokenization via js-tiktoken o200k_base (~200k vocab). Runs 100% in-browser.
+  - OpenAI GPT-4 / GPT-3.5-turbo: exact BPE tokenization via js-tiktoken cl100k_base (~100k vocab). Runs 100% in-browser.
+  - Anthropic Claude: estimated count using ~3.5 characters per token for English text. No public tokenizer available.
+  - Google Gemini: estimated count using ~4 characters per token for English text. No public tokenizer available.
+  - xAI Grok: estimated count using ~3.7 characters per token for English text. No public tokenizer available.
+  - Features: color-coded token visualization, token ID view, top 5 most expensive words, top 5 most frequent tokens (OpenAI models only).
+  - Privacy: all processing runs in-browser. No API keys, no server routes. Text never leaves the device.
+
 ---
 
 ## 4. Image & PDF Utilities

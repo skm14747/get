@@ -57,6 +57,7 @@ const es: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "Limpiador de texto", shortDescription: "Elimina líneas duplicadas, recorta espacios y ordena texto en el navegador." },
   "color-converter": { name: "Conversor de colores", shortDescription: "Convierte códigos de color entre HEX, RGB y HSL con vista previa en vivo." },
   "unix-timestamp-converter": { name: "Conversor de marca de tiempo Unix", shortDescription: "Convierte marcas de tiempo Unix epoch a cadenas UTC y hora local." },
+  "tokenizer": { name: "Tokenizador", shortDescription: "Cuenta tokens y visualiza cómo GPT, Claude, Gemini y Grok tokenizan tu texto." },
 };
 
 const fr: ToolTranslationCatalog = {
@@ -98,6 +99,7 @@ const fr: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "Nettoyeur de texte", shortDescription: "Supprimez les lignes en double, coupez les espaces et triez le texte dans le navigateur." },
   "color-converter": { name: "Convertisseur de couleurs", shortDescription: "Convertissez les codes couleur entre HEX, RGB et HSL avec aperçu en direct." },
   "unix-timestamp-converter": { name: "Convertisseur d'horodatage Unix", shortDescription: "Convertissez les horodatages Unix epoch en chaînes UTC et heure locale." },
+  "tokenizer": { name: "Tokeniseur", shortDescription: "Comptez les tokens et visualisez comment GPT, Claude, Gemini et Grok tokenisent votre texte." },
 };
 
 const de: ToolTranslationCatalog = {
@@ -139,6 +141,7 @@ const de: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "Textbereiniger", shortDescription: "Entferne doppelte Zeilen, schneide Leerzeichen ab und sortiere Text im Browser." },
   "color-converter": { name: "Farbkonverter", shortDescription: "Konvertiere Farbcodes zwischen HEX, RGB und HSL mit Live-Farbvorschau." },
   "unix-timestamp-converter": { name: "Unix-Zeitstempel-Konverter", shortDescription: "Konvertiere Unix-Epoch-Zeitstempel in UTC- und lokale Datums-/Zeitzeichenketten." },
+  "tokenizer": { name: "Tokenizer", shortDescription: "Zähle Tokens und visualisiere, wie GPT, Claude, Gemini und Grok deinen Text tokenisieren." },
 };
 
 const ptBR: ToolTranslationCatalog = {
@@ -180,6 +183,7 @@ const ptBR: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "Limpador de texto", shortDescription: "Remova linhas duplicadas, corte espaços e ordene texto no navegador." },
   "color-converter": { name: "Conversor de cores", shortDescription: "Converta códigos de cor entre HEX, RGB e HSL com pré-visualização ao vivo." },
   "unix-timestamp-converter": { name: "Conversor de timestamp Unix", shortDescription: "Converta timestamps Unix epoch para strings UTC e horário local." },
+  "tokenizer": { name: "Tokenizador", shortDescription: "Conte tokens e visualize como GPT, Claude, Gemini e Grok tokenizam seu texto." },
 };
 
 const ar: ToolTranslationCatalog = {
@@ -221,6 +225,7 @@ const ar: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "منظّف النصوص", shortDescription: "أزل الأسطر المكررة وقص المسافات ورتّب النص في المتصفح." },
   "color-converter": { name: "محوّل الألوان", shortDescription: "حوّل أكواد الألوان بين HEX وRGB وHSL مع معاينة حية." },
   "unix-timestamp-converter": { name: "محوّل طابع Unix الزمني", shortDescription: "حوّل طوابع Unix الزمنية إلى سلاسل UTC وتوقيت محلي." },
+  "tokenizer": { name: "محلل الرموز", shortDescription: "عدّ الرموز وتصوّر كيف يقوم GPT وClaude وGemini وGrok بتحليل نصك إلى رموز." },
 };
 
 const ja: ToolTranslationCatalog = {
@@ -262,6 +267,7 @@ const ja: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "テキストクリーナー", shortDescription: "重複行の削除、空白のトリミング、テキストの並べ替えをブラウザで行います。" },
   "color-converter": { name: "カラーコンバーター", shortDescription: "HEX、RGB、HSL間でカラーコードを変換し、ライブプレビューで確認します。" },
   "unix-timestamp-converter": { name: "Unixタイムスタンプ変換", shortDescription: "Unixエポックタイムスタンプをadriano UTCとローカル日時文字列に変換します。" },
+  "tokenizer": { name: "トークナイザー", shortDescription: "トークン数をカウントし、GPT、Claude、Gemini、Grokがテキストをどのようにトークン化するかを視覚化します。" },
 };
 
 const hi: ToolTranslationCatalog = {
@@ -303,6 +309,7 @@ const hi: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "टेक्स्ट क्लीनर", shortDescription: "ब्राउज़र में डुप्लिकेट लाइनें हटाएं, व्हाइटस्पेस ट्रिम करें और टेक्स्ट सॉर्ट करें।" },
   "color-converter": { name: "कलर कन्वर्टर", shortDescription: "HEX, RGB और HSL के बीच कलर कोड बदलें लाइव प्रीव्यू के साथ।" },
   "unix-timestamp-converter": { name: "Unix टाइमस्टैम्प कन्वर्टर", shortDescription: "Unix epoch टाइमस्टैम्प को UTC और स्थानीय दिनांक-समय स्ट्रिंग में बदलें।" },
+  "tokenizer": { name: "टोकनाइज़र", shortDescription: "टोकन गिनें और देखें कि GPT, Claude, Gemini और Grok आपके टेक्स्ट को कैसे टोकनाइज़ करते हैं।" },
 };
 
 const id_ID: ToolTranslationCatalog = {
@@ -344,6 +351,7 @@ const id_ID: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "Pembersih teks", shortDescription: "Hapus baris duplikat, potong spasi, dan urutkan teks di browser." },
   "color-converter": { name: "Konverter warna", shortDescription: "Konversi kode warna antara HEX, RGB, dan HSL dengan pratinjau warna langsung." },
   "unix-timestamp-converter": { name: "Konverter timestamp Unix", shortDescription: "Konversi timestamp Unix epoch ke string UTC dan waktu lokal." },
+  "tokenizer": { name: "Tokenizer", shortDescription: "Hitung token dan visualisasikan bagaimana GPT, Claude, Gemini, dan Grok memotong teks Anda menjadi token." },
 };
 
 const it: ToolTranslationCatalog = {
@@ -385,6 +393,7 @@ const it: ToolTranslationCatalog = {
   "remove-duplicate-lines": { name: "Pulitore di testo", shortDescription: "Rimuovi righe duplicate, taglia spazi e ordina il testo nel browser." },
   "color-converter": { name: "Convertitore di colori", shortDescription: "Converti codici colore tra HEX, RGB e HSL con anteprima dal vivo." },
   "unix-timestamp-converter": { name: "Convertitore timestamp Unix", shortDescription: "Converti i timestamp Unix epoch in stringhe UTC e ora locale." },
+  "tokenizer": { name: "Tokenizzatore", shortDescription: "Conta i token e visualizza come GPT, Claude, Gemini e Grok tokenizzano il tuo testo." },
 };
 
 const toolCatalogs: Record<string, ToolTranslationCatalog> = {

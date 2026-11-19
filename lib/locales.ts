@@ -65,6 +65,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "gst-calculator-australia",
       "slug-generator": "slug-generator",
       "text-compare": "text-compare",
+      "tokenizer": "tokenizer",
     },
   },
   {
@@ -102,6 +103,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "calculadora-gst-australia",
       "slug-generator": "generador-de-slug",
       "text-compare": "comparador-de-texto",
+      "tokenizer": "tokenizador",
     },
   },
   {
@@ -139,6 +141,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "calculateur-gst-australie",
       "slug-generator": "generateur-de-slug",
       "text-compare": "comparateur-de-texte",
+      "tokenizer": "tokeniseur",
     },
   },
   {
@@ -176,6 +179,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "حاسبة-gst-استراليا",
       "slug-generator": "مولد-slug",
       "text-compare": "مقارنة-النصوص",
+      "tokenizer": "محلل-الرموز",
     },
   },
   {
@@ -213,6 +217,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "calculadora-gst-australia",
       "slug-generator": "gerador-de-slug",
       "text-compare": "comparador-de-texto",
+      "tokenizer": "tokenizador",
     },
   },
   {
@@ -250,6 +255,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "gst-rechner-australien",
       "slug-generator": "slug-generator",
       "text-compare": "textvergleich",
+      "tokenizer": "tokenizer",
     },
   },
   {
@@ -287,6 +293,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "オーストラリアgst計算",
       "slug-generator": "スラッグ生成",
       "text-compare": "テキスト比較",
+      "tokenizer": "トークナイザー",
     },
   },
   {
@@ -324,6 +331,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "gst-calculator-australia",
       "slug-generator": "slug-generator",
       "text-compare": "text-compare",
+      "tokenizer": "tokenizer",
     },
   },
   {
@@ -361,6 +369,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "kalkulator-gst-australia",
       "slug-generator": "pembuat-slug",
       "text-compare": "pembanding-teks",
+      "tokenizer": "tokenizer",
     },
   },
   {
@@ -398,6 +407,7 @@ export const launchLocales: readonly LaunchLocale[] = [
       "gst-calculator-australia": "calcolatore-gst-australia",
       "slug-generator": "generatore-slug",
       "text-compare": "confronto-testi",
+      "tokenizer": "tokenizzatore",
     },
   },
 ];
@@ -452,6 +462,7 @@ const TOOL_IDS = [
   "gst-calculator-australia",
   "slug-generator",
   "text-compare",
+  "tokenizer",
 ] as const;
 
 export function publicationBlockers(code: string): string[] {

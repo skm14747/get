@@ -52,7 +52,7 @@ export const browseGroups: readonly BrowseGroup[] = [
       "Generate cryptographically secure random passwords using Web Crypto API (crypto.getRandomValues).",
       "Create permanent, high-resolution static QR codes for website links, plain text, and Wi-Fi networks.",
     ],
-    toolIds: ["json-formatter", "base64", "password-generator", "qr-code-generator", "slug-generator", "color-converter", "unix-timestamp-converter", "jwt-decoder", "url-encoder", "json-to-typescript", "json-to-python", "csv-to-json", "contrast-checker", "gradient-generator", "color-palette-generator", "css-box-shadow-generator", "css-border-radius-generator", "regex-tester", "cron-generator", "sql-formatter", "barcode-generator"],
+    toolIds: ["json-formatter", "base64", "password-generator", "qr-code-generator", "slug-generator", "color-converter", "unix-timestamp-converter", "jwt-decoder", "url-encoder", "json-to-typescript", "json-to-python", "csv-to-json", "contrast-checker", "gradient-generator", "color-palette-generator", "css-box-shadow-generator", "css-border-radius-generator", "regex-tester", "cron-generator", "sql-formatter", "barcode-generator", "tokenizer"],
   },
   {
     id: "image-tools",
