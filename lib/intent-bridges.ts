@@ -436,6 +436,13 @@ export const intentBridges: readonly IntentBridge[] = [
     description: "Trim MP3, WAV, and audio files with interactive waveform scrubbing in browser.",
     callToAction: "Open Audio Trimmer",
   },
+  {
+    sourceToolId: "video-to-gif",
+    targetToolId: "image-compressor",
+    headline: "Need to optimize media size for the web?",
+    description: "Compress images and graphics locally to reduce bandwidth and storage.",
+    callToAction: "Open Image Compressor",
+  },
 ];
 
 export function intentBridgeFor(toolId: string): (IntentBridge & { targetTool: ToolDefinition }) | undefined {

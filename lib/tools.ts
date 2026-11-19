@@ -416,6 +416,18 @@ export const tools = [
     ["speed", "tempo", "duration"],
     "Audio Speed Changer — Speed Up or Slow Down Audio Online"
   ),
+  tool(
+    "video-to-gif",
+    "/video-to-gif",
+    "Video to GIF converter",
+    "Convert MP4, WebM, and MOV video clips into animated GIF loops in browser.",
+    "Convert MP4, WebM, and MOV videos into animated GIFs online. Custom timing trimmer, resolution, and frame rate controls. 100% private in-browser tool.",
+    "media",
+    ["image-compressor", "audio-trimmer"],
+    "video to gif",
+    ["gif", "convert", "frames"],
+    "Video to GIF — Convert MP4 & WebM to Animated GIF Online"
+  ),
 ] as const satisfies readonly ToolDefinition[];
 
 function tool(

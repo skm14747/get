@@ -591,6 +591,16 @@ const faqs: Record<string, FaqItem[]> = {
       answer: "The audio is rendered using the browser's hardware-accelerated OfflineAudioContext, which processes audio samples faster than real time locally.",
     },
   ],
+  "video-to-gif": [
+    {
+      question: "What is the maximum duration for video-to-GIF conversion?",
+      answer: "The tool supports clips up to 15 seconds to prevent browser memory exhaustion and ensure compact, fast-loading GIF animations.",
+    },
+    {
+      question: "Which video formats can I convert to animated GIF?",
+      answer: "The converter accepts MP4, WebM, and MOV video clips up to 50 MB, extracted frame-by-frame using the HTML5 2D canvas context in browser.",
+    },
+  ],
 };
 
 export function faqsFor(id: string): FaqItem[] {

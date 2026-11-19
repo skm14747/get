@@ -127,16 +127,16 @@ export const browseGroups: readonly BrowseGroup[] = [
   {
     id: "audio-tools",
     path: "/topics/audio-tools",
-    name: "Audio tools",
-    summary: "Trim, cut, and process audio tracks locally with interactive waveforms in your browser.",
+    name: "Audio & Media",
+    summary: "Trim audio tracks, adjust playback speed, and convert video clips into GIFs in your browser.",
     overview:
-      "Audio editing tasks—such as trimming voice memos, extracting podcast soundbites, cutting custom ringtones, or adjusting playback tempo—require precision without uploading confidential voice recordings to cloud servers. GoEasyTools processes audio directly on your device using the native Web Audio API and hardware-accelerated canvas.",
+      "Audio and media processing tasks—such as trimming voice memos, extracting podcast soundbites, adjusting playback tempo, or converting video highlights into animated GIFs—require precision without uploading confidential personal media to cloud servers. GoEasyTools processes audio and video directly on your device using the native Web Audio API and hardware-accelerated canvas.",
     keyUseCases: [
       "Trim MP3, WAV, AAC, and OGG audio files with visual waveform peak scrubbing.",
-      "Preview selected audio intervals with instant client-side playback before downloading.",
-      "Export lossless 16-bit PCM WAV audio files with zero server processing or compression artifacts.",
+      "Speed up or slow down audio recordings from 0.25x to 3x with real-time playback preview.",
+      "Convert MP4, WebM, and MOV video clips into animated GIF loops with customizable frame rate and resolution.",
     ],
-    toolIds: ["audio-trimmer", "audio-speed-changer"],
+    toolIds: ["audio-trimmer", "audio-speed-changer", "video-to-gif"],
   },
 ];
 

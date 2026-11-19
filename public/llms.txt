@@ -75,6 +75,7 @@
 ## Audio & Media Suite
 - [Audio Trimmer](https://goeasytools.com/audio-trimmer): Trims and cuts MP3, WAV, OGG, and AAC audio files with interactive waveform scrubbing in browser.
 - [Audio Speed Changer](https://goeasytools.com/audio-speed-changer): Speeds up or slows down audio tracks from 0.25x to 3x with real-time playback preview in browser.
+- [Video to GIF Converter](https://goeasytools.com/video-to-gif): Converts MP4, WebM, and MOV video clips into animated GIF loops with custom FPS and resolution controls.
 
 ## Optional
 - [Full Technical Manifest](https://goeasytools.com/llms-full.txt): Complete mathematical formulas, counting rules, boundary limits, and input/output contracts for every utility.

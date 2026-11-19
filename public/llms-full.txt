@@ -460,3 +460,10 @@ This document provides complete mathematical formulas, parsing specifications, c
   - Tempo Modification: Variable playback rates from 0.25x to 3.0x with real-time interactive preview.
   - Rendering: Hardware-accelerated `OfflineAudioContext` multi-threaded buffer rendering.
   - Export: Lossless 16-bit PCM RIFF WAV audio container. 100% in-browser processing.
+
+### Video to GIF Converter
+- **URL:** https://goeasytools.com/video-to-gif
+- **Specifications:**
+  - Frame Extraction: Samples temporal frames directly from HTML5 `<video>` into 2D canvas context at user-selected FPS (5 to 12 FPS) and resolution (320p or 480p).
+  - GIF89a Encoding: Generates standard 256-color palette GIF streams with Netscape 2.0 loop extension for infinite playback.
+  - Safety: Capped to 15 seconds max clip duration to ensure complete browser tab memory stability. 100% private in-browser execution.
