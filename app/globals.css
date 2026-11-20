@@ -123,6 +123,8 @@
 @theme inline {
   --color-canvas: var(--canvas);
   --color-surface: var(--paper);
+  --color-paper: var(--paper);
+  --color-background: var(--background);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-faint: var(--faint);
