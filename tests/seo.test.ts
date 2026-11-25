@@ -1,16 +1,23 @@
 import { describe, expect, it } from "vitest";
 import { groupForTool } from "@/lib/browse";
 import { faqsFor } from "@/lib/faqs";
-import { breadcrumbJsonLd, toolJsonLd } from "@/lib/schema";
+import { howToFor } from "@/lib/how-tos";
+import { breadcrumbJsonLd, howToJsonLd, toolJsonLd } from "@/lib/schema";
 import { toolMetadata } from "@/lib/seo";
-import { canonicalUrl } from "@/lib/site";
+import { canonicalUrl, siteUrl } from "@/lib/site";
 import { tools } from "@/lib/tools";
 
 describe("canonical URLs", () => {
+  it("uses www subdomain to match production redirect target", () => {
+    const url = siteUrl();
+    expect(url).toBe("https://www.goeasytools.com");
+    expect(url).toMatch(/^https:\/\/www\./);
+  });
+
   it("drops queries, hashes, and trailing slashes", () => {
-    expect(canonicalUrl("/word-counter?text=secret#counts")).toBe("https://goeasytools.com/word-counter");
-    expect(canonicalUrl("/privacy/")).toBe("https://goeasytools.com/privacy");
-    expect(canonicalUrl("/")).toBe("https://goeasytools.com/");
+    expect(canonicalUrl("/word-counter?text=secret#counts")).toBe("https://www.goeasytools.com/word-counter");
+    expect(canonicalUrl("/privacy/")).toBe("https://www.goeasytools.com/privacy");
+    expect(canonicalUrl("/")).toBe("https://www.goeasytools.com/");
   });
 
   it("publishes one path per tool", () => {
@@ -144,6 +151,29 @@ describe("SEO metadata standards", () => {
         });
       }
     }
+  });
+
+  it("generates valid HowTo schema for tools that have how-to data", () => {
+    for (const tool of tools) {
+      const howTo = howToFor(tool.id);
+      if (!howTo) continue;
+      const json = howToJsonLd(howTo);
+      expect(json["@context"]).toBe("https://schema.org");
+      expect(json["@type"]).toBe("HowTo");
+      expect(json.name.trim().length).toBeGreaterThan(5);
+      expect(json.description.trim().length).toBeGreaterThan(10);
+      expect(json.step.length).toBeGreaterThanOrEqual(2);
+      for (const step of json.step) {
+        expect(step["@type"]).toBe("HowToStep");
+        expect(step.position).toBeGreaterThanOrEqual(1);
+        expect(step.name.trim().length).toBeGreaterThan(0);
+        expect(step.text.trim().length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("returns null for tools without how-to data", () => {
+    expect(howToFor("nonexistent-tool-id")).toBeNull();
   });
 
   it("publishes complete and accurate llms.txt and llms-full.txt machine-readable manifests", async () => {

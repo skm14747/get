@@ -6,15 +6,18 @@ import { ToolIntentBridge } from "@/components/tool-intent-bridge";
 import { AdSlot } from "@/components/ui/ad-slot";
 import { groupForTool } from "@/lib/browse";
 import { faqsFor } from "@/lib/faqs";
-import { breadcrumbJsonLd, toolJsonLd } from "@/lib/schema";
+import { breadcrumbJsonLd, howToJsonLd, toolJsonLd } from "@/lib/schema";
+import { howToFor } from "@/lib/how-tos";
 import { relatedTools, type ToolDefinition } from "@/lib/tools";
 
 export function ToolPage({ tool, children, homePath = "/", homeLabel = "Home" }: { tool: ToolDefinition; children: ReactNode; homePath?: string; homeLabel?: string }) {
   const related = relatedTools(tool.id).slice(0, 4);
   const group = groupForTool(tool.id);
   const faqs = faqsFor(tool.id);
+  const howTo = howToFor(tool.id);
   const jsonLd = toolJsonLd(tool);
   const breadcrumb = breadcrumbJsonLd(tool, group);
+  const howToSchema = howTo ? howToJsonLd(howTo) : null;
   const faqSchema =
     faqs.length > 0
       ? {
@@ -38,6 +41,9 @@ export function ToolPage({ tool, children, homePath = "/", homeLabel = "Home" }:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {faqSchema ? (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      ) : null}
+      {howToSchema ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       ) : null}
 
       <nav aria-label="Breadcrumb" className="text-[0.8125rem] text-muted">

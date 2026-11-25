@@ -7,6 +7,7 @@ import { canonicalUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const toolPaths = [...publishedIndexablePaths(), ...browseGroups.map((group) => group.path)];
+  const ogImageUrl = canonicalUrl("/opengraph-image");
 
   const slugs = allBlogSlugs();
   const blogPaths = [
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: canonicalUrl(path),
       changeFrequency: "monthly" as const,
       priority: path === "/" ? 1 : 0.8,
+      images: path === "/" ? [ogImageUrl] : undefined,
     })),
     ...blogPaths.map((path) => ({
       url: canonicalUrl(path),

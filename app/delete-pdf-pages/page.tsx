@@ -17,7 +17,6 @@ export default function Page() {
         <p>Enter the pages you want to remove (e.g. 2, 4-6). The tool keeps all other pages and saves them into a clean PDF. At least one page must remain after deletion. Encrypted files are refused. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. The file is never uploaded to any server.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

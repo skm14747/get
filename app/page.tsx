@@ -6,7 +6,7 @@ import { ToolCard } from "@/components/ui/tool-card";
 import { categoryColorClasses, iconNameForGroup, ToolIcon } from "@/components/ui/tool-icon";
 import { browseGroups, toolsInGroup } from "@/lib/browse";
 import { pageMetadata } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { canonicalUrl, site } from "@/lib/site";
 import { tools } from "@/lib/tools";
 
 export const metadata: Metadata = pageMetadata({
@@ -33,8 +33,23 @@ export default function HomePage() {
     return tool ? [tool] : [];
   });
 
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Free browser tools",
+    description: site.description,
+    numberOfItems: tools.length,
+    itemListElement: tools.map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name,
+      url: canonicalUrl(tool.path),
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-[1200px] px-4 py-8 sm:px-6 sm:py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       {/* ── Conversion-Oriented Hero ── */}
       <section className="mx-auto max-w-3xl text-center">
         <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-5xl sm:tracking-[-0.02em]">

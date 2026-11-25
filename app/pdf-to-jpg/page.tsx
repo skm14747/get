@@ -17,7 +17,6 @@ export default function Page() {
         <p>Each page of the PDF is rendered to a canvas at the chosen scale and exported as a JPEG image. Single-page PDFs download as a JPG file; multi-page PDFs download as a ZIP archive. Quality and scale are adjustable. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Rendering runs entirely in this browser using pdf.js. The file is never uploaded to any server.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

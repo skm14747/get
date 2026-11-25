@@ -17,7 +17,6 @@ export default function Page() {
         <p>Enter your watermark text, choose a font size and opacity, and optionally enable diagonal placement. The text is drawn on every page in semi-transparent grey. Encrypted files are refused. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. The page does not put the contents in the address or in measurement events.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

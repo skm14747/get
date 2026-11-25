@@ -17,7 +17,6 @@ export default function Page() {
         <p>Upload a PDF that contains interactive form fields (AcroForms). The tool detects text fields, checkboxes, dropdowns, and radio buttons automatically. Fill in values and download the completed form. Optionally flatten to lock the fields as static content. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. No file content or filled data leaves your device.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

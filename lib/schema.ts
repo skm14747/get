@@ -37,6 +37,21 @@ export function toolJsonLd(tool: ToolDefinition) {
   };
 }
 
+export function howToJsonLd(howTo: { name: string; description: string; steps: { name: string; text: string }[] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: howTo.name,
+    description: howTo.description,
+    step: howTo.steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 export function breadcrumbJsonLd(tool: ToolDefinition, group?: BrowseGroup) {
   return {
     "@context": "https://schema.org",

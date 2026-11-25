@@ -17,7 +17,6 @@ export default function Page() {
         <p>Select a position (top or bottom, left, center, or right), choose a start number and font size, then upload a PDF. Sequential page numbers are stamped on every page using Helvetica. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. The page does not put the contents in the address or in measurement events.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

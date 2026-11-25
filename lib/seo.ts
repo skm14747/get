@@ -51,5 +51,6 @@ export function toolMetadata(tool: ToolDefinition): Metadata {
     title: tool.title,
     description: tool.metaDescription,
     path: tool.path,
+    pageId: tool.id as IndexableId,
   });
 }

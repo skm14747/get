@@ -17,7 +17,6 @@ export default function Page() {
         <p>Choose 90°, 180°, or 270° clockwise. The rotation is added to any existing page rotation. All pages are rotated. Encrypted files are refused. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. The page does not put the contents in the address or in measurement events.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

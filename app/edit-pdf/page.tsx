@@ -17,7 +17,6 @@ export default function Page() {
         <p>Add text annotations to any page at exact coordinates. Set the page number (1-based), X and Y position in PDF points (measured from the bottom-left corner), font size, and colour. You can add multiple annotations to a single document. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. No file content or annotation text leaves your device.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

@@ -17,7 +17,6 @@ export default function Page() {
         <p>The PDF is loaded, all pages are copied into a fresh document, and saved with object-stream compression enabled. This removes unused objects and dead references. The reduction is most noticeable on unoptimized or re-saved PDFs. Already-optimized files may see little change. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. No file content leaves your device.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

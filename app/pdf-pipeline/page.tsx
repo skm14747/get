@@ -19,7 +19,6 @@ export default function Page() {
         <p>Every operation creates a versioned copy (v0 = original, v1 = first operation, v2 = second, etc.). Clicking any version in the timeline jumps to that state. Undo goes back one step; redo goes forward. If you apply a new operation from an earlier version, the later versions are replaced — just like branching.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>All versions live in your browser memory. Nothing is uploaded to any server. Version history is lost when you close the tab.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

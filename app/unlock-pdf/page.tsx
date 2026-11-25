@@ -17,7 +17,6 @@ export default function Page() {
         <p>Upload an encrypted PDF. The tool loads the file with encryption bypassed and re-saves all pages into a new, unrestricted document. This works for PDFs that have owner-only or empty passwords. Strongly encrypted files that block page extraction will fail. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. No password or file content leaves your device.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

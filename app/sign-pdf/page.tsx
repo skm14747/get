@@ -19,7 +19,6 @@ export default function Page() {
         <p>This tool places a visual signature image on the PDF. It does not apply a cryptographic digital signature (PKI). For legal purposes, verify whether a visual signature meets your jurisdiction&apos;s requirements.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. No signature, file content, or personal data leaves your device.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );

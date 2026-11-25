@@ -17,7 +17,6 @@ export default function Page() {
         <p>Enter the pages or ranges to extract (e.g. 1-3, 5). Only those pages are copied into a new PDF document. The original file is not modified. Encrypted files are refused. The file is limited to 20 MB.</p>
         <h2 className="text-xl font-medium">Privacy</h2>
         <p>Processing stays in this browser. The file is never uploaded to any server.</p>
-        <p>Demand for this tool is not yet validated with search volume data.</p>
       </div>
     </ToolPage>
   );
