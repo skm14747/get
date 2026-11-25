@@ -1,0 +1,90 @@
+---
+description: SEO infrastructure patterns established for GoEasyTools — structured data, hreflang, i18n, content architecture, and metadata conventions.
+globs: app/**/*.tsx, lib/seo.ts, lib/hreflang.ts, lib/tools.ts, lib/guide-content.ts, lib/blog.ts, lib/how-tos.ts, lib/faqs.ts, components/*-guide.tsx, components/tool-page.tsx, middleware.ts, app/guides/**
+alwaysApply: false
+---
+
+# SEO infrastructure
+
+## Structured data stack
+
+The site emits these JSON-LD schemas from `app/layout.tsx`:
+- **WebSite** with `SearchAction` (sitelinks search box)
+- **Organization** with logo and description
+- **SoftwareApplication** with `featureList` (12 categories) and `aggregateRating`
+
+Per-tool pages emit from `components/tool-page.tsx`:
+- **WebApplication** with `isAccessibleForFree: true`
+- **BreadcrumbList** matching visible breadcrumb nav
+- **FAQPage** when `lib/faqs.ts` has entries for the tool
+- **HowTo** when `lib/how-tos.ts` has entries for the tool (currently 10/61 tools)
+
+Homepage (`app/page.tsx`) emits **ItemList** JSON-LD listing all tools.
+
+Guide pages (`app/guides/[slug]/page.tsx`) emit **FAQPage** + **BreadcrumbList**.
+
+Blog posts emit metadata via `lib/blog.ts`. Currently 30 posts.
+
+## Metadata pipeline
+
+- `lib/seo.ts` exports `pageMetadata()` and `toolMetadata()`.
+- `toolMetadata()` passes `tool.id` as `pageId` — this enables hreflang via `lib/hreflang.ts`.
+- Never call `toolMetadata()` without the tool having an `id` that matches `IndexableId`.
+- `googleBot` directives are set in root layout: `max-image-preview: large`, `max-snippet: -1`.
+
+## Hreflang
+
+- `lib/hreflang.ts` generates reciprocal hreflang links for all published locales.
+- English is unprefixed (`/word-counter`), other locales use `/{locale}/{localized-slug}`.
+- `toolMetadata()` now automatically passes `pageId`, so all 61 tools emit hreflang.
+- When adding a new tool, add it to `lib/tools.ts` — hreflang flows automatically.
+
+## Server-rendered locale (`lang` attribute)
+
+- `middleware.ts` detects locale from URL prefix and sets `x-locale` header.
+- `app/layout.tsx` reads the header via `headers()` and sets `<html lang>` and `dir` server-side.
+- Do NOT use client-side `useEffect` to set `document.documentElement.lang` — crawlers won't see it.
+- `components/locale-head.tsx` exists as legacy but is no longer used in `app/[locale]/layout.tsx`.
+
+## Content architecture
+
+### Tool guides (`components/*-guide.tsx`)
+- Every tool has a dedicated guide component (61 total).
+- Minimum 60 lines with: "How it works", "Common use cases", "Tips & best practices", "Privacy".
+- Guides are server components — no `"use client"`. Content is crawlable.
+- When creating a new tool, always create a matching guide component.
+
+### Category guides (`app/guides/[slug]/page.tsx`)
+- 9 programmatic guide pages, one per category from `lib/guide-content.ts`.
+- Each has educational intro (200+ words), 3-4 sections, FAQs with JSON-LD, tools grid.
+- Linked from topic pages, footer, and sitemap.
+
+### Blog (`lib/blog.ts`)
+- 30 posts targeting long-tail queries, each 800-1200 words.
+- Each post links to 2-3 relevant tools and includes FAQ section.
+- Blog is localized: `app/[locale]/blog/` serves translated versions when available.
+
+### Topic hubs (`app/topics/[topic]/page.tsx`)
+- 9 category pages with overview copy, tool grid, and "Read the full guide" CTA.
+- Currently English-only — localize when locale pages link to them.
+
+## Sitemap (`app/sitemap.ts`)
+
+- Reads from `lib/tools.ts`, `lib/browse.ts` (topics), `lib/guide-content.ts` (guides), and `lib/blog.ts`.
+- Includes `lastModified` and `images` (OG image on homepage).
+- Do not hand-maintain a parallel URL list.
+
+## Security headers
+
+- CSP, X-Content-Type-Options, Referrer-Policy, X-Frame-Options, Permissions-Policy set in `next.config.ts`.
+- `poweredByHeader: false`.
+
+## Checklist for new tool pages
+
+1. Add tool to `lib/tools.ts` with unique `id`, `title`, `metaDescription`, `primaryQuery`
+2. Create `app/{slug}/page.tsx` using `toolMetadata(tool)` + `ToolPage` wrapper
+3. Create `components/{slug}-guide.tsx` (60+ lines, server component)
+4. Add FAQs in `lib/faqs.ts` (at least 2 Q&As)
+5. Add HowTo in `lib/how-tos.ts` if the tool has clear steps
+6. Add to `tool.related` on 2-3 existing tools
+7. Sitemap, hreflang, and blog index update automatically
