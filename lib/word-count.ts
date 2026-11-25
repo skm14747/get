@@ -78,9 +78,27 @@ export function readingTimeLabel(words: number, wordsPerMinute = WORDS_PER_MINUT
   return rounded === 1 ? "About 1 minute" : `About ${rounded} minutes`;
 }
 
-export function countText(text: string, wordsPerMinute = WORDS_PER_MINUTE): WordCount {
+/**
+ * Count words in text. When a locale is provided and `Intl.Segmenter` is
+ * available, uses linguistic word segmentation (required for CJK languages
+ * that do not separate words with whitespace). Falls back to whitespace
+ * splitting when the API is unavailable or no locale is given.
+ */
+export function countWords(text: string, locale?: string): number {
   const trimmed = text.trim();
-  const words = trimmed === "" ? 0 : trimmed.split(/\s+/u).length;
+  if (trimmed === "") return 0;
+
+  if (locale && typeof Intl !== "undefined" && "Segmenter" in Intl) {
+    const segmenter = new Intl.Segmenter(locale, { granularity: "word" });
+    return Array.from(segmenter.segment(trimmed)).filter((seg) => seg.isWordLike).length;
+  }
+
+  return trimmed.split(/\s+/u).length;
+}
+
+export function countText(text: string, wordsPerMinute = WORDS_PER_MINUTE, locale?: string): WordCount {
+  const trimmed = text.trim();
+  const words = countWords(trimmed, locale);
   const points = codePoints(text);
   const charactersNoSpaces = points.filter((character) => !/^\s$/u.test(character)).length;
 

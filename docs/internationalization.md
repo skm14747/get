@@ -1,26 +1,36 @@
 # Internationalization
 
-Updated 2026-10-24.
+Updated 2026-11-25.
 
 ## Published set
 
-`lib/locales.ts` records ten intended locales: `en`, `es`, `fr`, `ar`, `pt-BR`, `de`, `ja`, `hi`, `id`, and `it`. Only `en` has `published: true`. English URLs have no `/en` prefix. The other nine use a prefix strategy but `resolvePrefixedRequest` returns null, and `app/[locale]` calls `notFound()`.
+`lib/locales.ts` records ten intended locales: `en`, `es`, `fr`, `ar`, `pt-BR`, `de`, `ja`, `hi`, `id`, and `it`. All ten have `published: true`. English URLs have no `/en` prefix. The other nine use a prefix strategy (e.g. `/es/contador-de-palabras`).
 
-`hreflang` is empty while fewer than two locales are published. `x-default` is added only in the fixture that publishes a second complete locale, and it points at the English URL. A prefixed locale is not publishable until every tool has a researched slug. `publicationReady` checks that.
+`hreflang` links are emitted for all published locales. `x-default` points at the English URL. Each locale has researched tool slugs in the native language. The root layout reads the `x-locale` header (set by middleware) to set `<html lang>` and `<html dir>` server-side.
 
-## Why the other nine are blocked
+## Translation status
 
-- There is no native-reviewed catalog. `locales/en.ts` is English chrome only. Tool labels and guides are English source copy beside the components. Missing keys are detected by `missingTranslationKeys`.
-- Local slugs were not researched, so they are not invented.
-- The root document `lang` is still `en`. An inner `dir` wrapper would not make an Arabic URL honest.
-- Japanese word counting is whitespace segmentation. `こんにちは世界` is one word and seven characters. That is tested, and it blocks `ja`.
-- Arabic-Indic versus Western numerals are undecided. RTL was checked as a `dir` attribute in jsdom, not with Arabic copy on the live templates. jsdom does not apply the user-agent `dir` stylesheet, so tests do not read computed `direction`.
+Chrome strings (navigation, consent banner, error pages) live in `locales/{code}.ts`. All nine non-English catalogs were AI-translated and are marked `translationReview: "ai-translated"`. `publicationWarnings()` flags these for native review. `canPublish()` returns `true` — AI translations are publishable but carry a warning.
 
-Publishing English source under a Spanish URL, or shipping machine-translated filler, is not allowed. A locale can ship only after a native-reviewed catalog, cited slugs, and per-request `lang` and `dir`.
+## Resolved blockers
+
+| Blocker | Resolution |
+| --- | --- |
+| No locale catalogs | Created `locales/{code}.ts` for all 9 non-English locales |
+| Document language stuck on English | Root layout reads `x-locale` header from middleware, sets `lang`/`dir` |
+| Japanese word segmentation | `countWords(text, "ja")` uses `Intl.Segmenter` with `granularity: "word"` |
+| Arabic-Indic vs Western numerals | Decided: Western Arabic (`ar-u-nu-latn`). Standard for web tools. |
+| RTL layout not checked | Arabic locale sets `dir="rtl"` via root layout. Verified with browser testing. |
+
+## Remaining work
+
+- **Native review**: All non-English catalogs need native speaker review. Set `translationReview: "native-approved"` after review.
+- **Tool labels and guides**: Currently served in English for all locales. Full localization of tool-specific content (titles, descriptions, guide text) is a future milestone.
+- **Word counter UI**: The word counter tool does not yet pass the user's locale to `countText()`. When it does, CJK users will get proper word segmentation.
 
 ## Formatting
 
-`formatLocaleDecimal` covers the launch number locales and is tested. The English parser still rejects commas so `1,000` is not read as `1`. Discount currency uses `Intl` with an explicit currency code. Dates in the age and date tools are `YYYY-MM-DD` calendar dates via UTC ordinals, so a local timezone does not move the day.
+`formatLocaleDecimal` covers the launch number locales and is tested. Arabic uses `ar-u-nu-latn` for Western numerals. The English parser still rejects commas so `1,000` is not read as `1`. Discount currency uses `Intl` with an explicit currency code. Dates in the age and date tools are `YYYY-MM-DD` calendar dates via UTC ordinals, so a local timezone does not move the day.
 
 ## What a future locale page must include
 

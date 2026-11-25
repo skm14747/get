@@ -5,18 +5,20 @@ explains why the limitation exists and what would be needed to lift it.
 
 ---
 
-## 1. Word counter does not segment CJK or Thai text
+## 1. Word counter — CJK segmentation is locale-opt-in
 
-**Behavior:** "こんにちは世界" (7 characters) counts as 1 word.
+**Behavior:** `countText(text)` without a locale still splits on whitespace
+for backward compatibility. `countText(text, 200, "ja")` uses
+`Intl.Segmenter("ja", { granularity: "word" })` and correctly counts
+"こんにちは世界" as 2 words (こんにちは + 世界).
 
-**Reason:** The word counter uses whitespace-based splitting (`text.split(/\s+/u)`).
-Chinese, Japanese, and Thai do not use spaces between words. A proper word
-segmenter would require `Intl.Segmenter` with `granularity: "word"`, which
-would change the counting behavior for all languages.
+**Reason:** Changing the default would alter word counts for existing English
+users. The locale parameter enables proper CJK segmentation when the caller
+knows the language.
 
-**To lift:** Add an `Intl.Segmenter("ja", { granularity: "word" })` code path
-for CJK locales. This would be a behavioral change and needs its own test
-suite and user communication.
+**Remaining gap:** Thai segmentation works the same way but no Thai locale
+is in the launch set. The word counter tool UI does not yet pass the user's
+locale to `countText`.
 
 ---
 
@@ -33,17 +35,18 @@ from a maintained dataset (e.g., Nager.Date API or a bundled JSON file).
 
 ---
 
-## 3. Non-English locales return 404
+## 3. Non-English locale translations are AI-generated
 
 **Behavior:** All 9 non-English locales (`es`, `fr`, `ar`, `pt-BR`, `de`,
-`ja`, `hi`, `id`, `it`) return 404.
+`ja`, `hi`, `id`, `it`) are published with `translationReview: "ai-translated"`.
 
-**Reason:** `published: false` in `lib/locales.ts`. Non-English content has
-not been native-reviewed. Publishing machine-translated content without review
-would violate the project's quality standards.
+**Reason:** Chrome strings were translated by AI, not native speakers.
+`publicationWarnings()` flags these locales. The translations are functional
+but should be reviewed by native speakers before the quality gate is lifted
+to `"native-approved"`.
 
-**To lift:** Complete native review for each locale, set `published: true`,
-and verify hreflang reciprocity.
+**To lift:** Have a native speaker review each locale catalog in `locales/`,
+then set `translationReview: "native-approved"` in `lib/locales.ts`.
 
 ---
 

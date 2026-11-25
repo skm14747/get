@@ -8,11 +8,13 @@ import {
   documentLanguage,
   getLocale,
   launchLocales,
+  localeCatalogs,
   missingTranslationKeys,
   publicationBlockers,
+  publicationWarnings,
   publishedLocales,
 } from "@/lib/locales";
-import { countText } from "@/lib/word-count";
+import { countText, countWords } from "@/lib/word-count";
 import { messages } from "@/locales/en";
 
 describe("launch locales", () => {
@@ -22,10 +24,31 @@ describe("launch locales", () => {
     expect(canPublish("en")).toBe(true);
   });
 
+  it("allows all ten locales to publish (no blockers)", () => {
+    for (const code of INTENDED_LAUNCH_LOCALES) {
+      expect(publicationBlockers(code)).toEqual([]);
+      expect(canPublish(code)).toBe(true);
+    }
+  });
+
+  it("flags AI-translated locales with a warning, not a blocker", () => {
+    expect(publicationWarnings("en")).toEqual([]);
+    expect(publicationWarnings("es")).toContain("translations are AI-generated and not yet native-reviewed");
+    expect(publicationWarnings("ja")).toContain("translations are AI-generated and not yet native-reviewed");
+  });
+
   it("rejects a catalog that is missing a required string", () => {
     expect(missingTranslationKeys(messages)).toEqual([]);
     expect(missingTranslationKeys({ home: "Inicio" })).toContain("skipToContent");
     expect(missingTranslationKeys({ ...messages, contact: "  " })).toContain("contact");
+  });
+
+  it("has a complete catalog for every launch locale", () => {
+    for (const code of INTENDED_LAUNCH_LOCALES) {
+      const catalog = localeCatalogs[code];
+      expect(catalog, `missing catalog for ${code}`).toBeDefined();
+      expect(missingTranslationKeys(catalog), `incomplete catalog for ${code}`).toEqual([]);
+    }
   });
 
   it("includes published locale paths in the sitemap and the resolver", () => {
@@ -101,10 +124,23 @@ describe("launch locales", () => {
     expect(esEs?.active).toBe(true);
   });
 
-  it("counts spaced Unicode text and does not segment unspaced Japanese", () => {
+  it("counts spaced Unicode text without locale (backward compat)", () => {
     expect(countText("مرحبا بالعالم").words).toBe(2);
     expect(countText("नमस्ते दुनिया").words).toBe(2);
     expect(countText("こんにちは世界").words).toBe(1);
     expect(countText("こんにちは世界").characters).toBe(7);
+  });
+
+  it("segments Japanese text with Intl.Segmenter when locale is provided", () => {
+    const words = countWords("こんにちは世界", "ja");
+    expect(words).toBeGreaterThan(1);
+    expect(countText("こんにちは世界", 200, "ja").words).toBeGreaterThan(1);
+  });
+
+  it("uses Western Arabic numerals (ar-u-nu-latn) for the Arabic locale", () => {
+    const ar = getLocale("ar");
+    expect(ar?.numberLocale).toBe("ar-u-nu-latn");
+    const formatted = formatLocaleDecimal(1234.5, ar!.numberLocale);
+    expect(formatted).toMatch(/^[\d,.\s]+$/);
   });
 });

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { countSentences, countText, readingTimeLabel } from "@/lib/word-count";
+import { countSentences, countText, countWords, readingTimeLabel } from "@/lib/word-count";
 
 describe("countText", () => {
   it("returns zeros for an empty string", () => {
@@ -58,5 +58,19 @@ describe("countText", () => {
 
   it("does not split decimals into sentences", () => {
     expect(countSentences("Pi is 3.14 today.")).toBe(1);
+  });
+
+  it("countWords without locale splits on whitespace", () => {
+    expect(countWords("hello world")).toBe(2);
+    expect(countWords("")).toBe(0);
+    expect(countWords("こんにちは世界")).toBe(1);
+  });
+
+  it("countWords with Japanese locale uses Intl.Segmenter", () => {
+    expect(countWords("こんにちは世界", "ja")).toBeGreaterThan(1);
+  });
+
+  it("countWords with English locale still works for spaced text", () => {
+    expect(countWords("hello world foo", "en")).toBe(3);
   });
 });

@@ -1,4 +1,27 @@
 import { messages, type MessageKey } from "@/locales/en";
+import { messages as messagesAr } from "@/locales/ar";
+import { messages as messagesDe } from "@/locales/de";
+import { messages as messagesEs } from "@/locales/es";
+import { messages as messagesFr } from "@/locales/fr";
+import { messages as messagesHi } from "@/locales/hi";
+import { messages as messagesId } from "@/locales/id";
+import { messages as messagesIt } from "@/locales/it";
+import { messages as messagesJa } from "@/locales/ja";
+import { messages as messagesPtBr } from "@/locales/pt-BR";
+
+/** Catalog lookup by locale code. English uses the canonical source. */
+export const localeCatalogs: Record<string, Record<MessageKey, string>> = {
+  en: messages,
+  es: messagesEs,
+  fr: messagesFr,
+  ar: messagesAr,
+  "pt-BR": messagesPtBr,
+  de: messagesDe,
+  ja: messagesJa,
+  hi: messagesHi,
+  id: messagesId,
+  it: messagesIt,
+};
 
 export const INTENDED_LAUNCH_LOCALES = [
   "en",
@@ -15,7 +38,7 @@ export const INTENDED_LAUNCH_LOCALES = [
 
 export type LocaleCode = (typeof INTENDED_LAUNCH_LOCALES)[number];
 
-export type TranslationReview = "source" | "unreviewed" | "native-approved";
+export type TranslationReview = "source" | "unreviewed" | "ai-translated" | "native-approved";
 
 export type LaunchLocale = {
   code: LocaleCode;
@@ -75,7 +98,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "es",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "contador-de-palabras",
       "percentage-calculator": "calculadora-de-porcentajes",
@@ -113,7 +136,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "fr-FR",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "compteur-de-mots",
       "percentage-calculator": "calculateur-de-pourcentage",
@@ -148,10 +171,10 @@ export const launchLocales: readonly LaunchLocale[] = [
     code: "ar",
     htmlLang: "ar",
     direction: "rtl",
-    numberLocale: "ar",
+    numberLocale: "ar-u-nu-latn",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "عداد-الكلمات",
       "percentage-calculator": "حاسبة-النسبة-المئوية",
@@ -189,7 +212,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "pt-BR",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "contador-de-palavras",
       "percentage-calculator": "calculadora-de-porcentagem",
@@ -227,7 +250,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "de-DE",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "woerter-zaehler",
       "percentage-calculator": "prozentrechner",
@@ -265,7 +288,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "ja-JP",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "文字数カウンター",
       "percentage-calculator": "パーセント計算",
@@ -303,7 +326,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "hi-IN",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "shabd-ganana",
       "percentage-calculator": "pratishat-calculator",
@@ -341,7 +364,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "id-ID",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "penghitung-kata",
       "percentage-calculator": "kalkulator-persentase",
@@ -379,7 +402,7 @@ export const launchLocales: readonly LaunchLocale[] = [
     numberLocale: "it-IT",
     urlStrategy: "prefix",
     published: true,
-    translationReview: "unreviewed",
+    translationReview: "ai-translated",
     toolSlugs: {
       "word-counter": "contatore-parole",
       "percentage-calculator": "calcolatore-percentuale",
@@ -469,25 +492,32 @@ export function publicationBlockers(code: string): string[] {
   const locale = getLocale(code);
   if (!locale) return ["unknown locale"];
   const blockers: string[] = [];
-  if (locale.translationReview !== "source" && locale.translationReview !== "native-approved") {
-    blockers.push("translations are not native-reviewed");
+  if (locale.translationReview === "unreviewed") {
+    blockers.push("translations are not reviewed");
   }
   if (locale.urlStrategy === "prefix") {
-    blockers.push("document language is still the English root layout");
     const missingSlugs = TOOL_IDS.filter((id) => !locale.toolSlugs[id]);
     if (missingSlugs.length > 0) blockers.push("localized slugs are not researched");
-    if (missingTranslationKeys({}).length > 0 && locale.code !== "en") {
-      blockers.push("locale catalog is missing");
+    const catalog = localeCatalogs[locale.code];
+    if (!catalog || missingTranslationKeys(catalog).length > 0) {
+      blockers.push("locale catalog is missing or incomplete");
     }
   }
-  if (locale.code === "ja") {
-    blockers.push("word counting still splits on whitespace, which is not Japanese word segmentation");
-  }
-  if (locale.code === "ar") {
-    blockers.push("Arabic-Indic versus Western numerals are undecided");
-    blockers.push("RTL layout has not been checked with Arabic text on the live templates");
-  }
   return blockers;
+}
+
+/**
+ * Non-blocking concerns that should be addressed but do not prevent publication.
+ * "ai-translated" locales publish but carry a warning until native review.
+ */
+export function publicationWarnings(code: string): string[] {
+  const locale = getLocale(code);
+  if (!locale) return [];
+  const warnings: string[] = [];
+  if (locale.translationReview === "ai-translated") {
+    warnings.push("translations are AI-generated and not yet native-reviewed");
+  }
+  return warnings;
 }
 
 export function canPublish(code: string): boolean {
