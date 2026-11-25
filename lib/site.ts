@@ -9,7 +9,7 @@ export const site = {
 
 export function siteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  const url = configured && configured.length > 0 ? configured : "https://www.goeasytools.com";
+  const url = configured && configured.length > 0 ? configured : "https://goeasytools.com";
   return url.replace(/\/$/, "");
 }
 

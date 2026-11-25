@@ -8,75 +8,75 @@
 - Real-Time Execution: Instant calculations with no round-trip server latency.
 
 ## Text Tools
-- [Word Counter](https://www.goeasytools.com/word-counter): Real-time word, character, sentence, paragraph, and reading time counter.
-- [Character Counter](https://www.goeasytools.com/character-counter): Counts characters with and without spaces against custom platform limits.
-- [Case Converter](https://www.goeasytools.com/case-converter): Converts text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case.
-- [Text Diff Checker](https://www.goeasytools.com/text-compare): Compares two text documents side-by-side to highlight additions, deletions, and inline modifications.
-- [Remove Duplicate Lines](https://www.goeasytools.com/remove-duplicate-lines): Removes duplicate lines, trims whitespace, removes blank lines, and sorts text alphabetically in browser.
+- [Word Counter](https://goeasytools.com/word-counter): Real-time word, character, sentence, paragraph, and reading time counter.
+- [Character Counter](https://goeasytools.com/character-counter): Counts characters with and without spaces against custom platform limits.
+- [Case Converter](https://goeasytools.com/case-converter): Converts text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case.
+- [Text Diff Checker](https://goeasytools.com/text-compare): Compares two text documents side-by-side to highlight additions, deletions, and inline modifications.
+- [Remove Duplicate Lines](https://goeasytools.com/remove-duplicate-lines): Removes duplicate lines, trims whitespace, removes blank lines, and sorts text alphabetically in browser.
 
 ## Calculators & Financial
-- [Percentage Calculator](https://www.goeasytools.com/percentage-calculator): Multi-scenario percentage calculations (percentage of, percentage change, increase, decrease, difference).
-- [Discount Calculator](https://www.goeasytools.com/discount-calculator): Calculates sale price, savings, and optional stacked second discounts across multiple currencies.
-- [EMI Calculator](https://www.goeasytools.com/emi-calculator): Monthly loan payment (EMI) estimator using reducing-balance amortization with interest breakdowns.
-- [GST Calculator](https://www.goeasytools.com/gst-calculator): Calculates inclusive and exclusive GST rates with CGST/SGST 50/50 split and IGST breakdowns.
-- [Unit Converter](https://www.goeasytools.com/unit-converter): Exact scientific conversion across length, mass, temperature, area, volume, and speed.
-- [Date Calculator](https://www.goeasytools.com/date-calculator): Computes calendar days, midnights, and Monday-to-Friday business days between dates, or adds/subtracts days.
-- [Age Calculator](https://www.goeasytools.com/age-calculator): Chronological age calculation in exact years, months, and days, plus next birthday countdown.
-- [UK VAT Calculator](https://www.goeasytools.com/vat-calculator-uk): Calculates UK VAT additions and reverse deductions with official HMRC standard, reduced, and zero rates.
-- [Australia GST Calculator](https://www.goeasytools.com/gst-calculator-australia): Calculates Australian GST additions and reverse deductions using the statutory ATO 1/11th rule.
-- [France TVA Calculator](https://www.goeasytools.com/france-tva-calculator): Calculates French TVA at normal (20%), intermediate (10%), reduced (5.5%), and super-reduced (2.1%) rates.
-- [Belgium TVA Calculator](https://www.goeasytools.com/belgium-tva-calculator): Calculates Belgian TVA at standard (21%), reduced (6%), and intermediate (12%) rates.
+- [Percentage Calculator](https://goeasytools.com/percentage-calculator): Multi-scenario percentage calculations (percentage of, percentage change, increase, decrease, difference).
+- [Discount Calculator](https://goeasytools.com/discount-calculator): Calculates sale price, savings, and optional stacked second discounts across multiple currencies.
+- [EMI Calculator](https://goeasytools.com/emi-calculator): Monthly loan payment (EMI) estimator using reducing-balance amortization with interest breakdowns.
+- [GST Calculator](https://goeasytools.com/gst-calculator): Calculates inclusive and exclusive GST rates with CGST/SGST 50/50 split and IGST breakdowns.
+- [Unit Converter](https://goeasytools.com/unit-converter): Exact scientific conversion across length, mass, temperature, area, volume, and speed.
+- [Date Calculator](https://goeasytools.com/date-calculator): Computes calendar days, midnights, and Monday-to-Friday business days between dates, or adds/subtracts days.
+- [Age Calculator](https://goeasytools.com/age-calculator): Chronological age calculation in exact years, months, and days, plus next birthday countdown.
+- [UK VAT Calculator](https://goeasytools.com/vat-calculator-uk): Calculates UK VAT additions and reverse deductions with official HMRC standard, reduced, and zero rates.
+- [Australia GST Calculator](https://goeasytools.com/gst-calculator-australia): Calculates Australian GST additions and reverse deductions using the statutory ATO 1/11th rule.
+- [France TVA Calculator](https://goeasytools.com/france-tva-calculator): Calculates French TVA at normal (20%), intermediate (10%), reduced (5.5%), and super-reduced (2.1%) rates.
+- [Belgium TVA Calculator](https://goeasytools.com/belgium-tva-calculator): Calculates Belgian TVA at standard (21%), reduced (6%), and intermediate (12%) rates.
 
 ## Developer Utilities
-- [JSON Formatter](https://www.goeasytools.com/json-formatter): Pretty-prints, minifies, and validates JSON in-browser with syntax error diagnostics.
-- [Base64 Encoder & Decoder](https://www.goeasytools.com/base64): Encodes and decodes UTF-8 text to standard Base64 with multi-byte emoji support.
-- [Password Generator](https://www.goeasytools.com/password-generator): Cryptographically secure random password generator using Web Crypto API (crypto.getRandomValues).
-- [QR Code Generator](https://www.goeasytools.com/qr-code-generator): Generates permanent static QR codes for website URLs, plain text, and Wi-Fi network credentials.
-- [Slug Generator](https://www.goeasytools.com/slug-generator): Generates URL-friendly slugs from text, accents, and multilingual scripts with custom delimiters.
-- [Color Converter](https://www.goeasytools.com/color-converter): Converts color codes between HEX, RGB, and HSL formats with live color preview.
-- [Unix Timestamp Converter](https://www.goeasytools.com/unix-timestamp-converter): Converts Unix epoch timestamps to UTC and local dates, and dates to Unix seconds and milliseconds.
-- [JWT Decoder](https://www.goeasytools.com/jwt-decoder): Decodes and inspects JSON Web Tokens (JWT) online, parsing claims, headers, and expiration dates safely in browser.
-- [URL Encoder & Decoder](https://www.goeasytools.com/url-encoder): Encodes and decodes URL components, full URLs, and query strings using RFC 3986 percent-encoding in browser.
-- [JSON to TypeScript](https://www.goeasytools.com/json-to-typescript): Generates TypeScript interfaces and type definitions from JSON data with recursive type inference in browser.
-- [JSON to Python](https://www.goeasytools.com/json-to-python): Converts JSON payloads into Python Pydantic models (v2), dataclasses, or TypedDict with PEP 8 snake_case mapping.
-- [CSV to JSON Converter](https://www.goeasytools.com/csv-to-json): Converts CSV spreadsheets to JSON arrays and JSON to CSV using RFC 4180 parsing in browser.
-- [Contrast Checker](https://www.goeasytools.com/contrast-checker): Tests foreground and background color contrast ratios against WCAG 2.1 AA and AAA standards with live text preview.
-- [CSS Gradient Generator](https://www.goeasytools.com/gradient-generator): Generates linear and radial CSS gradients with angle controls, multi-color stops, and live canvas preview.
-- [Color Palette Generator](https://www.goeasytools.com/color-palette-generator): Generates harmonious 5-color palettes based on HSL color wheel rules with pin locks and CSS variables export.
-- [CSS Box Shadow Generator](https://www.goeasytools.com/css-box-shadow-generator): Generates multi-layer CSS box shadows with live card preview, blur, spread, opacity, and inset controls.
-- [CSS Border Radius Generator](https://www.goeasytools.com/css-border-radius-generator): Generates 8-point CSS border-radius organic shapes, liquid blobs, and rounded corners with live canvas preview.
-- [Regex Tester](https://www.goeasytools.com/regex-tester): Tests JavaScript regular expressions with real-time match highlighting, flag toggles, capture group tables, and presets.
-- [Cron Expression Generator](https://www.goeasytools.com/cron-generator): Generates and translates 5-part cron schedules into natural English with upcoming execution run dates.
-- [SQL Formatter](https://www.goeasytools.com/sql-formatter): Formats, beautifies, indents, and minifies SQL queries with uppercase keywords and clause breaks in browser.
-- [Barcode Generator](https://www.goeasytools.com/barcode-generator): Generates 1D barcodes (Code 128, EAN-13, UPC-A, Code 39) with print-ready SVG and PNG downloads in browser.
-- [Tokenizer](https://www.goeasytools.com/tokenizer): Counts tokens and visualizes how GPT-4o, GPT-4, Claude, Gemini, and Grok tokenize text. OpenAI uses exact BPE; others use character-per-token estimation. 100% in-browser.
+- [JSON Formatter](https://goeasytools.com/json-formatter): Pretty-prints, minifies, and validates JSON in-browser with syntax error diagnostics.
+- [Base64 Encoder & Decoder](https://goeasytools.com/base64): Encodes and decodes UTF-8 text to standard Base64 with multi-byte emoji support.
+- [Password Generator](https://goeasytools.com/password-generator): Cryptographically secure random password generator using Web Crypto API (crypto.getRandomValues).
+- [QR Code Generator](https://goeasytools.com/qr-code-generator): Generates permanent static QR codes for website URLs, plain text, and Wi-Fi network credentials.
+- [Slug Generator](https://goeasytools.com/slug-generator): Generates URL-friendly slugs from text, accents, and multilingual scripts with custom delimiters.
+- [Color Converter](https://goeasytools.com/color-converter): Converts color codes between HEX, RGB, and HSL formats with live color preview.
+- [Unix Timestamp Converter](https://goeasytools.com/unix-timestamp-converter): Converts Unix epoch timestamps to UTC and local dates, and dates to Unix seconds and milliseconds.
+- [JWT Decoder](https://goeasytools.com/jwt-decoder): Decodes and inspects JSON Web Tokens (JWT) online, parsing claims, headers, and expiration dates safely in browser.
+- [URL Encoder & Decoder](https://goeasytools.com/url-encoder): Encodes and decodes URL components, full URLs, and query strings using RFC 3986 percent-encoding in browser.
+- [JSON to TypeScript](https://goeasytools.com/json-to-typescript): Generates TypeScript interfaces and type definitions from JSON data with recursive type inference in browser.
+- [JSON to Python](https://goeasytools.com/json-to-python): Converts JSON payloads into Python Pydantic models (v2), dataclasses, or TypedDict with PEP 8 snake_case mapping.
+- [CSV to JSON Converter](https://goeasytools.com/csv-to-json): Converts CSV spreadsheets to JSON arrays and JSON to CSV using RFC 4180 parsing in browser.
+- [Contrast Checker](https://goeasytools.com/contrast-checker): Tests foreground and background color contrast ratios against WCAG 2.1 AA and AAA standards with live text preview.
+- [CSS Gradient Generator](https://goeasytools.com/gradient-generator): Generates linear and radial CSS gradients with angle controls, multi-color stops, and live canvas preview.
+- [Color Palette Generator](https://goeasytools.com/color-palette-generator): Generates harmonious 5-color palettes based on HSL color wheel rules with pin locks and CSS variables export.
+- [CSS Box Shadow Generator](https://goeasytools.com/css-box-shadow-generator): Generates multi-layer CSS box shadows with live card preview, blur, spread, opacity, and inset controls.
+- [CSS Border Radius Generator](https://goeasytools.com/css-border-radius-generator): Generates 8-point CSS border-radius organic shapes, liquid blobs, and rounded corners with live canvas preview.
+- [Regex Tester](https://goeasytools.com/regex-tester): Tests JavaScript regular expressions with real-time match highlighting, flag toggles, capture group tables, and presets.
+- [Cron Expression Generator](https://goeasytools.com/cron-generator): Generates and translates 5-part cron schedules into natural English with upcoming execution run dates.
+- [SQL Formatter](https://goeasytools.com/sql-formatter): Formats, beautifies, indents, and minifies SQL queries with uppercase keywords and clause breaks in browser.
+- [Barcode Generator](https://goeasytools.com/barcode-generator): Generates 1D barcodes (Code 128, EAN-13, UPC-A, Code 39) with print-ready SVG and PNG downloads in browser.
+- [Tokenizer](https://goeasytools.com/tokenizer): Counts tokens and visualizes how GPT-4o, GPT-4, Claude, Gemini, and Grok tokenize text. OpenAI uses exact BPE; others use character-per-token estimation. 100% in-browser.
 
 ## Image & PDF Suite
-- [Image Compressor](https://www.goeasytools.com/image-compressor): Compresses JPG, PNG, and WebP images locally via HTML5 canvas with before/after byte comparisons.
-- [Image Resizer](https://www.goeasytools.com/image-resizer): Resizes image pixel width and height with optional aspect-ratio lock.
-- [Image Cropper](https://www.goeasytools.com/image-cropper): Crops JPG, PNG, and WebP images with custom aspect ratio presets (1:1, 16:9, 4:3) and live canvas grid preview.
-- [Merge PDF](https://www.goeasytools.com/merge-pdf): Combines multiple PDF files (up to 10 files, 20 MB each) into one using pdf-lib in browser.
-- [Split PDF](https://www.goeasytools.com/split-pdf): Extracts pages or custom page ranges (e.g., 1-3, 5) from PDF files into a new document.
-- [JPG to PDF](https://www.goeasytools.com/jpg-to-pdf): Converts JPG and PNG images into standard A4 or native-sized PDF documents.
-- [Rotate PDF](https://www.goeasytools.com/rotate-pdf): Rotates all PDF pages by 90°, 180°, or 270° clockwise using pdf-lib in browser.
-- [Organize PDF](https://www.goeasytools.com/organize-pdf): Reorders, removes, or duplicates PDF pages in any user-specified order.
-- [Crop PDF](https://www.goeasytools.com/crop-pdf): Trims PDF page margins by setting CropBox values in points (72 pt = 1 inch).
-- [Add Page Numbers](https://www.goeasytools.com/add-page-numbers): Stamps sequential page numbers on every page with six position choices and adjustable font size.
-- [Watermark PDF](https://www.goeasytools.com/watermark-pdf): Adds a semi-transparent text watermark on every PDF page with configurable opacity and diagonal placement.
-- [Unlock PDF](https://www.goeasytools.com/unlock-pdf): Removes PDF encryption restrictions by re-saving pages into an unrestricted document.
-- [PDF to JPG](https://www.goeasytools.com/pdf-to-jpg): Converts each PDF page to a JPEG image using pdf.js rendering with adjustable quality and scale.
-- [Compress PDF](https://www.goeasytools.com/compress-pdf): Reduces PDF file size by re-saving with object-stream compression. Lossless, no quality loss.
-- [Edit PDF](https://www.goeasytools.com/edit-pdf): Adds text annotations at exact coordinates on any PDF page with font size and colour control.
-- [PDF Forms](https://www.goeasytools.com/pdf-forms): Auto-detects and fills interactive PDF form fields (text, checkbox, dropdown, radio) with optional flatten.
-- [Sign PDF](https://www.goeasytools.com/sign-pdf): Adds a visual signature (drawn, typed, or uploaded) to any PDF page at precise coordinates.
-- [Delete PDF Pages](https://www.goeasytools.com/delete-pdf-pages): Removes selected pages from a PDF and saves the remaining pages as a clean document.
-- [Extract PDF Pages](https://www.goeasytools.com/extract-pdf-pages): Extracts selected pages or ranges into a new standalone PDF document.
-- [PDF Pipeline](https://www.goeasytools.com/pdf-pipeline): Chain unlimited PDF operations (rotate, crop, watermark, compress, etc.) with full undo/redo version history.
+- [Image Compressor](https://goeasytools.com/image-compressor): Compresses JPG, PNG, and WebP images locally via HTML5 canvas with before/after byte comparisons.
+- [Image Resizer](https://goeasytools.com/image-resizer): Resizes image pixel width and height with optional aspect-ratio lock.
+- [Image Cropper](https://goeasytools.com/image-cropper): Crops JPG, PNG, and WebP images with custom aspect ratio presets (1:1, 16:9, 4:3) and live canvas grid preview.
+- [Merge PDF](https://goeasytools.com/merge-pdf): Combines multiple PDF files (up to 10 files, 20 MB each) into one using pdf-lib in browser.
+- [Split PDF](https://goeasytools.com/split-pdf): Extracts pages or custom page ranges (e.g., 1-3, 5) from PDF files into a new document.
+- [JPG to PDF](https://goeasytools.com/jpg-to-pdf): Converts JPG and PNG images into standard A4 or native-sized PDF documents.
+- [Rotate PDF](https://goeasytools.com/rotate-pdf): Rotates all PDF pages by 90°, 180°, or 270° clockwise using pdf-lib in browser.
+- [Organize PDF](https://goeasytools.com/organize-pdf): Reorders, removes, or duplicates PDF pages in any user-specified order.
+- [Crop PDF](https://goeasytools.com/crop-pdf): Trims PDF page margins by setting CropBox values in points (72 pt = 1 inch).
+- [Add Page Numbers](https://goeasytools.com/add-page-numbers): Stamps sequential page numbers on every page with six position choices and adjustable font size.
+- [Watermark PDF](https://goeasytools.com/watermark-pdf): Adds a semi-transparent text watermark on every PDF page with configurable opacity and diagonal placement.
+- [Unlock PDF](https://goeasytools.com/unlock-pdf): Removes PDF encryption restrictions by re-saving pages into an unrestricted document.
+- [PDF to JPG](https://goeasytools.com/pdf-to-jpg): Converts each PDF page to a JPEG image using pdf.js rendering with adjustable quality and scale.
+- [Compress PDF](https://goeasytools.com/compress-pdf): Reduces PDF file size by re-saving with object-stream compression. Lossless, no quality loss.
+- [Edit PDF](https://goeasytools.com/edit-pdf): Adds text annotations at exact coordinates on any PDF page with font size and colour control.
+- [PDF Forms](https://goeasytools.com/pdf-forms): Auto-detects and fills interactive PDF form fields (text, checkbox, dropdown, radio) with optional flatten.
+- [Sign PDF](https://goeasytools.com/sign-pdf): Adds a visual signature (drawn, typed, or uploaded) to any PDF page at precise coordinates.
+- [Delete PDF Pages](https://goeasytools.com/delete-pdf-pages): Removes selected pages from a PDF and saves the remaining pages as a clean document.
+- [Extract PDF Pages](https://goeasytools.com/extract-pdf-pages): Extracts selected pages or ranges into a new standalone PDF document.
+- [PDF Pipeline](https://goeasytools.com/pdf-pipeline): Chain unlimited PDF operations (rotate, crop, watermark, compress, etc.) with full undo/redo version history.
 
 ## Audio & Media Suite
-- [Audio Trimmer](https://www.goeasytools.com/audio-trimmer): Trims and cuts MP3, WAV, OGG, and AAC audio files with interactive waveform scrubbing in browser.
-- [Audio Speed Changer](https://www.goeasytools.com/audio-speed-changer): Speeds up or slows down audio tracks from 0.25x to 3x with real-time playback preview in browser.
-- [Video to GIF Converter](https://www.goeasytools.com/video-to-gif): Converts MP4, WebM, and MOV video clips into animated GIF loops with custom FPS and resolution controls.
+- [Audio Trimmer](https://goeasytools.com/audio-trimmer): Trims and cuts MP3, WAV, OGG, and AAC audio files with interactive waveform scrubbing in browser.
+- [Audio Speed Changer](https://goeasytools.com/audio-speed-changer): Speeds up or slows down audio tracks from 0.25x to 3x with real-time playback preview in browser.
+- [Video to GIF Converter](https://goeasytools.com/video-to-gif): Converts MP4, WebM, and MOV video clips into animated GIF loops with custom FPS and resolution controls.
 
 ## Optional
-- [Full Technical Manifest](https://www.goeasytools.com/llms-full.txt): Complete mathematical formulas, counting rules, boundary limits, and input/output contracts for every utility.
+- [Full Technical Manifest](https://goeasytools.com/llms-full.txt): Complete mathematical formulas, counting rules, boundary limits, and input/output contracts for every utility.

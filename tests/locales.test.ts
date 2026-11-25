@@ -68,10 +68,10 @@ describe("launch locales", () => {
     expect(langs).toContain("es");
     expect(langs).toContain("x-default");
     expect(links.find((link) => link.hrefLang === "es")?.href).toBe(
-      "https://www.goeasytools.com/es/contador-de-palabras",
+      "https://goeasytools.com/es/contador-de-palabras",
     );
     expect(links.find((link) => link.hrefLang === "x-default")?.href).toBe(
-      "https://www.goeasytools.com/word-counter",
+      "https://goeasytools.com/word-counter",
     );
     expect(hreflangIsReciprocal("word-counter")).toBe(true);
   });

@@ -9,16 +9,15 @@ import { canonicalUrl, siteUrl } from "@/lib/site";
 import { tools } from "@/lib/tools";
 
 describe("canonical URLs", () => {
-  it("uses www subdomain to match production redirect target", () => {
+  it("uses the bare domain as fallback when NEXT_PUBLIC_SITE_URL is unset", () => {
     const url = siteUrl();
-    expect(url).toBe("https://www.goeasytools.com");
-    expect(url).toMatch(/^https:\/\/www\./);
+    expect(url).toBe("https://goeasytools.com");
   });
 
   it("drops queries, hashes, and trailing slashes", () => {
-    expect(canonicalUrl("/word-counter?text=secret#counts")).toBe("https://www.goeasytools.com/word-counter");
-    expect(canonicalUrl("/privacy/")).toBe("https://www.goeasytools.com/privacy");
-    expect(canonicalUrl("/")).toBe("https://www.goeasytools.com/");
+    expect(canonicalUrl("/word-counter?text=secret#counts")).toBe("https://goeasytools.com/word-counter");
+    expect(canonicalUrl("/privacy/")).toBe("https://goeasytools.com/privacy");
+    expect(canonicalUrl("/")).toBe("https://goeasytools.com/");
   });
 
   it("publishes one path per tool", () => {
