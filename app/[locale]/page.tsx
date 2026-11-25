@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: "Free browser tools",
     description: site.description,
     path: `/${locale}`,
+    pageId: "home",
   });
 }
 

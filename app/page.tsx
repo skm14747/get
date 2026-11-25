@@ -13,6 +13,7 @@ export const metadata: Metadata = pageMetadata({
   title: "Free Browser Tools — Fast, Private, In-Browser Utilities",
   description: site.description,
   path: "/",
+  pageId: "home",
 });
 
 const featured = [

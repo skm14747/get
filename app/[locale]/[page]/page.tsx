@@ -26,7 +26,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const tool = tools.find((t) => t.id === toolId);
   if (!tool) return {};
   const t = getToolTranslation(locale, tool.id, tool);
-  return toolMetadata({ ...tool, name: t.name, shortDescription: t.shortDescription, title: `${t.name} · GoEasyTools`, metaDescription: t.shortDescription });
+  return toolMetadata({
+    ...tool,
+    path: `/${locale}/${page}`,
+    name: t.name,
+    shortDescription: t.shortDescription,
+    title: `${t.name} · GoEasyTools`,
+    metaDescription: t.shortDescription,
+  });
 }
 
 export default async function PrefixedPage({

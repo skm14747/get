@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { groupForTool } from "@/lib/browse";
 import { faqsFor } from "@/lib/faqs";
+import { hreflangLinks, type IndexableId } from "@/lib/hreflang";
 import { howToFor } from "@/lib/how-tos";
 import { breadcrumbJsonLd, howToJsonLd, toolJsonLd } from "@/lib/schema";
-import { toolMetadata } from "@/lib/seo";
+import { pageMetadata, toolMetadata } from "@/lib/seo";
 import { canonicalUrl, siteUrl } from "@/lib/site";
 import { tools } from "@/lib/tools";
 
@@ -174,6 +175,37 @@ describe("SEO metadata standards", () => {
 
   it("returns null for tools without how-to data", () => {
     expect(howToFor("nonexistent-tool-id")).toBeNull();
+  });
+
+  it("emits hreflang for homepage, privacy, and contact", () => {
+    for (const page of ["home", "privacy", "contact"] as IndexableId[]) {
+      const links = hreflangLinks(page);
+      expect(links.length, `hreflang for ${page}`).toBeGreaterThanOrEqual(11);
+      expect(links.some((l) => l.hrefLang === "x-default")).toBe(true);
+      expect(links.some((l) => l.hrefLang === "en")).toBe(true);
+      expect(links.some((l) => l.hrefLang === "es")).toBe(true);
+      expect(links.some((l) => l.hrefLang === "ar")).toBe(true);
+    }
+  });
+
+  it("emits hreflang for tools that have slugs in all locales", () => {
+    const fullyMapped = tools.filter((t) => {
+      const links = hreflangLinks(t.id);
+      return links.length > 0;
+    });
+    expect(fullyMapped.length).toBeGreaterThan(0);
+    for (const tool of fullyMapped) {
+      const links = hreflangLinks(tool.id);
+      expect(links.length, `hreflang for ${tool.id}`).toBeGreaterThanOrEqual(11);
+      expect(links.some((l) => l.hrefLang === "x-default")).toBe(true);
+    }
+  });
+
+  it("includes hreflang alternates in pageMetadata when pageId is set", () => {
+    const meta = pageMetadata({ title: "Home", description: "test", path: "/", pageId: "home" });
+    const languages = meta.alternates?.languages;
+    expect(languages).toBeDefined();
+    expect(Object.keys(languages!).length).toBeGreaterThanOrEqual(10);
   });
 
   it("publishes complete and accurate llms.txt and llms-full.txt machine-readable manifests", async () => {

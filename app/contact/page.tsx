@@ -6,6 +6,7 @@ export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description: "How to reach GoEasyTools. A public contact address is shown only when one has been configured.",
   path: "/contact",
+  pageId: "contact",
 });
 
 export default function ContactPage() {

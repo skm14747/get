@@ -5,6 +5,7 @@ export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
   description: "What GoEasyTools stores, how in-browser processing works, advertising disclosures, and cookie policies.",
   path: "/privacy",
+  pageId: "privacy",
 });
 
 export default function PrivacyPage() {
