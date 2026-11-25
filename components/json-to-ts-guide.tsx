@@ -34,10 +34,29 @@ export function JsonToTsGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>API integration:</strong> Paste a sample REST API response to generate typed interfaces for safe data access with full IntelliSense support in VS Code or Cursor.</li>
+          <li><strong>GraphQL schema typing:</strong> Convert GraphQL JSON responses into TypeScript types for client-side query result handling.</li>
+          <li><strong>Configuration files:</strong> Generate type definitions for JSON config files to catch typos and missing fields at compile time.</li>
+          <li><strong>Mock data typing:</strong> Create interfaces from test fixture JSON files so mock data matches your production data shape.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Interfaces vs. type aliases in TypeScript</h2>
         <p className="mt-2">
           TypeScript interfaces are extendable via declaration merging and are the standard pattern for object shape definitions in libraries. Type aliases are preferred when defining unions, primitives, or tuple structures. For API payloads, both formats provide identical compile-time type safety and IntelliSense in editors like VS Code and Cursor.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use representative sample data — if a field can be <code className="rounded bg-line px-1 py-0.5 text-xs">null</code> in production but isn&apos;t in your sample, the generated type won&apos;t include <code className="rounded bg-line px-1 py-0.5 text-xs">null</code>.</li>
+          <li>Review array types carefully — if your sample has only one item, the tool infers that item&apos;s type. Multiple items with different shapes produce a union.</li>
+          <li>Use the interface format for public library types (benefits from declaration merging) and type aliases for internal application code.</li>
+        </ul>
       </section>
 
       <section>

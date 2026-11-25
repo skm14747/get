@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { browseGroups } from "@/lib/browse";
+import { guideEntries } from "@/lib/guide-content";
 import { messages } from "@/locales/en";
 
 export function SiteFooter() {
@@ -13,16 +14,31 @@ export function SiteFooter() {
           </p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">{messages.footerNote}</p>
         </div>
-        <nav aria-label={messages.toolsNav}>
-          <p className="text-xs font-medium text-faint">Categories</p>
-          <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-            {browseGroups.map((group) => (
-              <li key={group.id}>
-                <Link href={group.path} className="text-muted no-underline transition-colors hover:text-ink">{group.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="grid gap-8 sm:grid-cols-2">
+          <nav aria-label={messages.toolsNav}>
+            <p className="text-xs font-medium text-faint">Categories</p>
+            <ul className="mt-3 grid gap-y-1.5 text-sm">
+              {browseGroups.map((group) => (
+                <li key={group.id}>
+                  <Link href={group.path} className="text-muted no-underline transition-colors hover:text-ink">{group.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="Guides">
+            <p className="text-xs font-medium text-faint">Guides</p>
+            <ul className="mt-3 grid gap-y-1.5 text-sm">
+              {guideEntries.map((guide) => {
+                const group = browseGroups.find((g) => g.id === guide.slug);
+                return (
+                  <li key={guide.slug}>
+                    <Link href={`/guides/${guide.slug}`} className="text-muted no-underline transition-colors hover:text-ink">{group?.name ?? guide.slug} guide</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
       </div>
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-2 px-4 py-4 text-[0.8125rem] text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">

@@ -29,10 +29,29 @@ export function AudioSpeedGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Podcast binge listening:</strong> Speed up podcast episodes to 1.5x or 2x to get through your queue faster without missing content.</li>
+          <li><strong>Lecture review:</strong> Slow down fast-paced university lectures to 0.75x for note-taking and comprehension.</li>
+          <li><strong>Music practice:</strong> Slow down complex musical passages to 0.5x speed to learn finger positions or rhythm patterns.</li>
+          <li><strong>Audiobook efficiency:</strong> Listen at 1.25x speed for a comfortable speedup that saves hours over a full book.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Hardware-accelerated OfflineAudioContext</h2>
         <p className="mt-2">
           Rather than waiting for the entire audio track to play through in real time to re-record it, GoEasyTools uses the browser&apos;s <code className="rounded bg-line px-1 py-0.5 text-xs">OfflineAudioContext</code>. This renders the adjusted audio samples faster than real time using your device&apos;s multi-core CPU before encoding directly to WAV.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Start with 1.25x if you&apos;re new to speed listening — it&apos;s fast enough to save time but slow enough to catch every word.</li>
+          <li>The output is always WAV format for maximum quality. Convert to MP3 afterward if you need a smaller file.</li>
+          <li>Speed changes also affect pitch — speech will sound higher at faster speeds and lower at slower speeds.</li>
+        </ul>
       </section>
 
       <section>

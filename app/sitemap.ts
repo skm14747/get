@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { browseGroups } from "@/lib/browse";
 import { allBlogSlugs } from "@/lib/blog";
+import { allGuideSlugs } from "@/lib/guide-content";
 import { publishedIndexablePaths } from "@/lib/hreflang";
 import { INTENDED_LAUNCH_LOCALES } from "@/lib/locales";
 import { canonicalUrl } from "@/lib/site";
@@ -19,12 +20,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]),
   ];
 
+  const guidePaths = ["/guides", ...allGuideSlugs().map((slug) => `/guides/${slug}`)];
+
   return [
     ...toolPaths.map((path) => ({
       url: canonicalUrl(path),
       changeFrequency: "monthly" as const,
       priority: path === "/" ? 1 : 0.8,
       images: path === "/" ? [ogImageUrl] : undefined,
+    })),
+    ...guidePaths.map((path) => ({
+      url: canonicalUrl(path),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     ...blogPaths.map((path) => ({
       url: canonicalUrl(path),

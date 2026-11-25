@@ -7,13 +7,22 @@ export function PercentageGuide() {
         <h2 className="text-xl font-semibold">What each calculation means: Increase, decrease, and difference</h2>
         <ul className="mt-2 list-disc space-y-2 pl-5">
           <li>What is X% of Y? Multiplies Y by X, then divides by 100. Fifteen percent of 80 is 12.</li>
-          <li>X is what percent of Y? Divides X by Y, then multiplies by 100. “What percentage is X of Y?” is the same question. Both stay on this page.</li>
+          <li>X is what percent of Y? Divides X by Y, then multiplies by 100. &ldquo;What percentage is X of Y?&rdquo; is the same question. Both stay on this page.</li>
           <li>Percentage change from the original number to the new number is (new − original) ÷ original × 100. Positive means an increase. Negative means a decrease.</li>
           <li>Percentage increase uses that same change formula. If the result is negative, the new number is smaller.</li>
           <li>Percentage decrease is (original − new) ÷ original × 100. A price that falls from 100 to 80 is a 20% decrease. If the result is negative, the new number is larger.</li>
           <li>Percentage difference compares two numbers without a direction. It divides the absolute gap by the average of the two absolute values. The difference between 80 and 100 is 22.222222%. That is not the 25% change from 80 to 100, and it is not a percentage-point change.</li>
           <li>Original before an increase divides the final amount by 1 + percent / 100. A final amount of 112 after a 12% increase started at 100.</li>
           <li>Original before a discount divides the final amount by 1 − percent / 100. A final amount of 80 after a 20% discount started at 100. A 100% discount has no original price, because that would divide by zero.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Shopping discounts:</strong> Calculate the final price after a percentage-off sale or verify the discount percentage between original and sale prices.</li>
+          <li><strong>Grade calculations:</strong> Determine what percentage score you achieved on a test (e.g. 42 out of 50 = 84%).</li>
+          <li><strong>Financial analysis:</strong> Compute year-over-year revenue growth, profit margin percentages, or investment return rates.</li>
+          <li><strong>Data analysis:</strong> Calculate percentage change between two data points, or find the percentage difference between competing metrics.</li>
         </ul>
       </section>
       <section>
@@ -38,9 +47,17 @@ export function PercentageGuide() {
         </ul>
       </section>
       <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Percentage change and percentage difference are not the same thing — change has a direction (from A to B), while difference is symmetric.</li>
+          <li>When working backwards from a discounted price to the original, use the &ldquo;Original before a discount&rdquo; calculator rather than adding the discount percentage to the sale price.</li>
+          <li>For compound percentage changes (e.g. two successive 10% increases), calculate each step separately — they are not additive.</li>
+        </ul>
+      </section>
+      <section>
         <h2 className="text-xl font-semibold">Client-side privacy: Calculations stay in your browser</h2>
         <p className="mt-2">
-          The numbers stay in this browser. Measurement does not receive them.
+          The numbers stay in this browser. Measurement does not receive them. No financial or personal data is logged or transmitted.
         </p>
       </section>
     </div>

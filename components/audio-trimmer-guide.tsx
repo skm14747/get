@@ -31,10 +31,29 @@ export function AudioTrimmerGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Ringtone creation:</strong> Trim your favorite song to a 30-second clip for a custom phone ringtone.</li>
+          <li><strong>Podcast editing:</strong> Cut out intros, outros, or dead air from recorded podcast segments before publishing.</li>
+          <li><strong>Voice memo cleanup:</strong> Extract the relevant portion of a long voice recording and discard the silence before and after.</li>
+          <li><strong>Sound effects:</strong> Isolate specific sound effects from a longer audio recording for use in video editing or presentations.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Waveform amplitude extraction</h2>
         <p className="mt-2">
           The visual waveform represents raw decibel peak amplitudes sampled across the audio track. The highlighted blue segment shows the active trim region, giving you immediate visual confirmation of musical intros, quiet pauses, and vocal phrases.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use the waveform to visually identify silent gaps — trim just before the audio starts and just after it ends for a clean cut.</li>
+          <li>Always preview your selection before downloading to ensure the trim points sound natural without abrupt cuts.</li>
+          <li>The output WAV file may be larger than the original MP3 because WAV is uncompressed. Use an external converter if you need MP3 output.</li>
+        </ul>
       </section>
 
       <section>

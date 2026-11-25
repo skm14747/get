@@ -40,10 +40,30 @@ export function BoxShadowGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Card elevation:</strong> Apply layered drop shadows to card components for Material Design-style elevation hierarchy (raised, hover, dialog).</li>
+          <li><strong>Button depth:</strong> Add subtle shadows to buttons so they appear raised and clickable, improving perceived affordance.</li>
+          <li><strong>Modal and dialog overlays:</strong> Use large, soft shadows behind modal windows to create visual separation from the page background.</li>
+          <li><strong>Input focus states:</strong> Apply a colored spread shadow on focus to highlight the active form field without changing layout.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Why multi-layer shadows look more natural</h2>
         <p className="mt-2">
           In real-world physics, objects cast two types of shadows: a direct shadow near the contact base (low blur, darker) and an ambient occlusion shadow (wide blur, lighter). By layering 2 or more shadow definitions separated by commas, UI components achieve smooth, photorealistic elevation that looks dramatically cleaner than a single harsh shadow.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use low-opacity shadows (5–15%) for modern, subtle elevation — heavy black shadows look dated.</li>
+          <li>Layer 2–3 shadows at different blur radii for the most natural, photorealistic depth effect.</li>
+          <li>Use <code className="rounded bg-line px-1 py-0.5 text-xs">inset</code> shadows for input fields to create a recessed, text-entry affordance.</li>
+          <li>Test shadows on both light and dark backgrounds — shadow visibility changes dramatically with background color.</li>
+        </ul>
       </section>
 
       <section>

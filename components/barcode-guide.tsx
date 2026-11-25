@@ -34,10 +34,30 @@ export function BarcodeGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Inventory management:</strong> Generate Code 128 barcodes for internal asset tags, warehouse bin labels, and equipment tracking.</li>
+          <li><strong>Retail product labeling:</strong> Create EAN-13 or UPC-A barcodes for product packaging that scans correctly at any checkout register.</li>
+          <li><strong>Shipping and logistics:</strong> Print Code 128 barcodes on shipping labels for parcel tracking and sorting automation.</li>
+          <li><strong>Library systems:</strong> Generate barcodes for book cataloguing and patron card identification.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Quiet zones and printing best practices</h2>
         <p className="mt-2">
           Optical laser barcode scanners require a clear, unprinted border on both the left and right ends of the barcode known as the <strong>quiet zone</strong> (at least 10 times the width of the narrowest bar). The generated SVG and PNG images automatically incorporate compliant quiet zones to guarantee high read-rates on handheld scanners and phone cameras.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use SVG format for print materials — it scales to any size without pixelation, unlike PNG.</li>
+          <li>Test-scan your generated barcode with a physical scanner or phone app before mass-printing labels.</li>
+          <li>EAN-13 and UPC-A are numeric-only. If you need to encode letters, use Code 128 or Code 39.</li>
+          <li>Increase bar height for barcodes that will be scanned at a distance or on curved surfaces.</li>
+        </ul>
       </section>
 
       <section>

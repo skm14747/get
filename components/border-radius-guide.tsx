@@ -30,10 +30,29 @@ export function BorderRadiusGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Button styling:</strong> Apply uniform corner radii for rounded buttons, or use pill-shaped radii (9999px) for tag badges and chips.</li>
+          <li><strong>Card components:</strong> Add subtle 8–12px corner rounding to card containers for modern Material or Apple-style UI design.</li>
+          <li><strong>Avatar frames:</strong> Create organic blob shapes for profile pictures and feature section backgrounds.</li>
+          <li><strong>Hero section accents:</strong> Design asymmetric decorative shapes for landing page backgrounds without loading SVG or image files.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Browser compatibility and prefixes</h2>
         <p className="mt-2">
           The 8-point border-radius syntax is part of the W3C CSS Backgrounds and Borders Module Level 3 and is natively supported across 100% of modern web browsers without polyfills. The output snippet includes the standard property alongside the <code className="rounded bg-line px-1 py-0.5 text-xs">-webkit-border-radius</code> fallback for legacy rendering engines.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use pixel values for consistent sizing across screen sizes, and percentage values for shapes that scale proportionally with the element.</li>
+          <li>A border-radius of 50% on a square element creates a perfect circle. On a rectangle, it creates an ellipse.</li>
+          <li>Combine border-radius with <code className="rounded bg-line px-1 py-0.5 text-xs">overflow: hidden</code> to clip child content to the rounded shape.</li>
+        </ul>
       </section>
 
       <section>

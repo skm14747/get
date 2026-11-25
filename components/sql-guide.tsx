@@ -34,10 +34,29 @@ export function SqlGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Code review:</strong> Format raw queries from application code into readable multi-line SQL before reviewing join logic and filter conditions.</li>
+          <li><strong>Database debugging:</strong> Paste a minified query from a slow-query log and format it to quickly identify missing indexes or inefficient joins.</li>
+          <li><strong>Migration scripts:</strong> Clean up auto-generated SQL migration files for consistent formatting across your team&apos;s codebase.</li>
+          <li><strong>Documentation:</strong> Format example queries for API documentation, README files, or technical specifications.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Supported database dialects</h2>
         <p className="mt-2">
-          The formatting rules apply standard ANSI SQL syntax, compatible with PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server (T-SQL), Snowflake, and Google BigQuery.
+          The formatting rules apply standard ANSI SQL syntax, compatible with PostgreSQL, MySQL, MariaDB, SQLite, Microsoft SQL Server (T-SQL), Snowflake, and Google BigQuery. Dialect-specific extensions (e.g. PostgreSQL <code className="rounded bg-line px-1 py-0.5 text-xs">::</code> casts) are preserved without modification.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use 2-space indentation for compact display in side-by-side code reviews, and 4-space for standalone SQL files.</li>
+          <li>Use Minify when embedding SQL in application code strings to reduce bundle size without changing query behavior.</li>
+          <li>The formatter does not validate SQL syntax — it organizes whitespace and line breaks without modifying query semantics.</li>
+        </ul>
       </section>
 
       <section>

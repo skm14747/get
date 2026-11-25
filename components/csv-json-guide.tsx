@@ -34,10 +34,30 @@ export function CsvJsonGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>API payload preparation:</strong> Convert spreadsheet exports into JSON format for REST API request bodies or database seeding scripts.</li>
+          <li><strong>Data migration:</strong> Transform CSV database exports into JSON for import into NoSQL databases like MongoDB or Firestore.</li>
+          <li><strong>Frontend development:</strong> Convert static CSV data files into JSON for use in React, Vue, or Angular applications.</li>
+          <li><strong>Reporting and analytics:</strong> Convert JSON API responses back to CSV for analysis in Excel, Google Sheets, or pandas DataFrames.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Delimiter auto-detection</h2>
         <p className="mt-2">
           Different software exports use different separators: US spreadsheets typically use commas (<code className="rounded bg-line px-1 py-0.5 text-xs">,</code>), European accounting systems use semicolons (<code className="rounded bg-line px-1 py-0.5 text-xs">;</code>) because the comma is a decimal separator, and log files frequently use tabs (<code className="rounded bg-line px-1 py-0.5 text-xs">\t</code>) or pipes (<code className="rounded bg-line px-1 py-0.5 text-xs">|</code>). The auto-detect feature samples the header row to choose the correct delimiter automatically.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Enable &ldquo;Parse numbers &amp; booleans&rdquo; when your JSON consumer expects typed values rather than string-only data.</li>
+          <li>If auto-detection picks the wrong delimiter, manually select the correct one from the dropdown.</li>
+          <li>For JSON to CSV conversion, nested objects are flattened — deeply nested JSON structures may need manual review.</li>
+          <li>Remove empty trailing rows from CSV before converting to avoid empty objects in the JSON output.</li>
+        </ul>
       </section>
 
       <section>

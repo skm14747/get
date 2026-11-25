@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ToolCard } from "@/components/ui/tool-card";
 import { browseGroups, toolsInGroup } from "@/lib/browse";
+import { getGuideEntry } from "@/lib/guide-content";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -57,6 +58,22 @@ export default async function TopicPage({ params }: { params: Promise<{ topic: s
           ))}
         </ul>
       </section>
+      {/* Guide link */}
+      {getGuideEntry(group.id) && (
+        <section className="mt-10 max-w-3xl rounded-xl border border-line bg-surface p-6">
+          <h2 className="text-base font-semibold text-ink sm:text-lg">📖 {group.name} guide</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Learn tips, workflows, and best practices for using {group.name.toLowerCase()}.
+          </p>
+          <Link
+            href={`/guides/${group.id}`}
+            className="mt-3 inline-flex h-8 items-center rounded-md bg-action px-4 text-[0.8125rem] font-medium text-white no-underline transition-opacity hover:opacity-90"
+          >
+            Read the full guide →
+          </Link>
+        </section>
+      )}
+
       <nav aria-label="Other categories" className="mt-12">
         <h2 className="text-lg font-medium text-ink">Other categories</h2>
         <ul className="mt-3 flex flex-wrap gap-1.5">

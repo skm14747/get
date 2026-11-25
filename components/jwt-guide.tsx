@@ -39,10 +39,29 @@ export function JwtGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>API debugging:</strong> Decode a bearer token from an API response header to inspect user scopes, permissions, and expiration time.</li>
+          <li><strong>Authentication troubleshooting:</strong> Check whether a JWT has expired or whether the <code className="rounded bg-line px-1 py-0.5 text-xs">iss</code> and <code className="rounded bg-line px-1 py-0.5 text-xs">aud</code> claims match your expected values.</li>
+          <li><strong>OAuth flow inspection:</strong> Decode ID tokens from Google, GitHub, or Auth0 to verify the claims being passed to your application.</li>
+          <li><strong>Security audits:</strong> Inspect the algorithm (<code className="rounded bg-line px-1 py-0.5 text-xs">alg</code>) in the header to ensure tokens use secure algorithms like RS256 instead of the insecure <code className="rounded bg-line px-1 py-0.5 text-xs">none</code>.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Decoding vs. verification</h2>
         <p className="mt-2">
           Decoding a JWT converts the Base64URL characters into human-readable JSON so you can inspect user scopes, user IDs, and expiration dates. It does not verify cryptographic signature integrity against a private key. Never trust unverified JWT claims on the server side without validating the cryptographic signature using your backend authentication secret or public key.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Always check the <code className="rounded bg-line px-1 py-0.5 text-xs">exp</code> claim — expired tokens are a common cause of &ldquo;401 Unauthorized&rdquo; errors.</li>
+          <li>Never paste production tokens into third-party websites — use this browser-based decoder instead.</li>
+          <li>The decoded payload is not secret; anyone with the token can decode it. The signature ensures integrity, not confidentiality.</li>
+        </ul>
       </section>
 
       <section>

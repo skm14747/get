@@ -37,10 +37,30 @@ export function RegexGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Input validation:</strong> Test email, phone, or URL validation patterns against sample inputs before deploying them in your application.</li>
+          <li><strong>Log parsing:</strong> Write patterns to extract timestamps, error codes, or IP addresses from server log files.</li>
+          <li><strong>Data extraction:</strong> Build capture groups to pull structured data (prices, dates, IDs) from unstructured text documents.</li>
+          <li><strong>Search and replace:</strong> Prototype find-and-replace patterns before running them on production data or large codebases.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Catastrophic backtracking protection</h2>
         <p className="mt-2">
           Poorly nested quantifiers (such as <code className="rounded bg-line px-1 py-0.5 text-xs">(a+)+$</code>) can trigger exponential complexity (ReDoS) and freeze browsers. GoEasyTools executes matching client-side with zero-length loop guards and caps total global iterations to protect your browser tab from crashing on accidental runaway patterns.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Start with a preset pattern and modify it rather than writing from scratch — it&apos;s faster and less error-prone.</li>
+          <li>Always use the <code className="rounded bg-line px-1 py-0.5 text-xs">u</code> flag when your text may contain emoji or non-BMP Unicode characters.</li>
+          <li>Avoid nested quantifiers like <code className="rounded bg-line px-1 py-0.5 text-xs">(a*)*</code> that cause exponential backtracking — use atomic groups or possessive quantifiers where available.</li>
+          <li>Use named capture groups <code className="rounded bg-line px-1 py-0.5 text-xs">(?&lt;name&gt;...)</code> for self-documenting patterns that are easier to maintain.</li>
+        </ul>
       </section>
 
       <section>

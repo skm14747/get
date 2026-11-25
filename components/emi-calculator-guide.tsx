@@ -4,9 +4,12 @@ export function EmiCalculatorGuide() {
   return (
     <div className="mt-10 max-w-3xl space-y-8 text-[15px] leading-7">
       <section>
-        <h2 className="text-xl font-semibold">How to use it</h2>
+        <h2 className="text-xl font-semibold">How it works</h2>
         <p className="mt-2">
           Enter your loan principal amount, annual interest rate percentage, and loan tenure in months (up to {EMI_MAX_MONTHS} months / 30 years). The calculator displays your monthly payment (EMI), total interest payable, overall payment, and a full month-by-month repayment schedule.
+        </p>
+        <p className="mt-2">
+          The amortization schedule breaks down each month&apos;s payment into the principal component and interest component, showing how the balance decreases over time. Early payments are interest-heavy, while later payments go mostly toward principal.
         </p>
       </section>
       <section>
@@ -25,15 +28,33 @@ export function EmiCalculatorGuide() {
         </ul>
       </section>
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Home loan planning:</strong> Estimate monthly EMI before applying for a mortgage to ensure the payment fits within your budget.</li>
+          <li><strong>Car loan comparison:</strong> Compare EMIs across different loan tenures and interest rates offered by banks to find the most affordable option.</li>
+          <li><strong>Personal loan budgeting:</strong> Calculate the total interest you&apos;ll pay over the life of a personal loan and decide whether a shorter tenure saves enough interest to justify higher monthly payments.</li>
+          <li><strong>Education loan estimation:</strong> Plan for student loan repayments before enrollment by modeling different principal amounts and repayment periods.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Shortening the loan tenure increases EMI but dramatically reduces total interest paid — a 15-year mortgage costs far less in interest than a 30-year one.</li>
+          <li>Use the amortization schedule to see the crossover point where more of each payment goes to principal than interest.</li>
+          <li>Compare multiple scenarios by adjusting the rate or tenure to find the right balance between monthly affordability and total cost.</li>
+          <li>This calculator uses a fixed-rate model. If your loan has a floating rate, recalculate whenever the rate changes.</li>
+        </ul>
+      </section>
+      <section>
         <h2 className="text-xl font-semibold">Financial disclosure</h2>
         <p className="mt-2">
-          This calculator provides an educational mathematical estimate. Actual lender contracts may include processing fees, insurance premiums, fluctuating rate structures, or proprietary daily rounding methods.
+          This calculator provides an educational mathematical estimate. Actual lender contracts may include processing fees, insurance premiums, fluctuating rate structures, or proprietary daily rounding methods. Always confirm the final EMI with your bank or lender.
         </p>
       </section>
       <section>
         <h2 className="text-xl font-semibold">Privacy: no loan solicitations</h2>
         <p className="mt-2">
-          Unlike commercial banking portals that require your phone number or email to view loan calculations, GoEasyTools does not harvest your personal information, sell leads, or run credit checks.
+          Unlike commercial banking portals that require your phone number or email to view loan calculations, GoEasyTools does not harvest your personal information, sell leads, or run credit checks. All calculations stay in your browser.
         </p>
       </section>
     </div>

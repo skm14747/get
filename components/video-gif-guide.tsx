@@ -31,10 +31,30 @@ export function VideoGifGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>GitHub pull requests:</strong> Record a short screen capture of a UI change and convert it to a GIF for inline PR previews that reviewers can see without clicking a video link.</li>
+          <li><strong>Bug reports:</strong> Capture a visual bug in action and attach the GIF to a Jira or Linear ticket for instant developer context.</li>
+          <li><strong>Social media and messaging:</strong> Create reaction GIFs, meme loops, or product demos for Discord, Slack, or social feeds.</li>
+          <li><strong>Documentation:</strong> Embed animated GIFs in README files, tutorials, or knowledge base articles to show step-by-step interactions.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">In-browser canvas frame extraction</h2>
         <p className="mt-2">
           Rather than relying on heavy server-side transcoding queues or multi-megabyte FFmpeg binaries, GoEasyTools samples video frames directly into an HTML5 2D canvas context and compiles GIF byte streams using native client-side memory.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Keep clips under 5 seconds and use 320p resolution for the smallest file sizes — ideal for messaging and inline documentation.</li>
+          <li>Use 8 FPS for a good balance between smoothness and file size for most use cases.</li>
+          <li>GIFs with limited color variation (UI demos, text-heavy screens) compress better than photographic or gradient-heavy content.</li>
+          <li>For higher quality animations, consider keeping the video as MP4 — GIFs are best for short, looping previews.</li>
+        </ul>
       </section>
 
       <section>

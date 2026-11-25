@@ -31,6 +31,16 @@ export function ContrastGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Web accessibility audits:</strong> Verify that every text color on your site meets WCAG AA or AAA thresholds before launch.</li>
+          <li><strong>Design system validation:</strong> Check all foreground/background combinations in your design token palette for accessibility compliance.</li>
+          <li><strong>Legal compliance:</strong> Ensure your website meets ADA, Section 508, or EAA accessibility requirements to avoid legal liability.</li>
+          <li><strong>Dark mode testing:</strong> Verify that your dark theme color pairs maintain sufficient contrast for readability.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">The mathematical formula for relative luminance</h2>
         <p className="mt-2">
           Relative luminance is calculated per the sRGB color space definition:
@@ -41,6 +51,16 @@ export function ContrastGuide() {
         <p className="mt-2 text-xs text-muted">
           Where channel values C are converted to linear values: C / 12.92 if C &le; 0.04045, else ((C + 0.055) / 1.055)^2.4. Contrast ratio is (L1 + 0.05) / (L2 + 0.05), where L1 is the lighter luminance and L2 is the darker luminance.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Aim for WCAG AAA (7:1) for body text to serve the widest possible audience, including users with low vision.</li>
+          <li>Grey text on white backgrounds often fails AA — check ratios before using light grey for secondary text.</li>
+          <li>Large text (18pt+) has relaxed thresholds, but heading contrast alone does not guarantee an accessible page.</li>
+          <li>Test contrast with both your light and dark themes — a color pair that passes in light mode may fail in dark mode.</li>
+        </ul>
       </section>
 
       <section>

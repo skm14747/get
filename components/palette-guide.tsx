@@ -37,10 +37,30 @@ export function PaletteGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Brand identity design:</strong> Generate a cohesive primary, secondary, and accent color palette for a new brand or product launch.</li>
+          <li><strong>UI theme creation:</strong> Build light and dark mode color tokens for a design system using harmonious color relationships.</li>
+          <li><strong>Presentation design:</strong> Find complementary slide colors that look professional without clashing.</li>
+          <li><strong>Creative inspiration:</strong> Hit Spacebar repeatedly to explore random palettes when you need a creative spark for a new project.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">The 60-30-10 design rule</h2>
         <p className="mt-2">
           Interior and UI designers apply the 60-30-10 rule to balance visual weight: <strong>60%</strong> dominant color (typically canvas background/neutral cards), <strong>30%</strong> secondary color (structural chrome, navigation, cards), and <strong>10%</strong> accent color (call-to-action buttons, badges, active link states).
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Lock your primary brand color and shuffle the remaining swatches to find accent and secondary colors that harmonize with your base.</li>
+          <li>Test your palette against the Contrast Checker to ensure text readability across all color combinations.</li>
+          <li>Export CSS variables directly into your project&apos;s root stylesheet for instant theming.</li>
+          <li>Use analogous palettes for calm, professional interfaces and complementary palettes for high-energy marketing pages.</li>
+        </ul>
       </section>
 
       <section>

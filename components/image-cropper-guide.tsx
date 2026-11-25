@@ -34,10 +34,30 @@ export function ImageCropperGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Social media profiles:</strong> Crop photos to exact square dimensions for Instagram, LinkedIn, or X profile pictures.</li>
+          <li><strong>E-commerce product shots:</strong> Standardize product photos to consistent aspect ratios across your catalog.</li>
+          <li><strong>Presentation slides:</strong> Crop images to 16:9 widescreen to fit cleanly into slide decks without distortion.</li>
+          <li><strong>Document scanning:</strong> Trim excess whitespace or background from scanned documents and receipts.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Direct canvas extraction without compression loss</h2>
         <p className="mt-2">
           Cropping uses hardware-accelerated canvas pixel coordinate copying (<code className="rounded bg-line px-1 py-0.5 text-xs">ctx.drawImage</code>) at full native resolution. Cropping a 4000×3000px photo retains pure native pixel clarity without down-sampling or artificial blur.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use the rule-of-thirds grid overlay to position key subjects along the intersection lines for better visual composition.</li>
+          <li>Lock the aspect ratio before dragging the crop area to ensure consistent dimensions across a batch of images.</li>
+          <li>For passport or ID photos, check your country&apos;s exact pixel dimension requirements before cropping.</li>
+          <li>Combine cropping with the Image Resizer if you need a specific final pixel size (e.g. 800×800 for a web thumbnail).</li>
+        </ul>
       </section>
 
       <section>

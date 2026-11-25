@@ -31,10 +31,29 @@ export function GradientGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Hero section backgrounds:</strong> Replace heavy background images with lightweight CSS gradients that load instantly and look crisp on all screen sizes.</li>
+          <li><strong>Button hover effects:</strong> Apply gradient backgrounds to call-to-action buttons for eye-catching visual depth.</li>
+          <li><strong>Card overlays:</strong> Use semi-transparent gradients over images to ensure text readability on photo-heavy card components.</li>
+          <li><strong>Brand theming:</strong> Create consistent gradient palettes that match your brand identity across headers, footers, and accent elements.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">Fallback rules for older browsers</h2>
         <p className="mt-2">
           The generated CSS snippet includes a solid background fallback declaration (<code className="rounded bg-line px-1 py-0.5 text-xs">background: #firstColor;</code>) followed by the gradient declaration. In the unlikely event an ancient client cannot render CSS gradients, the container gracefully displays the primary theme color.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Avoid harsh color transitions — add a mid-tone color stop between high-contrast colors for a smoother blend.</li>
+          <li>Use radial gradients for spotlight or vignette effects, and linear gradients for directional color flows.</li>
+          <li>Keep gradients subtle for text-heavy sections to maintain readability — high-contrast gradients work better as decorative accents.</li>
+        </ul>
       </section>
 
       <section>

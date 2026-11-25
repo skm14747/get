@@ -2,9 +2,12 @@ export function SlugGuide() {
   return (
     <div className="mt-10 max-w-3xl space-y-8 text-[15px] leading-7">
       <section>
-        <h2 className="text-xl font-semibold">How to use it</h2>
+        <h2 className="text-xl font-semibold">How it works</h2>
         <p className="mt-2">
           Type or paste a headline, blog post title, or product name into the source box. The URL-friendly slug updates instantly. Choose between hyphens or underscores as delimiters, toggle lowercase casing, and enable accent stripping for clean SEO URLs.
+        </p>
+        <p className="mt-2">
+          The generator normalizes Unicode characters, strips unsafe punctuation and symbols, collapses consecutive separators, and trims leading/trailing delimiters — all in real time as you type.
         </p>
       </section>
       <section>
@@ -17,6 +20,15 @@ export function SlugGuide() {
         </ul>
       </section>
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>Blog post URLs:</strong> Convert article titles like &ldquo;10 Tips for Better SEO in 2026&rdquo; into <code className="rounded bg-line px-1 py-0.5 text-xs">10-tips-for-better-seo-in-2026</code> for clean, shareable URLs.</li>
+          <li><strong>E-commerce product pages:</strong> Generate consistent URL slugs for product listings across your store.</li>
+          <li><strong>CMS content management:</strong> Pre-generate slugs for WordPress, Ghost, or custom CMS entries before publishing.</li>
+          <li><strong>File naming:</strong> Create filesystem-safe names from titles by replacing spaces and special characters with hyphens or underscores.</li>
+        </ul>
+      </section>
+      <section>
         <h2 className="text-xl font-semibold">Example transformations</h2>
         <ul className="mt-2 list-disc space-y-2 pl-5">
           <li><strong>French accents:</strong> &quot;Café au Lait &amp; Crème Brûlée!&quot; → <code className="rounded bg-line px-1 py-0.5 text-xs">cafe-au-lait-creme-brulee</code></li>
@@ -25,15 +37,23 @@ export function SlugGuide() {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-semibold">Privacy guarantee</h2>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Keep slugs short — remove unnecessary stop words like &ldquo;the&rdquo;, &ldquo;and&rdquo;, &ldquo;a&rdquo; manually for cleaner URLs.</li>
+          <li>Use hyphens for web URLs (better for SEO) and underscores for file names and database identifiers.</li>
+          <li>Once a slug is published and indexed by search engines, avoid changing it — URL changes lose accumulated SEO value unless you set up 301 redirects.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-semibold">Why clean URLs matter for SEO</h2>
         <p className="mt-2">
-          Slug generation executes 100% inside your browser runtime. Draft article titles, product names, and private URLs are never sent to external servers.
+          Search engines use URL structure as a relevance signal. Clean, descriptive slugs that contain target keywords perform better in search rankings than generic IDs or encoded characters. Human-readable URLs also improve click-through rates in search results because users can see what the page is about before clicking. Additionally, clean URLs are easier to share on social media and in messaging apps.
         </p>
       </section>
       <section>
-        <h2 className="text-xl font-semibold">Why this page exists</h2>
+        <h2 className="text-xl font-semibold">Privacy guarantee</h2>
         <p className="mt-2">
-          Content creators and developers need clean, URL-safe slugs that preserve multilingual meaning and strip diacritics. This tool runs entirely in-browser without sending draft titles to external servers.
+          Slug generation executes 100% inside your browser runtime. Draft article titles, product names, and private URLs are never sent to external servers or logged.
         </p>
       </section>
     </div>

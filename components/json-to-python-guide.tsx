@@ -31,10 +31,29 @@ export function JsonToPythonGuide() {
       </section>
 
       <section>
+        <h2 className="text-xl font-semibold">Common use cases</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li><strong>API client development:</strong> Paste a sample API response and generate typed Pydantic models to safely parse responses in your Python backend.</li>
+          <li><strong>Database schema modeling:</strong> Convert JSON database exports into dataclass models for ORM-free data handling.</li>
+          <li><strong>AI/ML pipeline typing:</strong> Create typed structures for LLM API responses (OpenAI, Anthropic) to ensure safe field access in your data pipelines.</li>
+          <li><strong>Configuration management:</strong> Generate Pydantic settings models from JSON config files for validated application configuration.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">PEP 8 snake_case conversion and Field aliases</h2>
         <p className="mt-2">
           Python code style (PEP 8) requires variable and property names to use <code className="rounded bg-line px-1 py-0.5 text-xs">snake_case</code>, whereas web APIs frequently return <code className="rounded bg-line px-1 py-0.5 text-xs">camelCase</code> keys. When snake_case is enabled, this tool automatically converts keys like <code className="rounded bg-line px-1 py-0.5 text-xs">userId</code> to <code className="rounded bg-line px-1 py-0.5 text-xs">user_id</code> and adds <code className="rounded bg-line px-1 py-0.5 text-xs">Field(alias=&quot;userId&quot;)</code> in Pydantic to ensure seamless parsing of external API responses.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Tips &amp; best practices</h2>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Use Pydantic for any code that processes external input — its runtime validation catches malformed data before it reaches your business logic.</li>
+          <li>Use dataclasses for internal-only data structures where validation overhead is unnecessary.</li>
+          <li>Always enable snake_case conversion when the source JSON uses camelCase to follow Python naming conventions.</li>
+        </ul>
       </section>
 
       <section>
