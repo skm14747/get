@@ -1,0 +1,33 @@
+---
+description: Checklist for adding a new tool to GoEasyTools — covers all required files and SEO infrastructure.
+globs: app/*/page.tsx, lib/tools.ts
+alwaysApply: false
+---
+
+# New tool checklist
+
+When adding a new tool to GoEasyTools, complete ALL of these steps:
+
+## Required files
+
+1. **`lib/tools.ts`** — Add tool definition with `id`, `path`, `name`, `title` (keyword-rich), `h1`, `shortDescription`, `metaDescription`, `category`, `related`, `primaryQuery`
+2. **`app/{slug}/page.tsx`** — Page using `ToolPage` wrapper + tool widget + guide component
+3. **`components/{slug}-guide.tsx`** — Educational guide with 60+ lines (How it works, Use cases, Tips, Privacy)
+4. **`components/{slug}-tool.tsx`** — Client component for the tool UI
+5. **`lib/faqs.ts`** — Add 2-4 FAQ items for the tool
+6. **`lib/how-tos.ts`** — Add HowTo steps for the tool
+
+## Automatic from the above
+
+- Sitemap inclusion (reads from `lib/tools.ts`)
+- Hreflang links (via `toolMetadata` with `pageId`)
+- WebApplication + BreadcrumbList + FAQPage + HowTo JSON-LD (via `ToolPage`)
+- Related tools section (from `tool.related`)
+
+## Also update
+
+- `lib/browse.ts` — Ensure tool's category includes it
+- `app/guides/[slug]/page.tsx` tools grid — if the guide for its category exists
+- Blog — consider a related blog post in `lib/blog.ts`
+- `lib/intent-bridges.ts` — Add cross-links to/from related tools
+- Locale slugs — Add to relevant locale `toolSlugs` in `lib/locales.ts`

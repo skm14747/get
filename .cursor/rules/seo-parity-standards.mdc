@@ -1,0 +1,74 @@
+---
+description: SEO parity standards established Nov 2026 — structured data, hreflang, content depth, and guide requirements for GoEasyTools.
+globs: app/**/*.tsx, lib/seo.ts, lib/tools.ts, lib/blog.ts, lib/guide-content.ts, lib/hreflang.ts, lib/how-tos.ts, lib/faqs.ts, components/*-guide.tsx, components/tool-page.tsx, middleware.ts
+alwaysApply: false
+---
+
+# SEO parity standards
+
+These patterns were established to bring GoEasyTools to parity with the highest-performing sister site (Astra). Follow them for all new pages and tools.
+
+## Structured data (root layout)
+
+Root `app/layout.tsx` emits three global JSON-LD schemas:
+- **WebSite** with site name, URL, description
+- **Organization** with logo
+- **SoftwareApplication** with `featureList` (12 categories) and `aggregateRating`
+
+Homepage `app/page.tsx` emits **ItemList** JSON-LD listing all tools.
+
+Per-tool pages via `components/tool-page.tsx` emit:
+- **WebApplication** with `isAccessibleForFree: true`
+- **BreadcrumbList** (Home → category → tool)
+- **FAQPage** when FAQs exist in `lib/faqs.ts`
+- **HowTo** when steps exist in `lib/how-tos.ts`
+
+When adding a new tool: add FAQs in `lib/faqs.ts` AND HowTo steps in `lib/how-tos.ts`.
+
+## Hreflang
+
+`lib/seo.ts` → `toolMetadata()` passes `tool.id` as `pageId` to enable hreflang links. Never remove this. When adding a new tool, its `id` automatically becomes an `IndexableId` eligible for hreflang.
+
+## Server-rendered locale `lang`
+
+`middleware.ts` detects locale from URL prefix and sets `x-locale` header. Root layout reads this header to set `<html lang>` server-side. Do NOT use client-side `useEffect` to set `lang` — crawlers won't see it.
+
+## Content depth requirements
+
+Every tool page MUST have:
+1. A dedicated `components/{tool}-guide.tsx` with **60+ lines** of educational content
+2. At minimum: "How it works", "Common use cases", "Tips & best practices", "Privacy" sections
+3. Content must be specific to the tool — no generic filler
+
+Do NOT put inline content directly in `page.tsx` for new tools. Always create a guide component.
+
+Do NOT include internal roadmap text like "Demand for this tool is not yet validated" in indexable HTML.
+
+## Guide hub pages
+
+`app/guides/[slug]/page.tsx` serves 9 programmatic category guide pages from `lib/guide-content.ts`. Each guide has:
+- SEO-optimized title and description
+- 200+ word educational intro
+- 3-4 topical sections
+- FAQPage + BreadcrumbList JSON-LD
+- Tools grid for the category
+- Cross-links to related guides
+
+When adding a new tool category, add a matching guide in `lib/guide-content.ts`.
+
+## Blog
+
+Blog posts live in `lib/blog.ts`. Each post must:
+- Target a specific long-tail search query
+- Be 800-1200 words of genuinely educational content
+- Link to 2-3 relevant tools
+- Include a FAQ section
+- Have unique title and meta description
+
+## googleBot directives
+
+Root metadata includes `googleBot` with `max-image-preview: "large"` and `max-snippet: -1`. Do not weaken these.
+
+## Security headers
+
+`next.config.ts` sets CSP, X-Content-Type-Options, Referrer-Policy, X-Frame-Options, Permissions-Policy, and `poweredByHeader: false`. Maintain these on all responses.

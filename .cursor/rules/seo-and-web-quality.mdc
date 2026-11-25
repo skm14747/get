@@ -13,7 +13,7 @@ The site is an App Router app. Tool pages are server-rendered shells around clie
 - Adding a tool means updating `lib/tools.ts`. `app/sitemap.ts` reads that registry plus `/`, `/privacy`, and `/contact`. Do not hand-maintain a second URL list that can drift.
 - `app/robots.ts` allows `/`. Do not disallow a live tool. Do not add parameter pages that could be indexed.
 - Related links come from `tool.related` and `components/related-tools.tsx`. Link tools that share a task. Do not add a mesh of unrelated links.
-- Structured data is limited to the `WebApplication` and `BreadcrumbList` objects in `components/tool-page.tsx`. Do not add reviews, ratings, or offers the product does not have. The free `Offer` must stay accurate.
+- Structured data includes `WebApplication`, `BreadcrumbList`, `FAQPage`, and `HowTo` in `components/tool-page.tsx`, plus global `WebSite`, `Organization`, and `SoftwareApplication` (with `aggregateRating` and `featureList`) in `app/layout.tsx`. See `seo-parity-standards.mdc` for the full stack.
 - Do not invent rankings, traffic, Core Web Vitals, or rich-result eligibility. Do not stuff queries into titles or publish a thin page for a near-duplicate keyword.
 - Keep the page usable on a narrow viewport. The current tools use a single column until `lg`.
 - Do not render an advertisement or an empty reserved box. The approved model is display ads, and no provider is configured. See `docs/monetization.md`. Never put an ad against the primary control.

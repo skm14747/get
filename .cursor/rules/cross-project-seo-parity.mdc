@@ -1,0 +1,45 @@
+---
+description: Cross-project SEO patterns shared across GoEasyTools, Astra, and AFL — the common baseline all three sites must maintain.
+alwaysApply: true
+---
+
+# Cross-project SEO baseline
+
+GoEasyTools, Astra (astradestiny.com), and AFL (astrologyforlove.com) share these SEO patterns. Any deviation must be intentional and documented.
+
+## Shared infrastructure
+
+All three sites MUST have:
+1. **WebSite JSON-LD** in root layout
+2. **Organization JSON-LD** in root layout
+3. **SoftwareApplication JSON-LD** with `featureList` and `aggregateRating` in root layout
+4. **ItemList JSON-LD** on homepage listing all tools/calculators
+5. **BreadcrumbList JSON-LD** on every tool/calculator page
+6. **FAQPage JSON-LD** on pages with FAQ content
+7. **googleBot directives**: `max-image-preview: "large"`, `max-snippet: -1`
+8. **sitemap.ts** with `lastModified` and OG `images` on homepage
+9. **robots.ts** allowing `/`, disallowing `/api/` and `/private/`
+10. **Custom 404** page with branded design and navigation CTAs
+11. **ConsentBanner** for GDPR compliance (localStorage-backed)
+12. **Skip-to-content** accessibility link
+13. **Security headers**: CSP, X-Content-Type-Options, Referrer-Policy, X-Frame-Options, Permissions-Policy
+14. **`poweredByHeader: false`** in next.config.ts
+15. **PWA manifest.ts**
+16. **llms.txt** and **llms-full.txt** for AI discoverability
+
+## Content-first principle
+
+The #1 lesson from the Astra vs others comparison: **organic traction comes from content volume and depth, not tool count**. When building new features:
+- Every tool page needs 60+ lines of server-rendered educational content
+- Programmatic pages (combinations, date-based, category-based) multiply URL surface area
+- Blog posts and editorial guides capture informational-intent queries
+- Hub pages with internal links create topical authority
+- i18n with real translations (not stubs) multiplies everything
+
+## Anti-patterns
+
+- Never gate educational content behind JavaScript interaction — crawlers see empty shells
+- Never include internal roadmap/validation text in indexable HTML
+- Never set `html lang` via client-side `useEffect` — use middleware + server-rendered layout
+- Never omit `pageId`/hreflang on tool metadata — international clustering matters
+- Never create thin locale pages without real translations — they dilute crawl budget
